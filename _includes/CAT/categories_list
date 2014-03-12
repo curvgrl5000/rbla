@@ -1,0 +1,14 @@
+{% if site.CAT.categories_list.provider == "custom" %}
+  {% include custom/categories_list %}
+{% else %}
+  {% if categories_list.first[0] == null %}
+    {% for cat in categories_list %} 
+      <a href="{{ site.baseurl }}{{ site.CAT.cat_path }}">{{ cat }} </a>
+    {% endfor %}
+  {% else %}
+    {% for cat in categories_list %}
+      <a href="{{ site.baseurl }}{{ site.CAT.cat_path }}">{{ cat | first | camelize }} </a>
+    {% endfor %}
+  {% endif %}
+{% endif %}
+{% assign categories_list = null %}
