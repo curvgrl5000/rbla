@@ -65,7 +65,7 @@
 	
 	/*homepage*/
 	.logo-homepage{width:235px;height:39px;margin-bottom:30px;}
-	.logo-homepage .brand {
+	.logo-homepage .brand, .brand {
 	  font-family: "bello-pro"; 
 	  color: #E56869; 
 	  font-size: 30px;
@@ -430,7 +430,7 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endCol
 
 	/*fancybox-lightbox*/
 	.fancybox-html{display:none;}
-	#fancybox-outer,#fancybox-content iframe {background: #000 url(../images/logo-common.png) center center no-repeat;}
+	#fancybox-outer,#fancybox-content iframe {background: #B6202D url(../images/logo-common.png) center center no-repeat;}
 	#fancybox-content {border: 0px solid #000;}
 	#fancybox-left,#fancybox-right,#fancybox-close{opacity:1; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";}
 	#fancybox-left-ico {background: rgba(0,0,0,0.5)  url(../images/fancybox/fancybox.png) -39px -22px no-repeat ;-webkit-border-radius: 40px; -moz-border-radius: 40px; border-radius:40px;}

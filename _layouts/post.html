@@ -1,9 +1,219 @@
----
-layout: default
----
-<h2>{{ page.title }}</h2>
-<p class="meta">{{ page.date | date_to_string }}</p>
+{% include header_posts.html %}  
 
-<div class="post">
-{{ content }}
-</div>
+<!--start blog index-->
+ <div id="blog" class="page odd">
+    
+    <!--start content - left-->
+    <div class="content clearfix">
+    
+    	<h1><span>{{page.title}}</span></h1>
+     
+	 <!--blog content-left-->
+    	 <div class="content-inner-left">
+     
+     			<!--start post-->	
+                <div class="blog-post">
+                    
+                    <div class="blog-post-content">
+                    	<div class="blog-post-media">
+                        	<div class="video" style="width:620px;height:348px;">
+                         <iframe src="http://www.{{site.youtube}}/embed/U8GBXvdmHT4" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                         	</div>
+                        </div>
+                                                                     
+                        <div class="blog-post-type video"></div>
+                        
+                        <div class="blog-post-content-inner">
+                        
+                            <h5><span>{{page.title}}</h5>
+                            
+                            <div class="blog-post-meta">
+                                <ul>
+                                    <li>{{page.date}}</li>
+                                    <li class="separator">|</li>
+                                    <li>Comments: <span>35</span></li>
+                                    <li class="separator">|</li>
+                                    {% for member in site.data.members %}
+                                    <li>Posted by: <a href="#">{{ member.name }}</a></li>
+                                    {% endfor %}
+                                    <li class="separator">|</li>
+                                    <li>In <a href="{{site.baseurl}}/blog">Blog</a>, <a href="#">IT</a>, <a href="#">News</a></li>
+                                </ul>
+                            </div>
+                            
+                            {{ page.content }}
+                        
+                     	</div>
+                    </div>
+                </div>
+                <h4><span>05 Comments</span></h4>
+             	<div class="blog-post-comments">
+               		<ul>
+                    	<li>
+                        	<div class="avatar">
+                            	<img src="images/gallery/avatar.jpg" width="60" height="60" alt=""/>
+                            </div>
+                            <div class="comment">
+                            	<div class="author"><span>Adman Fitzpatrick</span></div>
+                                <div class="comment-meta">January 4, 2012 at 9:09 am - <a href="">Reply</a></div>
+                            	<p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis metus vitae ligula elementum ut luctus lorem facilisis. Sed non leo nisl, ac euismod nisi. Aenean augue dolor, facilisis id fringilla ut, tempus vitae nibh. Nullam nec diam risus. Donec laoreet ultricies rhoncus. Aliquam adipiscing. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis metus vitae ligula elementum ut luctus lorem facilisis. 
+                      		  </p>
+                            </div>
+                            
+                            <!--level 1 response-->
+                            <ul class="response level-1">
+                            	<li class="blog-post-response-last">
+                                	<div class="avatar">
+                                        <img src="images/gallery/avatar.jpg" width="60" height="60" alt=""/>
+                                    </div>
+                                    <div class="comment">
+                                        <div class="author"><span>George Adams</span></div>
+                                        <div class="comment-meta">January 4, 2012 at 9:09 am - <a href="">Reply</a></div>
+                                        <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis metus vitae ligula elementum ut luctus lorem facilisis. Sed non leo nisl, ac euismod nisi. Aenean augue dolor, facilisis id fringilla ut, tempus vitae nibh. Nullam nec diam risus.
+                                      </p>
+                                    </div>
+                                    
+                                    <!--level 2 response-->
+                                    <ul class="response level-2">
+                                        <li class="blog-post-response-last">
+                                            <div class="avatar">
+                                               <img src="images/gallery/avatar.jpg" width="60" height="60" alt=""/>
+                                            </div>
+                                            <div class="comment">
+                                                <div class="author"><span>Corey Andersson</span></div>
+                                                <div class="comment-meta">January 4, 2012 at 9:09 am - <a href="">Reply</a></div>
+                                                <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis metus vitae ligula elementum ut luctus lorem facilisis. Sed non leo nisl, ac euismod nisi. Aenean augue dolor, facilisis id fringilla ut, tempus vitae nibh. Nullam nec diam risus. Donec laoreet ultricies rhoncus. Aliquam adipiscing. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis metus vitae ligula elementum ut luctus lorem facilisis.
+                                              </p>
+                                            </div>
+                                        </li>
+                                      </ul>
+                                </li>
+                              </ul>
+                     
+                     	</li>
+                        	<li class="blog-post-comment-last">
+                        	<div class="avatar">
+                            	<img src="images/gallery/avatar.jpg" width="60" height="60" alt=""/>
+                            </div>
+                            <div class="comment">
+                            	<div class="author"><span>Adman Fitzpatrick</span></div>
+                                <div class="comment-meta">January 4, 2012 at 9:09 am - <a href="">Reply</a></div>
+                            	<p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis metus vitae ligula elementum ut luctus lorem facilisis. Sed non leo nisl, ac euismod nisi. Aenean augue dolor, facilisis id fringilla ut, tempus vitae nibh. Nullam nec diam risus. Donec laoreet ultricies rhoncus. Aliquam adipiscing. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis metus vitae ligula elementum ut luctus lorem facilisis. Sed non leo nisl, ac euismod nisi. Aenean augue dolor, facilisis id fringilla ut, tempus vitae nibh. Nullam nec diam risus. Donec laoreet ultricies rhoncus. Aliquam adipiscing
+                      		  </p>
+                            </div>
+                     
+                     	</li>
+                    </ul>
+                </div>
+             
+             	 <h4><span>Post a Comment</span></h4>
+                 <form action="" method="post" class="form comment-form" id="comment-form">
+                        <p><input type="text" name="username" class="required" id="username" value="Your Name" /></p>
+                        <p><input type="text" name="email" class="required" id="email" value="E-mail" /></p>
+                        <p><input type="text" name="subject"  id="subject" value="Subject" /></p>
+                       <textarea  class="required" name="comment" id="message" rows="" cols="">Message</textarea>
+                       <p><input type="submit" value="SEND" class="submit submitTheme" id="submitform" /></p>
+                  </form>    
+     
+     			<!--start pagination-->
+                <div class="blog-post-navigation">	
+                    <div id="previous-post">
+                    	<a href="">&#171; Prev Post Title</a>
+                	</div>
+                     <div id="next-post">
+                    	<a href="">Next Post Title &#187;</a>
+                	</div>
+                </div>
+     
+    	 </div>
+    	 <!--start content - left-->
+         
+         <!--start sidebar-->
+         <div id="sidebar" class="left">
+         
+         	<ul>
+                <!--widget-recent-posts-->
+                <li class="widget-recent-post">
+                    <h6 class="widgettitle"><span>RecentPosts</span></h6>
+                    <ul>
+                        <li>
+                        <a href="#">De Gustibus (Et Coloribus) Non Est Disputandum</a>
+                        <p class="date">06 July 2012</p>
+                        </li>
+                        <li>
+                        <a href="#">Lorem Ipsum Dolor</a>
+                         <p class="date">06 July 2012</p>
+                        </li>
+                        <li>
+                        <a href="#">Sit Amet Corinus Amet</a>
+                         <p class="date">06 July 2012</p>
+                        </li>
+                        <li>
+                        <a href="#">Imnet Amus Non Est</a>
+                         <p class="date">06 July 2012</p>
+                        </li>
+                        
+                    </ul>
+                </li>
+                
+                <!--widget-cats-->
+                <li class="widget-categories">
+                
+                    <h6 class="widgettitle"><span>Recent Categories</span></h6>
+                          <ul>
+                        <li>
+                        <a href="#">De Gustibus (Et Coloribus) Non Est Disputandum</a>
+                        </li>
+                        <li>
+                        <a href="#">Lorem Ipsum Dolor</a>
+                        </li>
+                        <li>
+                        <a href="#">Sit Amet Corinus Amet</a>
+                        </li>
+                        <li>
+                        <a href="#">Imnet Amus Non Est</a>
+                        </li>
+                        
+                    </ul>
+                
+                </li>
+                
+                 <!--widget-twitter-->
+                 <li class="widget-twitter">
+                    <h6 class="widgettitle"><span>Twitter Widget</span></h6>
+                    <div id='filter' class="query"></div>
+                
+                </li>
+                    
+                <!--widget-tag-cloud-->
+                 <li class="widget-tag-cloud">
+                    <h6 class="widgettitle">Tag <span>Cloud</span></h6>
+                     <a href="#">Design</a>
+                     <a href="#">News</a>
+                     <a href="#">Media</a>
+                     <a href="#">Javascript</a>
+                     <a href="#">Photography</a>
+                     <a href="#">Elements</a>
+                
+                </li>
+               
+                
+             </ul>
+         
+         </div>
+         
+         <!--end sidebar-->
+     
+ 	</div>
+    
+    
+ </div>
+<!--end blog index--> 
+
+<div class="clear"></div>
+
+{% include footer.html %}

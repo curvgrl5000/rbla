@@ -83,10 +83,16 @@ title: RailsBridge LA
                   <a href="http://www.meetup.com/LA-Eastside-Ruby-Rails-Study-Group/">> EAST-SIDE STUDY GROUP</a><br>
                   <a href="http://www.meetup.com/South-Bay-Ruby-Developers/">> SOUTH-BAY STUDY GROUP </a><br>
                 </p>
-
-                <a class="media app-button play" href="http://www.youtube.com/embed/Neff9scaCCI"> Vimeo Demo <br/><span>Community Needs You</span></a>
-              
-              
+                
+                <p>FEATURED MEETUP / HACKATHON<br>
+                   <a href="http://www.meetup.com/Westside-Rails-Study-Group/">> RailsGirls </a><br>
+                   Here's where some kind of information describing the event will sit. Showcasing
+                   the copy, managing the item to date. The afiliation and how it may work. Get Jen's 
+                   input on the program etc and seek some final copy etc.
+                 </p>
+                
+                
+                <a class="media app-button play" href="http://www.youtube.com/embed/3GeKarLwfqA"> FIND YOUR PASSION! <br/><span>Rachel Myers Discusses a Fabulous Beginning</span></a>
               </div>
 			</div>
     </div>
@@ -98,12 +104,20 @@ title: RailsBridge LA
                 <div class="info">
                     <div class="info-inner">
                         <div class="column_one_half">
-                            <h5><span>Featured Talk</span></h5>
-                             <p class="info-focus">This could be the latest talk worth promoting.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat fugiat nulla pariatur.</p>
+                            <h5><span>Featured Video:</span></h5>
+                             <p class="info-focus">The Basics of Git and GitHub</p>
+                            <p>
+                              Totally watchable and straight to the point.<br>
+                              A great intro on version control, Git and concise overview of GitHub.<br>
+                              Watch more from Mathew and Brent in the following posts:
+                            </p>
                             <div id="home">
                               <ul class="posts">
                                 {% for post in site.posts %}
+                                  <li>
+                                    <span>{{ post.date | date_to_string }}</span> 
+                                    &raquo; <a href="{{ post.url }}">{{ post.title }}</a>
+                                  </li>
                                   <li>
                                     <span>{{ post.date | date_to_string }}</span> 
                                     &raquo; <a href="{{ post.url }}">{{ post.title }}</a>
@@ -113,8 +127,8 @@ title: RailsBridge LA
                             </div>
                         </div>
                         <div class="column_one_half last">
-                            <div class="video" style="width:100%;height:234px;">
-                               <iframe src="http://player.vimeo.com/video/40530242?title=0&amp;portrait=0&amp;color=fc7022" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                            <div class="video" style="width:100%;height:310px;">
+                               <iframe width="580" height="335" src="//www.youtube.com/embed/U8GBXvdmHT4" frameborder="0" allowfullscreen></iframe>
                             </div>
                         </div>
                     </div>
@@ -248,5 +262,3 @@ title: RailsBridge LA
         
 	</div>
 	<!--end signup-->
-  
-              

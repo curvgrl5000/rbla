@@ -28,7 +28,7 @@ $(document).ready(function(){
 	 	overlayOpacity =0.8,						//Fancybox overlay opacity
 	 	overlayColor = '#000',						//Fancybox overlay color	
 	 	videoWidth = 663,							//Fancybox video width
-	 	videoHeight = 372;							//Fancybox video height
+	 	videoHeight = 465;							//Fancybox video height
 		lazyload = true;
 
 
@@ -141,7 +141,7 @@ $(document).ready(function(){
 			'transitionIn'		: lightboxTransition,
 			'transitionOut'		: lightboxTransition,
 			'titlePosition' 	: 'over',
-			'padding'			: '0',																		
+			'padding'			    : '0',																		
 			'overlayOpacity'    : overlayOpacity,
 			'overlayColor'      : overlayColor,
 			'titleFormat'		: function(title, currentArray, currentIndex, currentOpts) {  
