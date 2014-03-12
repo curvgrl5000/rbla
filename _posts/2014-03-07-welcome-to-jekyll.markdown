@@ -2,8 +2,7 @@
 layout: post
 title:  "What is VCS? Git Basics #1"
 date:   2014-03-07 14:26:51
-categories: Learning Git & Github
-
+category: learning-git-and-github
 ---
 
 
