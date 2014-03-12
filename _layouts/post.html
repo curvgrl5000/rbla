@@ -17,7 +17,7 @@
                     <div class="blog-post-content">
                     	<div class="blog-post-media">
                         	<div class="video" style="width:620px;height:348px;">
-                         <iframe src="http://www.{{site.youtube}}/embed/U8GBXvdmHT4" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                         <iframe src="{{page.video}}" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
                          	</div>
                         </div>
                                                                      
@@ -37,7 +37,16 @@
                                     <li>Posted by: <a href="#">{{ member.name }}</a></li>
                                     {% endfor %}
                                     <li class="separator">|</li>
-                                    <li>In <a href="{{site.baseurl}}/blog">Blog</a>, <a href="#">IT</a>, <a href="#">News</a></li>
+                                    <!-- {% for post in site.posts %}
+                                    <li>In 
+                                      <a href="{{site.baseurl}}{{site.categories[0]}}">{{ post.category }}</a> 
+                                    </li>
+                                    {% endfor %}  -->
+                                    {% for category_name in page.categories %}
+                                    <li>In 
+                                      <a href="{{site.baseurl}}{{site.categories[0]}}">{{ category_name | camelize }}</a> 
+                                    </li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                             
@@ -164,20 +173,9 @@
                 <li class="widget-categories">
                 
                     <h6 class="widgettitle"><span>Recent Categories</span></h6>
-                          <ul>
-                        <li>
-                        <a href="#">De Gustibus (Et Coloribus) Non Est Disputandum</a>
-                        </li>
-                        <li>
-                        <a href="#">Lorem Ipsum Dolor</a>
-                        </li>
-                        <li>
-                        <a href="#">Sit Amet Corinus Amet</a>
-                        </li>
-                        <li>
-                        <a href="#">Imnet Amus Non Est</a>
-                        </li>
-                        
+                      <ul>
+                        {% assign categories_list = site.categories %}
+                        {% include CAT/categories_list  %}
                     </ul>
                 
                 </li>
@@ -192,16 +190,10 @@
                 <!--widget-tag-cloud-->
                  <li class="widget-tag-cloud">
                     <h6 class="widgettitle">Tag <span>Cloud</span></h6>
-                     <a href="#">Design</a>
-                     <a href="#">News</a>
-                     <a href="#">Media</a>
-                     <a href="#">Javascript</a>
-                     <a href="#">Photography</a>
-                     <a href="#">Elements</a>
-                
+                    {% assign tags_list = site.tags %}
+                    {% include TAG/tags_list %}
                 </li>
-               
-                
+                                
              </ul>
          
          </div>

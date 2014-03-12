@@ -5,7 +5,10 @@ baseurl: /rbla
 
 vimeo: vimeo.com
 youtube: youtube.com
-permalink: pretty
 
+permalink: none
 
+categories: ["learning-git and github", "whatever"]
+
+tags: ["Git"]
 
