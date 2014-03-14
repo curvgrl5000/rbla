@@ -6,9 +6,8 @@ baseurl: /rbla
 vimeo: vimeo.com
 youtube: youtube.com
 
-permalink: none
+permalink: /:categories/:title
 
-categories: ["learning-git and github", "whatever"]
+categories: "tutorials", "cheatsheets", "blog"
 
 tags: ["Git"]
-

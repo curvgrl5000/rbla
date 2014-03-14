@@ -29,7 +29,7 @@
                             
                             <div class="blog-post-meta">
                                 <ul>
-                                    <li>{{page.date}}</li>
+                                    <li>{{page.date | date: "%a, %b %d, %y"}}</li>
                                     <li class="separator">|</li>
                                     <li>Comments: <span>35</span></li>
                                     <li class="separator">|</li>
@@ -37,14 +37,9 @@
                                     <li>Posted by: <a href="#">{{ member.name }}</a></li>
                                     {% endfor %}
                                     <li class="separator">|</li>
-                                    <!-- {% for post in site.posts %}
-                                    <li>In 
-                                      <a href="{{site.baseurl}}{{site.categories[0]}}">{{ post.category }}</a> 
-                                    </li>
-                                    {% endfor %}  -->
                                     {% for category_name in page.categories %}
                                     <li>In 
-                                      <a href="{{site.baseurl}}{{site.categories[0]}}">{{ category_name | camelize }}</a> 
+                                      <a href="{{site.baseurl}}{{site.categories[0]}}">{{ category_name | capitalize }}</a> 
                                     </li>
                                     {% endfor %}
                                 </ul>
@@ -147,25 +142,14 @@
          	<ul>
                 <!--widget-recent-posts-->
                 <li class="widget-recent-post">
-                    <h6 class="widgettitle"><span>RecentPosts</span></h6>
+                    <h6 class="widgettitle"><span>Recent Posts</span></h6>
                     <ul>
+                        {%  for post in site.posts offset: 0 limit: 10 %}
                         <li>
-                        <a href="#">De Gustibus (Et Coloribus) Non Est Disputandum</a>
-                        <p class="date">06 July 2012</p>
+                        <a href="#">{{page.title}}</a>
+                        <p class="date">{{page.date | date: "%a, %b %d, %y"}}</p>
                         </li>
-                        <li>
-                        <a href="#">Lorem Ipsum Dolor</a>
-                         <p class="date">06 July 2012</p>
-                        </li>
-                        <li>
-                        <a href="#">Sit Amet Corinus Amet</a>
-                         <p class="date">06 July 2012</p>
-                        </li>
-                        <li>
-                        <a href="#">Imnet Amus Non Est</a>
-                         <p class="date">06 July 2012</p>
-                        </li>
-                        
+                        {% endfor %}                        
                     </ul>
                 </li>
                 
@@ -174,9 +158,17 @@
                 
                     <h6 class="widgettitle"><span>Recent Categories</span></h6>
                       <ul>
-                        {% assign categories_list = site.categories %}
-                        {% include CAT/categories_list  %}
-                    </ul>
+                        {% for post in site.categories['blog'] %}
+                        <li><a href="{{site.baseurl}}{{site.categories[0]}}">{{post.category | capitalize }}</a></li>
+                        {% endfor %}
+                        {% for post in site.categories['cheatsheets'] %} 
+                        <li><a href="{{site.baseurl}}{{site.categories[0]}}">{{post.category | capitalize }}</a></li>
+                        {% endfor %}
+                        {% for post in site.categories['tutorials'] %} 
+                        <li><a href="{{site.baseurl}}{{site.categories[0]}}">{{post.category | capitalize }}</a></li>
+                        {% endfor %}
+                    </ul>                        
+                    
                 
                 </li>
                 
