@@ -720,6 +720,9 @@
 	  text-decoration:none; 
 	  font-weight:bold;
 	}
+	.blog-post-meta ul li a.category {
+	  text-transform: capitalize; 
+	}
 	.blog-post-content .blog-post-meta ul li a:hover {
 	  color:#FC7022;
 	  text-decoration:underline;
@@ -931,6 +934,7 @@
 	  text-decoration:none; 
 	  font-weight:bold; 
 	  width:100%;
+	  text-transform: capitalize;
 	}
 	#sidebar ul li ul li p.date { 
 	  color:#999; 

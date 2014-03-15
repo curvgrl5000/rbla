@@ -1,203 +1,244 @@
 {% include header_posts.html %}  
 
-<!--start blog index-->
- <div id="blog" class="page odd">
-    
+<!--start post index-->
+  <div id="blog" class="page odd">
     <!--start content - left-->
     <div class="content clearfix">
-    
     	<h1><span>{{page.title}}</span></h1>
-     
-	 <!--blog content-left-->
-    	 <div class="content-inner-left">
-     
-     			<!--start post-->	
-                <div class="blog-post">
-                    
-                    <div class="blog-post-content">
-                    	<div class="blog-post-media">
-                        	<div class="video" style="width:620px;height:348px;">
-                         <iframe src="{{page.video}}" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-                         	</div>
-                        </div>
+      <!--post content-left-->
+    	<div class="content-inner-left">
+        <!--start post-->	
+        <div class="blog-post">
+          <div class="blog-post-content">
+            <div class="blog-post-media">
+              <div class="video" style="width:620px;height:348px;">
+                <iframe src="{{page.video}}" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+              </div>
+            </div>
                                                                      
-                        <div class="blog-post-type video"></div>
-                        
-                        <div class="blog-post-content-inner">
-                        
-                            <h5><span>{{page.title}}</h5>
-                            
-                            <div class="blog-post-meta">
-                                <ul>
-                                    <li>{{page.date | date: "%a, %b %d, %y"}}</li>
-                                    <li class="separator">|</li>
-                                    <li>Comments: <span>35</span></li>
-                                    <li class="separator">|</li>
-                                    {% for member in site.data.members %}
-                                    <li>Posted by: <a href="#">{{ member.name }}</a></li>
-                                    {% endfor %}
-                                    <li class="separator">|</li>
-                                    {% for category_name in page.categories %}
-                                    <li>In 
-                                      <a href="{{site.baseurl}}{{site.categories[0]}}">{{ category_name | capitalize }}</a> 
-                                    </li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
-                            
-                            {{ page.content }}
-                        
-                     	</div>
+            <div class="blog-post-type video"></div>
+            <div class="blog-post-content-inner">
+              <h5><span>{{page.title}}</h5>
+              <div class="blog-post-meta">
+                <ul>
+                  <li>{{page.date | date: "%a, %b %d, %y"}}</li>
+                  <li class="separator">|</li>
+                  <li>Comments: <span>35</span></li>
+                  <li class="separator">|</li>
+                  {% for member in site.data.members %}
+                    <li>Posted by: <a href="#">{{ member.name }}</a></li>
+                  {% endfor %}
+                  <li class="separator">|</li>
+                  {% for post in site.categories[page.category] %}
+                    <li>In {{ post.categories | category_links | capitalize }}</li> 
+                  {% endfor %}
+                </ul>
+              </div>
+              <!--end post meta-->
+              
+              {{ page.content }}
+            
+            </div><!-- end blog-post-content-inner -->
+          </div><!-- end blog-post-content -->
+        </div><!-- end blog-post -->
+        
+        <h4>
+          <span>05 Comments</span>
+        </h4>
+        <div class="blog-post-comments">
+          <ul>
+            <li>
+              <div class="avatar">
+                <img src="images/gallery/avatar.jpg" width="60" height="60" alt=""/>
+              </div>
+              <div class="comment">
+                <div class="author">
+                  <span>Adman Fitzpatrick</span>
+                </div>
+                <div class="comment-meta">
+                  January 4, 2012 at 9:09 am - <a href="">Reply</a>
+                </div>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis metus 
+                  vitae ligula elementum ut luctus lorem facilisis. Sed non leo nisl, ac euismod nisi. 
+                  Aenean augue dolor, facilisis id fringilla ut, tempus vitae nibh. Nullam nec diam risus. 
+                  Donec laoreet ultricies rhoncus. Aliquam adipiscing. Lorem ipsum dolor sit amet, 
+                  consectetur adipiscing elit. Donec iaculis metus vitae ligula elementum ut luctus lorem 
+                  facilisis. 
+                </p>
+              </div>
+              <!--level 1 response-->
+              <ul class="response level-1">
+                <li class="blog-post-response-last">
+                  <div class="avatar">
+                    <img src="images/gallery/avatar.jpg" width="60" height="60" alt=""/>
+                  </div>
+                  <div class="comment">
+                    <div class="author">
+                      <span>George Adams</span>
                     </div>
-                </div>
-                <h4><span>05 Comments</span></h4>
-             	<div class="blog-post-comments">
-               		<ul>
-                    	<li>
-                        	<div class="avatar">
-                            	<img src="images/gallery/avatar.jpg" width="60" height="60" alt=""/>
-                            </div>
-                            <div class="comment">
-                            	<div class="author"><span>Adman Fitzpatrick</span></div>
-                                <div class="comment-meta">January 4, 2012 at 9:09 am - <a href="">Reply</a></div>
-                            	<p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis metus vitae ligula elementum ut luctus lorem facilisis. Sed non leo nisl, ac euismod nisi. Aenean augue dolor, facilisis id fringilla ut, tempus vitae nibh. Nullam nec diam risus. Donec laoreet ultricies rhoncus. Aliquam adipiscing. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis metus vitae ligula elementum ut luctus lorem facilisis. 
-                      		  </p>
-                            </div>
-                            
-                            <!--level 1 response-->
-                            <ul class="response level-1">
-                            	<li class="blog-post-response-last">
-                                	<div class="avatar">
-                                        <img src="images/gallery/avatar.jpg" width="60" height="60" alt=""/>
-                                    </div>
-                                    <div class="comment">
-                                        <div class="author"><span>George Adams</span></div>
-                                        <div class="comment-meta">January 4, 2012 at 9:09 am - <a href="">Reply</a></div>
-                                        <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis metus vitae ligula elementum ut luctus lorem facilisis. Sed non leo nisl, ac euismod nisi. Aenean augue dolor, facilisis id fringilla ut, tempus vitae nibh. Nullam nec diam risus.
-                                      </p>
-                                    </div>
+                    <div class="comment-meta">
+                      January 4, 2012 at 9:09 am - <a href="">Reply</a>
+                    </div>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis metus 
+                      vitae ligula elementum ut luctus lorem facilisis. Sed non leo nisl, ac euismod 
+                      nisi. Aenean augue dolor, facilisis id fringilla ut, tempus vitae nibh. Nullam nec 
+                      diam risus.
+                    </p>
+                  </div>
                                     
-                                    <!--level 2 response-->
-                                    <ul class="response level-2">
-                                        <li class="blog-post-response-last">
-                                            <div class="avatar">
-                                               <img src="images/gallery/avatar.jpg" width="60" height="60" alt=""/>
-                                            </div>
-                                            <div class="comment">
-                                                <div class="author"><span>Corey Andersson</span></div>
-                                                <div class="comment-meta">January 4, 2012 at 9:09 am - <a href="">Reply</a></div>
-                                                <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis metus vitae ligula elementum ut luctus lorem facilisis. Sed non leo nisl, ac euismod nisi. Aenean augue dolor, facilisis id fringilla ut, tempus vitae nibh. Nullam nec diam risus. Donec laoreet ultricies rhoncus. Aliquam adipiscing. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis metus vitae ligula elementum ut luctus lorem facilisis.
-                                              </p>
-                                            </div>
-                                        </li>
-                                      </ul>
-                                </li>
-                              </ul>
-                     
-                     	</li>
-                        	<li class="blog-post-comment-last">
-                        	<div class="avatar">
-                            	<img src="images/gallery/avatar.jpg" width="60" height="60" alt=""/>
-                            </div>
-                            <div class="comment">
-                            	<div class="author"><span>Adman Fitzpatrick</span></div>
-                                <div class="comment-meta">January 4, 2012 at 9:09 am - <a href="">Reply</a></div>
-                            	<p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis metus vitae ligula elementum ut luctus lorem facilisis. Sed non leo nisl, ac euismod nisi. Aenean augue dolor, facilisis id fringilla ut, tempus vitae nibh. Nullam nec diam risus. Donec laoreet ultricies rhoncus. Aliquam adipiscing. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis metus vitae ligula elementum ut luctus lorem facilisis. Sed non leo nisl, ac euismod nisi. Aenean augue dolor, facilisis id fringilla ut, tempus vitae nibh. Nullam nec diam risus. Donec laoreet ultricies rhoncus. Aliquam adipiscing
-                      		  </p>
-                            </div>
-                     
-                     	</li>
-                    </ul>
+                  <!--level 2 response-->
+                  <ul class="response level-2">
+                    <li class="blog-post-response-last">
+                      <div class="avatar">
+                        <img src="images/gallery/avatar.jpg" width="60" height="60" alt=""/>
+                      </div>
+                      <div class="comment">
+                        <div class="author">
+                          <span>Corey Andersson</span>
+                        </div>
+                        <div class="comment-meta">
+                          January 4, 2012 at 9:09 am - <a href="">Reply</a>
+                        </div>
+                        <p>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis metus vitae 
+                          ligula elementum ut luctus lorem facilisis. Sed non leo nisl, ac euismod nisi. 
+                          Aenean augue dolor, facilisis id fringilla ut, tempus vitae nibh. Nullam nec diam 
+                          risus. Donec laoreet ultricies rhoncus. Aliquam adipiscing. Lorem ipsum dolor sit amet, 
+                          consectetur adipiscing elit. Donec iaculis metus vitae ligula elementum ut luctus lorem 
+                          facilisis.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            
+            <li class="blog-post-comment-last">
+              <div class="avatar">
+                <img src="images/gallery/avatar.jpg" width="60" height="60" alt=""/>
+              </div>
+              <div class="comment">
+                <div class="author"><span>
+                  Adman Fitzpatrick</span>
                 </div>
+                <div class="comment-meta">
+                  January 4, 2012 at 9:09 am - <a href="">Reply</a>
+                </div>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis metus vitae ligula 
+                  elementum ut luctus lorem facilisis. Sed non leo nisl, ac euismod nisi. Aenean augue dolor, 
+                  facilisis id fringilla ut, tempus vitae nibh. Nullam nec diam risus. Donec laoreet ultricies 
+                  rhoncus. Aliquam adipiscing. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec 
+                  iaculis metus vitae ligula elementum ut luctus lorem facilisis. Sed non leo nisl, ac euismod nisi. Aenean augue dolor, facilisis id fringilla ut, tempus vitae nibh. Nullam nec diam risus. Donec laoreet ultricies rhoncus. Aliquam adipiscing
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
              
-             	 <h4><span>Post a Comment</span></h4>
-                 <form action="" method="post" class="form comment-form" id="comment-form">
-                        <p><input type="text" name="username" class="required" id="username" value="Your Name" /></p>
-                        <p><input type="text" name="email" class="required" id="email" value="E-mail" /></p>
-                        <p><input type="text" name="subject"  id="subject" value="Subject" /></p>
-                       <textarea  class="required" name="comment" id="message" rows="" cols="">Message</textarea>
-                       <p><input type="submit" value="SEND" class="submit submitTheme" id="submitform" /></p>
-                  </form>    
+        <h4><span>Post a Comment</span></h4>
+        <form action="" method="post" class="form comment-form" id="comment-form">
+          <p>
+            <input type="text" name="username" class="required" id="username" value="Your Name" />
+          </p>
+          <p>
+            <input type="text" name="email" class="required" id="email" value="E-mail" />
+          </p>
+          <p>
+            <input type="text" name="subject"  id="subject" value="Subject" />
+          </p>
+          <textarea  class="required" name="comment" id="message" rows="" cols="">
+            Message
+          </textarea>
+          <p>
+            <input type="submit" value="SEND" class="submit submitTheme" id="submitform" />
+          </p>
+        </form>    
      
-     			<!--start pagination-->
-                <div class="blog-post-navigation">	
-                    <div id="previous-post">
-                    	<a href="">&#171; Prev Post Title</a>
-                	</div>
-                     <div id="next-post">
-                    	<a href="">Next Post Title &#187;</a>
-                	</div>
-                </div>
-     
-    	 </div>
-    	 <!--start content - left-->
+        <!--start pagination-->
+        <div class="blog-post-navigation">	
+          <div id="previous-post">
+            <a href="">&#171; Prev Post Title</a>
+          </div>
+       
+          <div id="next-post">
+            <a href="">Next Post Title &#187;</a>
+          </div>
+        </div>
+      </div>
+      <!--start content - left-->
          
-         <!--start sidebar-->
-         <div id="sidebar" class="left">
-         
-         	<ul>
-                <!--widget-recent-posts-->
-                <li class="widget-recent-post">
-                    <h6 class="widgettitle"><span>Recent Posts</span></h6>
-                    <ul>
-                        {%  for post in site.posts offset: 0 limit: 10 %}
-                        <li>
-                        <a href="#">{{page.title}}</a>
-                        <p class="date">{{page.date | date: "%a, %b %d, %y"}}</p>
-                        </li>
-                        {% endfor %}                        
-                    </ul>
-                </li>
+      <!--start sidebar-->
+      <div id="sidebar" class="left">
+        <ul>
+        <!--widget-recent-posts-->
+          <li class="widget-recent-post">
+            <h6 class="widgettitle">
+              <span>Recent Posts</span>
+            </h6>
+            <ul>
+              {%  for post in site.posts offset: 0 limit: 10 %}
+              <li>
+                <a href="#">{{page.title}}</a>
+                <p class="date">
+                  {{page.date | date: "%a, %b %d, %y"}}
+                </p>
+              </li>
+              {% endfor %}                        
+            </ul>
+          </li>
                 
-                <!--widget-cats-->
-                <li class="widget-categories">
-                
-                    <h6 class="widgettitle"><span>Recent Categories</span></h6>
-                      <ul>
-                        {% for post in site.categories['blog'] %}
-                        <li><a href="{{site.baseurl}}{{site.categories[0]}}">{{post.category | capitalize }}</a></li>
-                        {% endfor %}
-                        {% for post in site.categories['cheatsheets'] %} 
-                        <li><a href="{{site.baseurl}}{{site.categories[0]}}">{{post.category | capitalize }}</a></li>
-                        {% endfor %}
-                        {% for post in site.categories['tutorials'] %} 
-                        <li><a href="{{site.baseurl}}{{site.categories[0]}}">{{post.category | capitalize }}</a></li>
-                        {% endfor %}
-                    </ul>                        
+          <!--widget-cats-->
+          <li class="widget-categories">
+            <h6 class="widgettitle">
+              <span>Recent Categories</span>
+            </h6>
+            <ul>
+            <!-- THIS IS HOW TO REACH INTO A SITE'S CATEGORY FOLDER AND LINK TO TO IT -->
+              {% for post in site.categories['blog'] %}
+              <li>
+                <a href="{{site.baseurl}}{{site.categories[0]}}">{{post.category | capitalize }}</a>
+              </li>
+              {% endfor %}
+          
+              {% for post in site.categories['cheatsheets'] %} 
+              <li>
+                <a href="{{site.baseurl}}{{site.categories[0]}}">{{post.category | capitalize }}</a>
+              </li>
+              {% endfor %}
+          
+              <!-- THIS IS HOW TO REACH INTO A SITE'S 'CATEGORIES' FOLDER AND LINK TO TO IT SEE CATEGORY GENERATOR -->
+              {% for post in site.categories[page.category] %}
+              <li>
+                {{ post.categories | category_links | capitalize }}
+              </li>
+              {% endfor %}
+            </ul>                        
+          </li>
+      
+          <!--widget-twitter-->
+          <li class="widget-twitter">
+            <h6 class="widgettitle">
+              <span>Twitter Widget</span>
+            </h6>
+            <div id='filter' class="query"></div>
+          </li>
                     
-                
-                </li>
-                
-                 <!--widget-twitter-->
-                 <li class="widget-twitter">
-                    <h6 class="widgettitle"><span>Twitter Widget</span></h6>
-                    <div id='filter' class="query"></div>
-                
-                </li>
-                    
-                <!--widget-tag-cloud-->
-                 <li class="widget-tag-cloud">
-                    <h6 class="widgettitle">Tag <span>Cloud</span></h6>
-                    {% assign tags_list = site.tags %}
-                    {% include TAG/tags_list %}
-                </li>
-                                
-             </ul>
-         
-         </div>
-         
-         <!--end sidebar-->
-     
- 	</div>
-    
-    
- </div>
-<!--end blog index--> 
+          <!--widget-tag-cloud-->
+          <li class="widget-tag-cloud">
+            <h6 class="widgettitle">Tag <span>Cloud</span></h6>
+            {% assign tags_list = site.tags %}
+            {% include TAG/tags_list %}
+          </li>
+        </ul>
+      </div>
+      <!--end sidebar-->
+    </div>
+  </div>
+  <!--end blog index--> 
 
-<div class="clear"></div>
-
-{% include footer.html %}
+  <div class="clear"></div>
+  {% include footer.html %}
