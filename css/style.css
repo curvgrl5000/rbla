@@ -1631,4 +1631,28 @@
     height: 100%;
     border: none;
   }
+  
+ .naming {
+   padding-top: 10px;
+   text-align: center;
+ }
+ .company{
+   font-style: italic;
+ }
+ 
+ .circular {
+  margin: auto;
+ 	width: 100px;
+ 	height: 100px;
+ 	border-radius: 150px;
+ 	-webkit-border-radius: 150px;
+ 	-moz-border-radius: 150px;
+ 	background: url(http://link-to-your/image.jpg) no-repeat #bbb;
+ 	}
+
+ .circular img {
+ 	opacity: 0;
+ 	filter: alpha(opacity=0);
+ 	} 
+ 
 				
