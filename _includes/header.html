@@ -90,12 +90,13 @@
       		  <div class="inner">
       			  <div class="logo-pages">
       				  <div class="logo-homepage brand">
-        				  <a class="brand navigateTo" href="#homepage">Rails Bridge LA</a>    <!-- {{ site.name }}  -->
+        				  <a class="brand navigateTo" href="#homepage">Rails Bridge LA</a>    
         				</div>
               </div> <!-- end logo-pages  -->
 
               <!--mobileMenu toggle-->
-              <div class="mobileMenuToggle"><a href="/">Rails Bridge LA</a></div>      <!-- {{ site.name }}  -->
+              <div class="mobileMenuToggle"><a href="/">Rails Bridge LA</a></div>      
+              <div class="mobileMenuToggle"><a href="/">{{ site.name }}</a></div>
 
               <!--navigation-->
               <ul class="navigation">
@@ -103,8 +104,10 @@
                 <li><a class="navigateTo" href="#features-1">List of Meetups</a></li>
                 <li><a class="navigateTo" href="#features-2">Mentors</a></li>
                 <li><a class="navigateTo" href="#signup">Sign Up</a></li>
-                <li><a class="navigateTo" href="http://demo.udfrance.com/encore/html/app/blog.html">Blog</a></li>
-                <li><a class="navigateTo" href="http://demo.udfrance.com/encore/html/app/contact.html">Contact</a></li>
+              	
+              	{% capture location %}{{ page.url | remove_first:'/' | split:'/' | first }}{% endcapture %}
+              	<li><a {% if location == 'blog' %}class="active" {% endif %}href="/blog/">Blog</a></li>
+              	<li><a {% if location == 'contact' %}class="active" {% endif %}href="/contact/">Contact</a></li>
               </ul> <!-- end navigation  -->
       		  </div> <!-- end inner  -->
           </div> <!-- end header header-main clearfix -->

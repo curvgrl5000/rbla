@@ -1,6 +1,4 @@
----
-layout: default
----
+{% include header_posts.html %} 
 
 <h1 class="category">{{ page.title }}</h1>
 <ul class="posts">
@@ -10,3 +8,5 @@ layout: default
     <div class="categories">Filed under {{ post.categories | category_links }}</div>
 {% endfor %}
 </ul>
+
+{% include footer.html %}

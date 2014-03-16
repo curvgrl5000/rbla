@@ -7,6 +7,7 @@ vimeo: vimeo.com
 youtube: youtube.com
 
 permalink: /:categories/:title
+permalink: /blog/:year/:month/:day/:title
 
 categories: "tutorials", "cheatsheets", "blog"
 

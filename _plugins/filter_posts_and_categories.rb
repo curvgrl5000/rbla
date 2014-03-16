@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 # module Jekyll
 #   module PostAndCategoryFilter
 #     RESTRICTED_CATEGORIES = ['blog', 'tutorials', 'cheatsheets']
+=======
+module Jekyll
+  module PostAndCategoryFilter
+     RESTRICTED_CATEGORIES = ['blog', 'tutorials', 'cheatsheets']
+>>>>>>> modules
  
     # Returns back all categories related to a primary category
     # e.g. "blog" or "questions"
