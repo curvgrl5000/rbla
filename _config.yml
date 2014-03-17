@@ -9,6 +9,9 @@ youtube: youtube.com
 permalink: /:categories/:title
 permalink: /blog/:year/:month/:day/:title
 
-categories: "tutorials", "cheatsheets", "blog"
+categories: 
+  -tutorials
+  - cheatsheets
+  - blog
 
 tags: ["Git"]
