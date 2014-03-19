@@ -132,15 +132,16 @@
 	
 	/*homepage specific
 	----------------------------*/
-	.column_homepage-1 {width:65.3334%;}
-	.column_homepage-2 {width:30.6666%;}
+	.column_homepage-1 {width:39.3334%;}
+	.column_homepage-2 {width:45.6666%;}
 	.column_homepage-2  p,#app-button-container{margin-bottom:15px;}
 	.app-price, .app-price span.variation{margin-bottom:5px;font-size:20px;}
 	#app-button-container a#button-appstore{width:98px;background-image: url(../images/button-appstore-small.png);}
 	#app-button-container a#button-tweet{width:98px;background-image:url(../images/button-tweet-small.png);}
-
-	
-	
+  .thumb img, .thumb a img{ margin: 17% auto;}
+  .logo-homepage {width: 100%;text-align: center;}
+  .txt-left {text-align: left;}
+		
 	/*featured specific
 	----------------------------*/
 	.stripe-indicator-left{background:url(../images/stripe-short.png) left 100px no-repeat;}
@@ -244,6 +245,15 @@
 	#app-button-container{padding-left:10px;}
 	.app-price{text-align:center;}
 	.note{text-align:center;}
+	.thumb img, .thumb a img {
+    position: relative;
+    z-index: -1;
+    width: 74%;
+    margin: 3% 15%;;
+    -ms-interpolation-mode: bicubic;
+    overflow: hidden;
+    vertical-align: baseline;
+   }
 	
 	
 	/*featured specific
@@ -380,7 +390,7 @@
 	.app-price, .app-price span.variation{margin-bottom:5px;font-size:20px;}
 	#app-button-container{padding-left:47px;}
 	#app-button-container a#button-appstore{width:98px;background-image: url(../images/button-appstore-small.png);}
-	#app-button-container a#button-tweet{width:98px;background-image:url(../images/button-tweet-small.png);}
+	#app-button-container a#button-tweet{width:98px;background-image:url(../images/button-tweet-small.png); margin: 0% 23%;}
 	.app-price{text-align:center;}
 	.note{text-align:center;}
 	

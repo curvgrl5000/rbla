@@ -3,22 +3,33 @@
 
 		<div class="content">
     
+      <ul class="navigation">
+        <li><a class="navigateTo pd-25-r" href="#homepage">Welcome</a></li>
+        <li><a class="navigateTo pd-25-r" href="#features-1">List of Meetups</a></li>
+        <li><a class="navigateTo pd-25-r" href="#features-2">Mentors</a></li>
+        <li><a class="navigateTo pd-25-r" href="#signup">Sign Up</a></li>
+        
+        {% capture location %}{{ page.url | remove_first:'/' | split:'/' | first }}{% endcapture %}
+        <li class="pd-10-r"><a {% if location == 'blog' %}class="active" {% endif %}href="/blog/">Blog</a></li>
+        <li><a {% if location == 'contact' %}class="active" {% endif %}href="/contact/">Contact</a></li>
+      </ul> <!-- end navigation  -->
+      <div class="clearfix"></div>
       <div class="contact">
         <p>
-          Contact us at: <br />
-          Join our Meetups!<br />
-          anna@gmail.com ( TBD )
+          Rails bridge is run entirely by donations! <br /> 
+          All donations go thru the fiscal sponsor School Factory, <br /> 
+          for more information contact <a href="mailto:hello@railsbridge.org">hello@railsbridge.org</a> <br /> 
+          Thanks in advance!
         </p>
-      </div> <!-- end contact -->
-      
-      <div class="contact">
-        <p>
-          <a href="https://github.com/yourusername">github.com/yourusername</a><br />
-          <a href="https://twitter.com/yourusername">twitter.com/yourusername</a><br />
-        </p>
-      </div> <!-- end contact   -->
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+          <input name="cmd" type="hidden" value="_s-xclick">
+          <input name="hosted_button_id" type="hidden" value="KSZ73WW554HP2">
+          <input alt="PayPal - The safer, easier way to pay online!" border="0" name="submit" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" type="image">
+          <img alt="" border="0" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1">
+        </form>   
+      </div>
+      <div class="clearfix"></div>
     </div> <!-- end content  -->
-    
     <div class="content">
  		  
 			<!--logo-->
@@ -29,7 +40,7 @@
       </div> <!-- end logo -->
             
       <!--copyright-->
-      <p class="copyright">&copy; <a href="/" title="EXAMPLE">SOMETHING TO THINK ABOUT</a> 2014. All rights reserved.</p>
+      <p class="copyright">&copy; <a href="/" title="RailsBridgeLA">RailsBrdigeLA</a> 2014. All rights reserved.</p>
             
       <!--social-->
       <div id="social-share">
@@ -37,7 +48,7 @@
         <iframe src="//www.facebook.com/plugins/like.php?href=http://www.facebook.com/unlimitdesign&amp;send=false&amp;layout=button_count&amp;width=80&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21&amp;appId=291686137521455" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:80px; height:21px;float:left;"></iframe>
         
         <!--twitter-->
-      	<a href="http://twitter.com/share?url=http://udthemes.com/&amp;via=twitterapi&amp;text=Check out @UDTHEMES, a really cool WordPress Theme %26 HTML Template Shop." class="twitter-share-button">Tweet</a>
+      	<a href="http://twitter.com/share?url=http://www.meetup.com/Los-Angeles-Womens-Ruby-on-Rails-Group/&amp;text=Learn to code with RailsBridgeLA!" class="twitter-share-button">Tweet</a>
       </div> <!-- end social-share -->
     
     </div> <!-- end content -->
