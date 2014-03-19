@@ -89,8 +89,8 @@
                 <li><a class="navigateTo" href="{{ site.baseurl}}/#features-2">Mentors</a></li>
                 <li><a class="navigateTo" href="{{ site.baseurl}}/#signup">Sign Up</a></li>
               	{% capture location %}{{ page.url | remove_first:'/' | split:'/' | first }}{% endcapture %}
-              	<li><a {% if location == 'blog' %}class="active" {% endif %}href="/blog/">Blog</a></li>
-              	<li><a {% if location == 'contact' %}class="active" {% endif %}href="/contact/">Contact</a></li>
+              	<li><a {% if location == 'blog' %}class="active" {% endif %}href="{{ site.baseurl}}/blog/">Blog</a></li>
+              	<li><a {% if location == 'contact' %}class="active" {% endif %}href="{{ site.baseurl}}/contact/">Contact</a></li>
               </ul> <!-- end navigation  -->
       		  </div> <!-- end inner  -->
           </div> <!-- end header header-main clearfix -->
