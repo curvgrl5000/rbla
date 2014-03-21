@@ -242,14 +242,15 @@
 	.logo-homepage {width: 100%;text-align: center;}
 	.column_homepage-2  p,#app-button-container{margin-bottom:15px; text-align:center;}
 	.app-price, .app-price span.variation{margin-bottom:5px;font-size:20px;}
-	#app-button-container{padding-left:10px;}
+	#app-button-container a#button-tweet{width:98px;background-image:url(../images/button-tweet-small.png); margin: 0% 40%;}
+	#app-button-container{padding-left:10px; margin-bottom: 40px;}
 	.app-price{text-align:center;}
 	.note{text-align:center;}
 	.thumb img, .thumb a img {
     position: relative;
     z-index: -1;
-    width: 74%;
-    margin: 3% 15%;;
+    width: 55%;
+    margin: 3% 28%;;
     -ms-interpolation-mode: bicubic;
     overflow: hidden;
     vertical-align: baseline;
@@ -393,6 +394,15 @@
 	#app-button-container a#button-tweet{width:98px;background-image:url(../images/button-tweet-small.png); margin: 0% 23%;}
 	.app-price{text-align:center;}
 	.note{text-align:center;}
+	.thumb img, .thumb a img {
+    position: relative;
+    z-index: -1;
+    width: 55%;
+    margin: 2% 25%;;
+    -ms-interpolation-mode: bicubic;
+    overflow: hidden;
+    vertical-align: baseline;
+   }
 	
 	
 	/*featured specific
