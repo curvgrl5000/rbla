@@ -107,7 +107,7 @@ $(document).ready(function(){
 			targetSection = $(this).attr('href');
 			
 			//Set doc title
-			document.title = 'Encore' + ( targetSection.replace( /[_\-\#\!\.\/]/g, ' ' ));
+			document.title = 'RBLA' + ( targetSection.replace( /[_\-\#\!\.\/]/g, ' ' ));
 
 			//prevent click if active
 			//if($(this).hasClass('active')) return false;

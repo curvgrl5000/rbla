@@ -213,7 +213,7 @@
 		float:left;
 		text-align:center;
 		display:none;
-		margin:19px auto 15px auto;
+		margin:5px auto 15px auto;
 	}
 	.header .inner .mobileMenuToggle a,.header .mobileMenuToggle.open a {
 		width:26px;
@@ -1305,6 +1305,7 @@
 	.thumb a { 
 	  float:left; 
 	  cursor:pointer;
+	  max-height: 87px;
 	}
 	.thumb a .thumb-rollover { 
 	  position:absolute;
@@ -1313,7 +1314,7 @@
 	  height:100%;
 	  background: #ff5a00;
 	  /*ie8 fallback*/ background: rgba(0,0,0,0.7);
-	  top:0; 
+	  top:0px; 
 	  opacity:0;
 	  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 	}
@@ -1327,13 +1328,22 @@
 	  text-align:center;
 	}
 	.thumb img,.thumb a img { 
-	  position:relative;
+	  position: relative;
 	  z-index:-1;
 	  width: 100%;
 	  margin: 0 auto;
 	  -ms-interpolation-mode: bicubic;
-	  overflow:hidden;
-	  vertical-align:baseline;
+	  overflow: hidden;
+	  vertical-align: baseline;
+	}
+	.thumb_1 img,.thumb_1 a img { 
+	  position: relative;
+	  z-index:-1;
+	  width: 100%;
+	  margin: 0 auto;
+	  -ms-interpolation-mode: bicubic;
+	  overflow: hidden;
+	  vertical-align: baseline;
 	}
 
 	/*thumb type*/

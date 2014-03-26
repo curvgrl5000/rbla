@@ -106,8 +106,8 @@
 	i.-- Page
 	-----------------------------*/
 	
-	.homepage .content{max-width:640px;padding-bottom:100px;}
-	.page .content{max-width:640px;padding:140px 0 100px 0;}
+	.homepage .content{max-width:674px;padding-bottom:100px;}
+	.page .content{max-width:674px;padding:140px 0 100px 0;}
 	.page .highlight{background-attachment:scroll; background-position:center center;}
 		
 	/*----------------------------
@@ -138,7 +138,7 @@
 	.app-price, .app-price span.variation{margin-bottom:5px;font-size:20px;}
 	#app-button-container a#button-appstore{width:98px;background-image: url(../images/button-appstore-small.png);}
 	#app-button-container a#button-tweet{width:98px;background-image:url(../images/button-tweet-small.png);}
-  .thumb img, .thumb a img{ margin: 17% auto;}
+  .thumb_1 img, .thumb_1 a img{ margin: 17% auto;}
   .logo-homepage {width: 100%;text-align: center;}
   .txt-left {text-align: left;}
 		
@@ -246,11 +246,11 @@
 	#app-button-container{padding-left:10px; margin-bottom: 40px;}
 	.app-price{text-align:center;}
 	.note{text-align:center;}
-	.thumb img, .thumb a img {
+	.thumb_1 img, .thumb_1 a img {
     position: relative;
     z-index: -1;
     width: 55%;
-    margin: 3% 28%;;
+    margin: 3% 28%;
     -ms-interpolation-mode: bicubic;
     overflow: hidden;
     vertical-align: baseline;
@@ -295,7 +295,7 @@
 	/*media
 	----------------------------*/
 	
-	.thumb.feature{float:none !important; margin:auto; width:230px;}
+	.thumb.feature{float:none !important; margin:0 auto; width:230px;}
 
 
 
@@ -394,16 +394,26 @@
 	#app-button-container a#button-tweet{width:98px;background-image:url(../images/button-tweet-small.png); margin: 0% 23%;}
 	.app-price{text-align:center;}
 	.note{text-align:center;}
-	.thumb img, .thumb a img {
+	.thumb a { 
+	  float:left; 
+	  cursor:pointer;
+	  max-height: 206px; /*Explore how this is getting generated throught the console, which library? it's not easy to find.  */
+	}
+  .thumb_1 img, .thumb_1 a img {
     position: relative;
     z-index: -1;
-    width: 55%;
-    margin: 2% 25%;;
+    width: 100%;
+    margin: 0 auto;
     -ms-interpolation-mode: bicubic;
     overflow: hidden;
     vertical-align: baseline;
    }
-	
+   #footer .content ul {
+   float: left;
+   padding: 0 5px;
+   margin: 0px 1px 16px 25px;
+   }
+
 	
 	/*featured specific
 	----------------------------*/
@@ -480,7 +490,7 @@
 	--------------------------------------------------------*/
 	
 	/*cols*/
-	.column_one_half, .column_one_third,.column_one_fourth,.column_two_thirds, .column_three_fourths{width:100%; margin-right:0px;margin-left:0px;}
+	.column_one_half, .column_one_third,.column_one_fourth,.column_two_thirds, .column_three_fourths, .circular_img {width:100%; margin-right:0px;margin-left:0px;}
 	
 	/*accordions and tabs*/
 	.accordion div.video, .accordion div.video .featured_flowplayer,

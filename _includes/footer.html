@@ -4,14 +4,15 @@
 		<div class="content">
     
       <ul class="navigation">
-        <li><a class="navigateTo pd-25-r" href="#homepage">Welcome</a></li>
-        <li><a class="navigateTo pd-25-r" href="#features-1">List of Meetups</a></li>
-        <li><a class="navigateTo pd-25-r" href="#features-2">Mentors</a></li>
+        <li><a class="navigateTo pd-25-r" href="{{ site.baseurl}}/#homepage">Welcome</a></li>
+        <li><a class="navigateTo pd-25-r" href="{{ site.baseurl}}/#features-1">Meetups</a></li>
+        <li><a class="navigateTo pd-25-r" href="{{ site.baseurl}}/#features-2">Mentors</a></li>
         <li><a class="navigateTo pd-25-r" href="#signup">Sign Up</a></li>
         
         {% capture location %}{{ page.url | remove_first:'/' | split:'/' | first }}{% endcapture %}
-        <li class="pd-10-r"><a {% if location == 'blog' %}class="active" {% endif %}href="/blog/">Blog</a></li>
-        <li><a {% if location == 'contact' %}class="active" {% endif %}href="/contact/">Contact</a></li>
+        <li class="pd-25-r"><a {% if location == 'blog' %}class="active" {% endif %}href="/blog/">Blog</a></li>
+        <li class="pd-25-r"><a {% if location == 'tutorials' %}class="active" {% endif %}href="{{ site.baseurl}}/tutorials/">Tutorials</a></li>
+        <li class="pd-25-r"><a {% if location == 'contact' %}class="active" {% endif %}href="/contact/">Contact</a></li>
       </ul> <!-- end navigation  -->
       <div class="clearfix"></div>
       <div class="contact">

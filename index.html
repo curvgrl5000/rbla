@@ -16,8 +16,8 @@ title: RailsBridge LA
                 
 		  <!--feature-->
 			<div class="column_homepage-1">
-        <div class="thumb">
-					<img src="images/gallery/Apple-Monitor.png" alt="Encore feature"/>
+        <div class="thumb_1">
+					<img src="images/gallery/Apple-Monitor.png" alt="RBLA feature"/>
         </div>
 			</div>
             
@@ -54,7 +54,7 @@ title: RailsBridge LA
     <div class="content clearfix">   
       <!--info-->
       <div class="fluid-wrapper">
-        <iframe src="https://mapsengine.google.com/map/embed?mid=zC8TgvM22b_0.kbadmQQw93ZY" width="440" height="450"></iframe>
+        <iframe src="https://mapsengine.google.com/map/embed?mid=zC8TgvM22b_0.kbadmQQw93ZY" width="440" height="480"></iframe>
       </div>
 			
 		  <div class="column_one_half">
@@ -65,7 +65,7 @@ title: RailsBridge LA
           <a href="http://www.meetup.com/pivotal-la-weekly/" target="_blank">> PIVOTAL LABS PAIR EXCHANGE / EXTREME ROUNDTABLE</a>
         </p>
         <p>WEDNESDAYS:<br> 
-          <a href="http://www.meetup.com/laruby/events/169640052/" target="_blank">> CAL TECH STUDY GROUP</a></br>
+          <a href="http://www.meetup.com/laruby/events/169640052/" target="_blank">> PASADENA STUDY GROUP</a></br>
           <a href="http://www.meetup.com/Hack-Night-at-Carbon-Five-LA/" target="_blank">> CARBON FIVE HACKATHON</a>
         </p>
       </div>
@@ -78,9 +78,8 @@ title: RailsBridge LA
             <a href="http://www.meetup.com/LA-Eastside-Ruby-Rails-Study-Group/" target="_blank">> EAST-SIDE STUDY GROUP</a><br>
             <a href="http://www.meetup.com/South-Bay-Ruby-Developers/" target="_blank">> SOUTH-BAY STUDY GROUP </a><br>
           </p>
-          <p>A GREAT ONLINE RESOURCES:<br>
-            <a href="http://www.railsmentors.org/" target="_blank">> RAILS MENTORS</a><br>
-            <a href="https://hackhands.com/#/howitworks" target="_blank">> HACK HANDS</a>
+          <p>A GREAT ONLINE RESOURCE:<br>
+            <a href="http://www.meetup.com/Westside-Rails-Study-Group/" target="_blank">> WEST-SIDE STUDY GROUP</a><br>
           </p>
                 
           <p>FEATURED MEETUP & HACKATHON<br>
@@ -98,47 +97,44 @@ title: RailsBridge LA
     
     <!--end featured content-->  
     <!--start highlight-->
-    <div id="highlight" class="highlight fixed" style="background: url(images/gallery/parallax-shapes.jpg) no-repeat;">
-      <div class="info-container">
-        <div class="info">
-          <div class="info-inner">
-            <div class="column_one_half">
-              <h5><span>Featured Video:</span></h5>
-              <p class="info-focus">The Basics of Git and GitHub</p>
-              <p>
-                Totally watchable and straight to the point.<br>
-                A great intro on version control, Git and concise overview of GitHub.
-                Watch more from Mathew and Brent in the following posts:
-              </p>
-              <div id="home">
-                <ul class="posts pd-60-l">
-                  {% for post in site.posts %}
-                  <li>
-                    <span>{{ post.date | date_to_string }}</span> 
-                    &raquo; <a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a>
-                  </li>
-                  <li>
-                    <span>{{ post.date | date_to_string }}</span> 
-                    &raquo; <a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a>
-                  </li>
-                  {% endfor %}
-                </ul>                                                                     
+      <div id="highlight" class="highlight fixed section" style="background: url(images/gallery/parallax-shapes.jpg) no-repeat;">
+        <div class="info-container">
+          <div class="info">
+            <div class="info-inner">
+              <div class="column_one_half">
+                <h5><span>Featured Video:</span></h5>
+                <p class="info-focus">The Basics of Git and GitHub</p>
+                <p>
+                  Totally watchable and straight to the point.<br>
+                  A great intro on version control, Git and concise overview of GitHub.
+                  Watch more from Mathew and Brent in the following posts:
+                </p>
+                <div id="home">
+                  <ul class="posts pd-60-l">
+                    {% for post in site.posts %}
+                    <li>
+                      <span>{{ post.date | date_to_string }}</span> 
+                      &raquo; <a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a>
+                    </li>
+
+                    {% endfor %}
+                  </ul>                                                                     
+                </div>
               </div>
-            </div>
-            <div class="column_one_half last">
-              <div class="video" style="width:100%;height:310px;">
-                <iframe width="580" height="335" src="//www.youtube.com/embed/U8GBXvdmHT4" frameborder="0" allowfullscreen></iframe>
+              <div class="column_one_half last">
+                <div class="video" style="width:100%;height:310px;">
+                  <iframe width="580" height="335" src="//www.youtube.com/embed/U8GBXvdmHT4" frameborder="0" allowfullscreen></iframe>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
             
-      <!--section-button-->
-      <div class="section-button">
-        <a class="navigateTo page-up" href="#features-1"></a>
+        <!--section-button-->
+        <div class="section-button">
+          <a class="navigateTo page-up" href="#features-1"></a>
+        </div>
       </div>
-    </div>
     <!--end highlight-->  
   </div>
 	<!--end page 2--> 
@@ -149,9 +145,6 @@ title: RailsBridge LA
     <div class="content clearfix">   
       <!--image-->
       <div class="column_one_half">
-        <!-- <div class="thumb feature left">
-          <img src="images/gallery/iphone-feat-2.png" alt=""/>
-        </div> -->
         <h1 class="focus-title">
           <span>Great Mentors</span>
         </h1>
@@ -201,6 +194,7 @@ title: RailsBridge LA
           tutorials listed below. Be smart: Come prepared to ask questions! And have fun.
         </p>
         <p>
+          <a class="navigateTo" href="#highlight">> FEATURED TUTORIAL</a><br>
           <a href="http://docs.railsbridge.org/installfest/" target="_blank">> INSTALFEST </a><br>
           <a href="http://docs.railsbridge.org/intro-to-rails/" target="_blank">> INTRO TO RAILS </a><br>
           <a href="http://ruby.learncodethehardway.org/" target="_blank">> LEARN RUBY THE HARD WAY </a><br>
@@ -210,7 +204,7 @@ title: RailsBridge LA
         </p> 
         <div class="thumb xsmall left">
           <a class="lightbox" rel="mini-gallery" title="view" href="images/gallery/closup.jpg">
-            <img class="lazy" src="images/gallery/thumb-1.jpg" alt="Encore feature"/>
+            <img class="lazy" src="images/gallery/thumb-1.jpg" alt="RBLA feature"/>
           </a>
         </div>
         <div class="fancybox-html">
@@ -223,17 +217,20 @@ title: RailsBridge LA
           </p> 
           <a href="#">Link to a Post Here</a>
         </div>                
+        
         <div class="thumb xsmall left">
           <a class="media" rel="mini-gallery" title="play" href="http://player.vimeo.com/video/41178550?title=0&amp;portrait=0&amp;badge=0&amp;color=fc7022">
-            <img class="lazy" src="images/gallery/thumb-2.jpg" alt="Encore feature"/>
+            <img class="lazy" src="images/gallery/thumb-2.jpg" alt="RBLA feature"/>
           </a>
         </div>
         <div class="fancybox-html"><p>And caption for our video here...</p></div>
+        
         <div class="thumb xsmall left last">
           <a class="lightbox" rel="mini-gallery" title="view" href="images/gallery/closup.jpg">
-            <img class="lazy" src="images/gallery/thumb-3.jpg" alt="Encore feature"/>
+            <img class="lazy" src="images/gallery/thumb-3.jpg" alt="RBLA feature"/>
           </a>
         </div> 
+        
         <div class="fancybox-html">
           <h3>
             Rails & <span>Javascript</span>
@@ -246,7 +243,7 @@ title: RailsBridge LA
         </div>
         <a class="media app-button sync" href="http://player.vimeo.com/video/41178550?title=0&amp;portrait=0&amp;badge=0&amp;color=fc7022">
           Data Modeling with Active Record<br/>
-          <span>Hannah Howard shares her knowledge about Data Modeling</span></a> <!-- http://oembed.com/  -->
+          <span>Hannah Howard shares her knowledge!</span></a> <!-- http://oembed.com/  -->
           <!-- <script async class="speakerdeck-embed" data-id="0f419160d25c0130a0441212964f4566" data-ratio="1.2994923857868" src="//speakerdeck.com/assets/embed.js"></script> -->
       </div>
     </div>
@@ -269,7 +266,7 @@ title: RailsBridge LA
           <a href=""><img style="margin-right:20px;" src="images/logos/logo-5.png" alt=""/></a>
         </div>
       </div>
-    
+  
       <!--section-button-->
       <div class="section-button">
         <a class="navigateTo page-up" href="#features-2"></a>
@@ -303,7 +300,6 @@ title: RailsBridge LA
 				</div>
 			</form>
     </div>
-         
     <!--section-button-->
     <div class="section-button last-page">
       <a class="navigateTo page-up"  href="#homepage"></a>

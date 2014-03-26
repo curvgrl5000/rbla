@@ -100,13 +100,18 @@
               <!--navigation-->
               <ul class="navigation">
                 <li><a class="navigateTo" href="#homepage">Welcome</a></li>
-                <li><a class="navigateTo" href="#features-1">List of Meetups</a></li>
+                <li><a class="navigateTo" href="#features-1">Meetups</a></li>
                 <li><a class="navigateTo" href="#features-2">Mentors</a></li>
-                <li><a class="navigateTo" href="#signup">Sign Up</a></li>
+                
+                <li><a class="navigateTo" href="#signup">Sign Up</a></li>                
               	
               	{% capture location %}{{ page.url | remove_first:'/' | split:'/' | first }}{% endcapture %}
               	<li><a {% if location == 'blog' %}class="active" {% endif %}href="{{ site.baseurl}}/blog/">Blog</a></li>
+              	<li><a {% if location == 'tutorials' %}class="active" {% endif %}href="{{ site.baseurl}}/tutorials/">Tutorials</a></li>
+              	<!-- <li><a class="navigateTo" href="#tuts">Tutorials</a></li> -->
+                
               	<li><a {% if location == 'contact' %}class="active" {% endif %}href="{{ site.baseurl}}/contact/">Contact</a></li>
+              	
               </ul> <!-- end navigation  -->
       		  </div> <!-- end inner  -->
           </div> <!-- end header header-main clearfix -->
