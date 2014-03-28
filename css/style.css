@@ -629,7 +629,7 @@
 	}
   .blog-post {
     margin-bottom:50px;
-    padding-bottom:50px; 
+    padding-bottom:25px; 
     overflow:hidden;
   }
   .blog-post.post-last {
