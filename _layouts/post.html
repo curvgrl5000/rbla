@@ -29,7 +29,7 @@
                     <li>Posted by: <a href="#">{{ member.name }}</a></li>
                   {% endfor %}
                   <li class="separator">|</li>
-                  {% for post in site.categories[page.category] %}
+                  {% for post in site.categories page.category %}
                     <li>In {{ post.categories | category_links | capitalize }}</li> 
                   {% endfor %}
                 </ul>
