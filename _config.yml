@@ -10,8 +10,8 @@ permalink: /:categories/:title
 permalink: /blog/:year/:month/:day/:title
 
 categories: 
-  - Tutorials
-  - Cheatsheets
-  - Blog
+  - tutorials
+  - cheatsheets
+  - blog
 
 tags: ["Git"]
