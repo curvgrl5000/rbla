@@ -29,8 +29,8 @@
                     <li>Posted by: <a href="#">{{ member.name }}</a></li>
                   {% endfor %}
                   <li class="separator">|</li>
-                  {% for post in site.categories[page.category] %}
-                    <li>In {{ post.categories | category_links | capitalize }}</li> 
+                  {% for post in site.categories['tutorials'] %}
+                    <li>In <span>{{ post.categories | category_links | capitalize }}</span></li> 
                   {% endfor %}
                 </ul>
               </div>
@@ -115,7 +115,7 @@
               {% endfor %}
           
               <!-- THIS IS HOW TO REACH INTO A SITE'S 'CATEGORIES' FOLDER AND LINK TO TO IT SEE CATEGORY GENERATOR -->
-              {% for post in site.categories[page.category] %}
+              {% for post in site.categories['tutorials'] %}
               <li>
                 {{ post.categories | category_links | capitalize }}
               </li>
