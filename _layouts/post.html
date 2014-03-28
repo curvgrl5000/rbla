@@ -46,8 +46,8 @@
           <span>05 Comments</span>
         </h4>
         <div class="blog-post-comments">
-          
-           % if page.comments %
+           <h4><span>Post a Comment</span></h4>
+           {% if page.comments %}
            <div id="disqus_thread"></div>
           <script type="text/javascript">
               /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -62,10 +62,10 @@
           </script>
           <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
           <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-         % endif % 
+         {% endif %} 
                   
           
-        <--  <ul>
+          <ul>
             <li>
               <div class="avatar">
                 <img src="images/gallery/avatar.jpg" width="60" height="60" alt=""/>
@@ -158,7 +158,7 @@
           </ul>
         </div>
              
-        <h4><span>Post a Comment</span></h4>
+        
         <form action="" method="post" class="form comment-form" id="comment-form">
           <!-- <p>
             <input type="text" name="username" class="required" id="username" value="Your Name" />
