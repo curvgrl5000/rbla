@@ -3,7 +3,7 @@ layout: post
 title:  "What is VCS? Git Basics #1"
 date:   2014-03-10 14:26:51
 video: http://www.youtube.com/embed/U8GBXvdmHT4
-category: "tutorials"
+category: "Tutorials"
 tags: [Git] 
 comments: true
 ---
