@@ -29,7 +29,7 @@
                     <li>Posted by: <a href="#">{{ member.name }}</a></li>
                   {% endfor %}
                   <li class="separator">|</li>
-                  {% for post in site.categories['tutorials'] %}
+                  {% for post in site.categories[page.category] %}
                     <li>In <span>{{ post.categories | category_links | capitalize }}</span></li> 
                   {% endfor %}
                 </ul>
@@ -86,7 +86,7 @@
             <ul>
               {%  for post in site.posts offset: 0 limit: 10 %}
               <li>
-                <a href="#">{{page.title}}</a>
+                <a href="{{ post.url }}">{{page.title}}</a>
                 <p class="date">
                   {{page.date | date: "%a, %b %d, %y"}}
                 </p>

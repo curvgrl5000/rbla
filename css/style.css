@@ -881,6 +881,9 @@
 	  margin-bottom:0px !important;
 	  border-bottom:none !important;
 	}
+	.categories a{
+	  text-transform: capitalize;
+	}
 	
 /*pagination*/	
   .blog-post, #sidebar ul li, 
@@ -957,7 +960,7 @@
 	  text-transform:uppercase;
 	}
 	#sidebar ul li ul li a:hover { 
-	  color:#FC7022;
+	  color:#E56869;
 	  text-decoration:underline;
 	} 
 	
@@ -1100,7 +1103,15 @@
 	   -moz-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);
 	   box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);
 	 }
-		
+	 
+	 /*forms */
+	 select {
+   width: 220px;
+   border: 1px solid #BBB;
+   }
+   select, input[type="file"] {
+   height: 28px;
+   } 
 	
 		
 	

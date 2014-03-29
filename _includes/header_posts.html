@@ -23,8 +23,11 @@
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
         <script type="text/javascript" src="{{ site.baseurl}}/js/jquery.lazyload.js"></script>
+        <script type="text/javascript" src="{{ site.baseurl}}/js/jquery.fancybox-1.3.4.pack.js"></script>
         <script type="text/javascript" src="{{ site.baseurl}}/js/common.js"></script>
-        <script type="text/javascript" src="{{ site.baseurl}}/js/jquery.tweet.js"></script>
+        <script type="text/javascript" src="{{ site.baseurl}}/js/contact.js"></script> 
+        <script type="text/javascript" src="{{ site.baseurl}}/js/udt_shortcodes.js"></script>
+        
         <script type="text/javascript" src="//use.typekit.net/two3pcx.js"></script>
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
         
@@ -88,6 +91,7 @@
                 <li><a class="navigateTo" href="{{ site.baseurl}}/#signup">Sign Up</a></li>
               	{% capture location %}{{ page.url | remove_first:'/' | split:'/' | first }}{% endcapture %}
               	<li><a {% if location == 'blog' %}class="active" {% endif %}href="{{ site.baseurl}}/blog/">Blog</a></li>
+              	<li><a {% if location == 'tutorials' %}class="active" {% endif %}href="{{ site.baseurl}}/tutorials/">Tutorials</a></li>
               	<li><a {% if location == 'contact' %}class="active" {% endif %}href="{{ site.baseurl}}/contact/">Contact</a></li>
               </ul> <!-- end navigation  -->
       		  </div> <!-- end inner  -->
