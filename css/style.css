@@ -592,7 +592,7 @@
 	input[type=text], textarea {
 	  background:#f3f3f3;
 	  -webkit-appearance: none;
-	  border:1px solid #e6e6e6; 
+	  border:1px solid #ccc; 
 	  color:#999; 
 	  font: 13px/18px Arial, Helvetica, sans-serif;
 	}
@@ -603,13 +603,13 @@
 	  background-color:#eee;
 	  color:#666;
 	}
-	input[type=text]:focus,textarea:focus {
+	input[type=text]:focus,textarea:focus, .form-validation-error:focus {
 	  background-color:#fff;
 	  color:#999;
-	  border:1px solid #ddd;
-	  -webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);
-	  -moz-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);
-	  box-shadow:inset 0 1px 2px rgba(0,0,0,0.1); 
+	  border: 1px solid rgba(82,168,236,.8);
+	  -webkit-box-shadow:inset 0 0 2px rgba(82,168,236,.8);
+	  -moz-box-shadow:inset 0 0px 2px rgba(82,168,236,.8);
+	  box-shadow:inset 0 0px 3px rgba(82,168,236,.8); 
 	  outline:none;
 	}
 	
