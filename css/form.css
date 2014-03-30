@@ -587,7 +587,9 @@
 .form-button-error{
     color:red;
     display:inline;
-    text-align: center;
+    text-align: left;
+    float: left;
+    width: 100%;
 }
 
 .form-pagebreak>.form-button-error { 
@@ -596,7 +598,7 @@
 }
 
 .form-line-error{
-    background:#FFAAAA;
+    background:#FFF;
     /*border:1px solid #FFAAAA;*/
     color:#333;
 }
