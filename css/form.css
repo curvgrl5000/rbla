@@ -197,15 +197,31 @@
 }
 
 .form-submit-button, .form-submit-reset, .form-submit-print, .form-screen-button{
-    margin:0px;    
-    overflow:visible;
-    padding:1px 6px;
-    width:auto;
+  width:125px;
+  height:60px;
+  background: url(../images/pattern-signup-button.png) repeat;
+  color:#fff;
+  line-height:60px;
+  border:none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -moz-border-radius-topright:5px;
+  -moz-border-radius-bottomright:5px;
+  float:left; 
+  cursor: pointer;
 }
 .form-submit-button::-moz-focus-inner, .form-submit-reset::-moz-focus-inner{
     border: 0px;
     padding:1px 6px;
 }
+
+.form-submit-button:hover{
+  opacity:0.8;
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+}
+
 
 .form-button-red{
 	border: 1px solid red;

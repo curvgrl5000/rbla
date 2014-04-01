@@ -289,16 +289,53 @@ title: RailsBridge LA
         Sign up and help mentor or teach!
       </p>
             
-			<form action="" method="post" class="signup" id="newsletter-form">
-				<p>
-				  <input type="text" name="signup_email" id="signup_email" class="required" value="Your E-mail" />
-				</p>
-				<input type="submit" value="SEND" class="signupSubmit" id="submitform" />
-				<div id="newsletter-msg-wrapper" style="position:relative; clear:both; width:100%;">
-					<div id="newsletter-loader"></div>
-					<span id="newsletter-msg"> &nbsp; </span>
-				</div>
-			</form>
+			<script type="text/javascript">
+         JotForm.init(function(){
+            $('input_1').hint('Your Email');
+         });
+      </script>
+      <form class="jotform-form" action="http://submit.jotform.us/submit.php" method="post" name="form_40901047594151" id="40901047594151" accept-charset="utf-8">
+        <input type="hidden" name="formID" value="40901047594151" />
+        <div class="form-all signup">
+          <ul class="form-section">
+            <li id="id_1" class="left">
+              <div id="cid_1" class="form-input">
+                <input type="text" class="form-textbox validate[required, Email] required" data-type="input-textbox" id="input_1" name="q1_signup_email1" size="20" value="" maxlength="20" />              
+              </div>
+            </li>
+            <li id="id_2" class="left">
+              <div id="cid_2" class="form-input-wide">
+                <div class="form-buttons-wrapper">
+                  <button id="input_2 submitform" type="submit" class="form-submit-button">
+                    SEND
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li style="display:none">
+              Should be Empty:
+              <input type="text" name="website" value="" />
+            </li>
+          </ul>
+        </div>
+        <input type="hidden" id="simple_spc" name="simple_spc" value="40901047594151" />
+        <script type="text/javascript">
+        document.getElementById("si" + "mple" + "_spc").value = "40901047594151-40901047594151";
+        </script>
+      </form><img src="//tracking.jotform.com/form/40901047594151" style="display:none" />
+			
+			
+       <!-- <form action="" method="post" class="signup" id="newsletter-form">
+                   <p>
+                     <input type="text" name="signup_email" id="signup_email" class="required" value="Your E-mail" />
+                   </p>
+                   <input type="submit" value="SEND" class="signupSubmit" id="submitform" />
+                   <div id="newsletter-msg-wrapper" style="position:relative; clear:both; width:100%;">
+                     <div id="newsletter-loader"></div>
+                     <span id="newsletter-msg"> &nbsp; </span>
+                   </div>
+                 </form>   -->
+			
     </div>
     <!--section-button-->
     <div class="section-button last-page">
