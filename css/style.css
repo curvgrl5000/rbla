@@ -350,7 +350,7 @@
 	  padding-top:12px;
 	}
 	.sync { 
-	  height:50px;
+	  height:60px;
 	  background: url(../images/cloud-icon.png) 0 11px no-repeat;
 	  line-height:14px;
 	  padding-left:75px; 
@@ -1472,7 +1472,7 @@
 	  line-height: 20px;
 	}
 	p.info-focus {
-	  font:18px/22px "ff-basic-gothic-web-pro", sans-serif;
+	  font:17px/22px "ff-basic-gothic-web-pro", sans-serif;
 	  margin-bottom:30px;
 	}
 

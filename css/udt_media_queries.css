@@ -424,7 +424,7 @@
 	----------------------------*/
 	.highlight {height:600px;}
 	.highlight.fixed{background-attachment:scroll;}
-	.highlight .info-container .info .info-inner{max-width:290px; margin:auto;}
+	.highlight .info-container .info .info-inner {max-width:290px; margin:auto;}	
 	.highlight .info-container .video{width:290px !important;height:163px !important;}	
 	.highlight .info-container .info .info-inner .video{width:290px !important;height:163px !important; margin:auto;}
 	
