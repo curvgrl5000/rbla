@@ -2110,8 +2110,11 @@ var JotForm = {
                 
                 // JotForm.info("Has Condition:", field, $(field));
                 if(!$(field)){ return; }
-                
-                $(field).run(event);
+                if(event === "number" || event === "autocomplete") {
+                    $(field).run("keyup");
+                } else {
+                    $(field).run(event);
+                }
             });
         };
         
@@ -2782,6 +2785,23 @@ var JotForm = {
                     }
                 }
             });
+        } else if(condition.type == 'require') {
+            var isConditionValid = (condition.link.toLowerCase() == 'any' && any) || (condition.link.toLowerCase() == 'all' && all);
+            condition.action.each(function(action) {
+                if (isConditionValid) {
+                    if (action.visibility.toLowerCase() == 'require'){
+                        JotForm.requireField(action.field, true);
+                    } else {
+                        JotForm.requireField(action.field, false);
+                    }
+                } else {
+                    if(action.visibility.toLowerCase() == 'require'){
+                        JotForm.requireField(action.field, false);
+                    } else {
+                        JotForm.requireField(action.field, true);
+                    }
+                }
+            });
         } else if(condition.type == 'calculation') {
             var calcs = JotForm.calculations;
             var cond = null;
@@ -2838,6 +2858,64 @@ var JotForm = {
     },
 
     widgetsAsCalculationOperands: [],
+
+    /*
+    * Require or Unrequire a field
+    */
+    requireField: function(qid, req) {
+
+        if(!$('id_'+qid)) return;
+
+        $$("#id_" + qid + ' input, textarea, select').each(function(el) {
+
+            //get all validations
+            var validations = [];
+            if(el.className.indexOf('validate[') > -1) {
+                validations = el.className.substr(el.className.indexOf('validate[') + 9);
+                validations = validations.substr(0, validations.indexOf(']')).split(/\s*,\s*/);
+            } else {
+                validations = [];
+            }
+
+            //remove all validation from class
+            el.className = el.className.replace(/validate\[.*\]/, '');
+
+            //remove required from validations array
+            for (var i=validations.length-1; i>=0; i--) {
+                if (validations[i] === 'required') {
+                    validations.splice(i, 1);
+                }
+            }
+
+            if(req) {
+                validations.push('required'); //add required to validations
+            } else {
+                el.removeClassName('form-validation-error')
+            }
+
+            //add validations back to class
+            if(validations.length > 0) {
+                el.addClassName('validate['+ validations.join(',') +']');
+            }
+
+            JotForm.setFieldValidation(el);
+        });
+        if(req) {
+            if($('label_'+qid) && !$('label_'+qid).down('.form-required')) {
+                $('label_'+qid).insert('<span class="form-required">*</span>');
+            }
+        } else {
+            if($('label_'+qid) && $('label_'+qid).down('.form-required')) {
+                $('label_'+qid).down('.form-required').remove();
+            }
+
+            //remove any existing errors
+            if($("id_"+qid).down('.form-error-message')) {
+                $("id_"+qid).down('.form-error-message').remove();
+            }
+            $("id_"+qid).removeClassName('form-line-error');
+        }
+    },
 
     /**
      * When widget value is updated check whether to trigger calculation
@@ -3295,7 +3373,7 @@ var JotForm = {
 
                 if(condition.disabled == true) return; //go to next condition
 
-                if (condition.type == 'field' || condition.type == 'calculation') {
+                if (condition.type == 'field' || condition.type == 'calculation' || condition.type == 'require') {
                     
                     // Loop through all rules
                     $A(condition.terms).each(function(term){
@@ -5156,14 +5234,6 @@ var JotForm = {
             return true;
         }
         var $this = this;
-        var reg = {
-            email: /[a-z0-9!#$%&'*+\/=?\^_`{|}~\-]+(?:\.[a-z0-9!#$%&'*+\/=?\^_`{|}~\-]+)*@(?:[a-z0-9](?:[a-z0-9\-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9\-]*[a-z0-9])/i,
-            alphanumeric: /^[a-zA-ZæøåäöÆØÅÄÖ0-9\s]+$/,
-            numeric: /^(-?\d+[\.]?)+$/,
-            numericDotStart: /^([\.]\d+)+$/,  //accept numbers starting with dot
-            alphabetic: /^[a-zA-ZæøåäöÆØÅÄÖ\s]+$/,
-            url: /(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?/
-        };
         
         $A(JotForm.forms).each(function(form){ // for each JotForm form on the page 
             if (form.validationSet) {
@@ -5173,6 +5243,21 @@ var JotForm = {
             form.validationSet = true;
             form.observe('submit', function(e){ // Set on submit validation
                 try {
+                    if($$('.form-submit-button') && $$('.form-submit-button').length > 0) {
+                        //only submit form if a submit button is visible
+                        var aSubmitIsVisible = false;
+                        $$('.form-submit-button').each(function(el) {
+                            if(JotForm.isVisible(el)) {
+                                aSubmitIsVisible = true;
+                                return;
+                            }
+                        });
+                        if(!aSubmitIsVisible) {
+                            JotForm.enableButtons();
+                            e.stop();
+                        }
+                    }
+
                     if (!JotForm.validateAll(form)) {
                         JotForm.enableButtons();
                         JotForm.showButtonMessage();
@@ -5259,281 +5344,8 @@ var JotForm = {
             });
             
             // for each validation element
-            $$('#'+form.id+' *[class*="validate"]').each(function(input){                
-                var validations = input.className.replace(/.*validate\[(.*)\].*/, '$1').split(/\s*,\s*/);
-                
-                input.validateInput = function(deep)
-                {
-                    if (!JotForm.isVisible(input)) {
-                        return true; // if it's hidden then user cannot fill this field then don't validate
-                    }
-                    
-                    if(!$(input.parentNode).hasClassName('form-matrix-values')) //ntw
-                        JotForm.corrected(input); // First clean the element
-                    
-                    var vals = validations;
-                    
-                    if(input.hinted === true){
-                        input.clearHint();
-                        setTimeout(function(){
-                            input.hintClear();
-                        }, 150);
-                    } // Clear hint value if exists
-
-                    //change where it deploys
-                    //to first check the data  of this inputs before going to the next with a validate[*] class
-                    if( input.readAttribute('data-type') === 'input-spinner' && input.value )
-                    {
-                        return input.validateSpinnerInputs();
-                    }
-                    else if( input.readAttribute('data-type') === 'input-grading' && input.value )
-                    {
-                        return input.validateGradingInputs();
-                    }
-                    else if( input.readAttribute('data-type') === 'input-number' && input.value )
-                    {
-                        return input.validateNumberInputs();
-                    }
-
-                    if(vals.include('disallowFree')) {
-                        var freeEmails = ['gmail','aim','outlook','hotmail', 'yahoo','mail','inbox'];
-                        for(var i=0; i<freeEmails.length; i++) {
-                            if(input.value.indexOf("@" + freeEmails[i] + ".") > -1) {
-                                return JotForm.errored(input, JotForm.texts.freeEmailError);
-                            }
-                        }
-                    }
-
-                    if(vals.include('minSelection')) {
-                        var minSelection = parseInt(input.readAttribute('data-minSelection'));
-                        var numberChecked = 0;
-                        input.up('.form-line').select('input[type=checkbox]').each(function(check) {
-                             if(check.checked) numberChecked++;
-                        });
-                        if(numberChecked > 0 && numberChecked < minSelection) {
-                            return JotForm.errored(input, JotForm.texts.minSelectionsError + minSelection + '.');
-                        }
-                    }
-
-                    if(vals.include('maxSelection')) {
-                        var maxSelection = parseInt(input.readAttribute('data-maxSelection'));
-                        var numberChecked = 0;
-                        input.up('.form-line').select('input[type=checkbox]').each(function(check) {
-                             if(check.checked) numberChecked++;
-                        });
-                        if(numberChecked > maxSelection) {
-                            return JotForm.errored(input, JotForm.texts.maxSelectionsError + maxSelection + '.');
-                        }
-                    }
-
-                    if(vals.include('disallowPast')) {
-                        var id = input.id.split('year_').last();
-                        var inputtedDate = JotForm.getDateValue(id).split('T')[0];
-                        var dat =  new Date();
-                        var month = (dat.getMonth()+1 < 10)? '0'+(dat.getMonth()+1):dat.getMonth()+1;
-                        var day = (dat.getDate() < 10) ? '0' + dat.getDate() : dat.getDate();
-                        var currentDate = dat.getFullYear() + "-" + month + "-" + day;
-
-                        if(JotForm.checkValueByOperator('before', JotForm.strToDate(currentDate), JotForm.strToDate(inputtedDate))) {
-                            return JotForm.errored(input, JotForm.texts.pastDatesDisallowed);
-                        }
-                    }
-
-                    //Emre confirmation email (36639)
-                    if (vals.include("Email_Confirm")) {
-                        //console.log("if (vals.include(\"Email_Confirm\")) {");
-                        var idEmail = input.id.replace(/.*_(\d+)(?:_confirm)?/gim, '$1'); //confirm email id is like "input_4_confirm"
-                        if(($('input_' + idEmail).value != $('input_' + idEmail + '_confirm').value)){
-                            return JotForm.errored(input, JotForm.texts.confirmEmail);
-                        } else if (($('input_' + idEmail + '_confirm').value) && (!reg.email.test($('input_' + idEmail + '_confirm').value))) {
-                            return JotForm.errored(input, JotForm.texts.email);
-                        }
-                    }
-                    if (vals.include("required")) {
-                        if (input.tagName == 'INPUT' && input.readAttribute('type') == "file") { // Upload
-                            if(input.value.empty() && !input.uploadMarked){
-                                return JotForm.errored(input, JotForm.texts.required);
-                            }else{
-                                return JotForm.corrected(input);
-                            }
-                        } else if (input.tagName == "INPUT" && (input.readAttribute('type') == "radio" || input.readAttribute('type') == "checkbox")) {
-
-                            if($(input.parentNode).hasClassName('form-matrix-values')){ // This is in a matrix
-                                
-                                var ty = input.readAttribute('type');
-                                var matrixRows = {};
-                                var oneChecked = false;
-                                input.up('table').select('input').each(function(e){
-                                    if(!(e.name in matrixRows)){matrixRows[e.name] = false;}
-                                    if(matrixRows[e.name] !== true){matrixRows[e.name] = e.checked;}
-                                    if(matrixRows[e.name] === true){oneChecked = true;}
-                                });
-                                if(vals.include("requireOneAnswer")) {
-                                  if(!oneChecked) 
-                                    return JotForm.errored(input, JotForm.texts.requireOne);
-                                } else if( ! $H(matrixRows).values().all()){
-                                    return JotForm.errored(input, JotForm.texts.requireEveryRow);
-                                } else {
-                                    return JotForm.corrected(input);
-                                }
-                            
-                            }else {
-                                var baseInputName = input.name.substr(0,input.name.indexOf('['));
-                                var otherInputName = baseInputName + '[other]';
-                                var checkboxArray = [];
-                                    // If 'Other' input exists;
-                                    if (document.getElementsByName(otherInputName)[0]) {
-                                        // Assign all checkboxes including 'Other' to array
-                                        checkboxArray = $A(document.getElementsByName(baseInputName + '[]')); 
-                                        checkboxArray[checkboxArray.length] = document.getElementsByName(otherInputName)[0];
-                                            // Validate each checkbox
-                                        if ( ! checkboxArray.map(function(e){ return e.checked; }).any()) {
-                                                return JotForm.errored(input, JotForm.texts.required);
-                                        }
-                                    } else {
-                                        if ( ! $A(document.getElementsByName(input.name)).map(function(e){ return e.checked; }).any()) {
-                                            return JotForm.errored(input, JotForm.texts.required);
-                                        }
-                                    }
-                                
-                            }
-                        } else if((input.tagName == "INPUT" || input.tagName == "SELECT") && $(input.parentNode).hasClassName('form-matrix-values')) {
-                                var matrixRows = {};
-                                var oneEntry = false;
-
-                                input.up('table').select(input.tagName).each(function(e){
-                                    if(!(e.name in matrixRows)){matrixRows[e.name] = false;}
-                                    if(matrixRows[e.name] !== true){matrixRows[e.name] = (e.value && !e.value.strip(" ").empty());}
-                                    if(matrixRows[e.name] === true){oneEntry = true;}
-                                });
-                                if(vals.include("requireEveryRow") && ! $H(matrixRows).values().all()) {
-                                    return JotForm.errored(input, JotForm.texts.requireEveryRow);
-                                } else if(vals.include("requireOneAnswer") && !oneEntry) {
-                                    return JotForm.errored(input, JotForm.texts.requireOne);
-                                } else {
-                                    return JotForm.corrected(input);
-                                }
-                        } else if (input.name && input.name.include("[")) {
-                            try{
-                                var cont = $this.getContainer(input);
-                                // Ozan, bugfix: 133419, both input and select fields should be selected
-                                var checkValues = cont.select('input,select[name*=' + input.name.replace(/\[.*$/, '') + ']').map(function(e){
-                                    // If this is an address field and country is not United States or Canada 
-                                    // then don't require state name
-                                    if(e.hasClassName('form-address-state')){
-                                        var country = cont.select('.form-address-country')[0].value;
-                                        if(country != 'United States' && country != 'Canada' && country != 'Please Select'){
-                                            e.removeClassName('form-validation-error');
-                                            e.__skipField = true;
-                                            return false;
-                                        }
-                                    }else{
-                                        if(e.__skipField){
-                                            e.__skipField = false;
-                                        }
-                                    }
-                                    
-                                    // If this is a custom quantity textbox
-                                    if(e.id.match(/input_[0-9]_quantity_[0-9]+_[0-9]+/) && e.type == 'text') {
-                                        var cb = $(((e.id.replace('_quantity', '')).match(/input_[0-9]_[0-9]+/))[0]);
-                                        // If product selected and quantity is not valid
-                                        if(cb.checked && (isNaN(e.value) || e.value == 0 || e.value.empty()) ) {
-                                            e.addClassName('form-validation-error');
-                                            return true;
-                                        }
-                                    }
-                                    
-                                    if(e.className.include('validate[required]') && JotForm.isVisible(e)){
-                                        if(e.value.empty() || e.value.strip() == 'Please Select'){
-                                            e.addClassName('form-validation-error');
-                                            return true;
-                                        }
-                                    }
-                                    e.removeClassName('form-validation-error');
-                                    return false;
-                                });
-                                
-                                if (checkValues.any()) {
-                                    return JotForm.errored(input, JotForm.texts.required);
-                                }
-                            }catch(e){
-                                // This can throw errors on internet explorer
-                                JotForm.error(e);
-                                return JotForm.corrected(input);
-                            }
-                        }
-                        if(input.__skipField){
-                            return JotForm.corrected(input);
-                        }
-                        if ( (!input.value || input.value.strip(" ").empty() || input.value.replace('<br>', '').empty() || input.value == 'Please Select') && !(input.readAttribute('type') == "radio" || input.readAttribute('type') == "checkbox") && !$(input.parentNode).hasClassName('form-matrix-values')) {
-                            return JotForm.errored(input, JotForm.texts.required);
-                        }
-
-                        vals = vals.without("required");
-                        
-                    } else if (input.value.empty()) {
-                        // if field is not required and there is no value 
-                        // then skip other validations
-                        return true;
-                    }
-                    
-                    if (!vals[0]) {
-                        return true;
-                    }
-                    
-                    switch (vals[0]) {
-                        case "Email":
-                            if (!reg.email.test(input.value)) {
-                                return JotForm.errored(input, JotForm.texts.email);
-                            }
-                            break;
-                        case "Alphabetic":
-                            if (!reg.alphabetic.test(input.value)) {
-                                return JotForm.errored(input, JotForm.texts.alphabetic);
-                            }
-                            break;
-                        case "Numeric":
-                            if (!reg.numeric.test(input.value) && !reg.numericDotStart.test(input.value)) {
-                                return JotForm.errored(input, JotForm.texts.numeric);
-                            }
-                            break;
-                        case "AlphaNumeric":
-                            if (!reg.alphanumeric.test(input.value)) {
-                                return JotForm.errored(input, JotForm.texts.alphanumeric);
-                            }
-                            break;
-                        case "Url":
-                            if (!reg.url.test(input.value)) {
-                                return JotForm.errored(input, JotForm.texts.url);
-                            }
-                            break;
-                        default:
-                            // throw ("This validation is not valid (" + vals[0] + ")");
-                    }
-                    return JotForm.corrected(input);
-                };
-                var validatorEvent = function(e){
-                    setTimeout(function(){ // to let focus event to work
-                        if($this.lastFocus && ($this.lastFocus == input || $this.getContainer($this.lastFocus) != $this.getContainer(input))){
-                            input.validateInput();
-                        }else if(input.type == "hidden"){
-                            input.validateInput(); // always run on hidden elements
-                        }
-                    }, 10);
-                };
-                
-                if(input.type == 'hidden'){
-                    input.observe('change', validatorEvent);
-                }else{
-                    input.observe('blur', validatorEvent);
-                }
-
-                if(input.up('.form-spinner')) {
-                    var spinnerEvent = function() {input.validateInput();};
-                    input.up('.form-spinner').down('.form-spinner-up').observe('click', spinnerEvent);
-                    input.up('.form-spinner').down('.form-spinner-down').observe('click', spinnerEvent);                  
-                }
-
+            $$('#'+form.id+' *[class*="validate"]').each(function(input){
+                JotForm.setFieldValidation(input);
             });
             
             $$('.form-upload').each(function(upload){
@@ -5642,6 +5454,301 @@ var JotForm = {
             }); 
         });
     },
+
+
+    /*
+    * set validation function on field
+    */
+    setFieldValidation: function(input) {
+        var $this = this;
+        var reg = {
+            email: /[a-z0-9!#$%&'*+\/=?\^_`{|}~\-]+(?:\.[a-z0-9!#$%&'*+\/=?\^_`{|}~\-]+)*@(?:[a-z0-9](?:[a-z0-9\-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9\-]*[a-z0-9])/i,
+            alphanumeric: /^[a-zA-ZæøåäöÆØÅÄÖ0-9\s]+$/,
+            numeric: /^(-?\d+[\.]?)+$/,
+            numericDotStart: /^([\.]\d+)+$/,  //accept numbers starting with dot
+            alphabetic: /^[a-zA-ZæøåäöÆØÅÄÖ\s]+$/,
+            url: /(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?/
+        };
+        var validations = input.className.replace(/.*validate\[(.*)\].*/, '$1').split(/\s*,\s*/);
+        
+        input.validateInput = function(deep)
+        {
+            if (!JotForm.isVisible(input)) {
+                return true; // if it's hidden then user cannot fill this field then don't validate
+            }
+            
+            if(!$(input.parentNode).hasClassName('form-matrix-values')) //ntw
+                JotForm.corrected(input); // First clean the element
+            
+            var vals = validations;
+            
+            if(input.hinted === true){
+                input.clearHint();
+                setTimeout(function(){
+                    input.hintClear();
+                }, 150);
+            } // Clear hint value if exists
+
+            //change where it deploys
+            //to first check the data  of this inputs before going to the next with a validate[*] class
+            if( input.readAttribute('data-type') === 'input-spinner' && input.value )
+            {
+                return input.validateSpinnerInputs();
+            }
+            else if( input.readAttribute('data-type') === 'input-grading' && input.value )
+            {
+                return input.validateGradingInputs();
+            }
+            else if( input.readAttribute('data-type') === 'input-number' && input.value )
+            {
+                return input.validateNumberInputs();
+            }
+
+            if(vals.include('disallowFree')) {
+                var freeEmails = ['gmail','aim','outlook','hotmail', 'yahoo','mail','inbox'];
+                for(var i=0; i<freeEmails.length; i++) {
+                    if(input.value.indexOf("@" + freeEmails[i] + ".") > -1) {
+                        return JotForm.errored(input, JotForm.texts.freeEmailError);
+                    }
+                }
+            }
+
+            if(vals.include('minSelection')) {
+                var minSelection = parseInt(input.readAttribute('data-minSelection'));
+                var numberChecked = 0;
+                input.up('.form-line').select('input[type=checkbox]').each(function(check) {
+                     if(check.checked) numberChecked++;
+                });
+                if(numberChecked > 0 && numberChecked < minSelection) {
+                    return JotForm.errored(input, JotForm.texts.minSelectionsError + minSelection + '.');
+                }
+            }
+
+            if(vals.include('maxSelection')) {
+                var maxSelection = parseInt(input.readAttribute('data-maxSelection'));
+                var numberChecked = 0;
+                input.up('.form-line').select('input[type=checkbox]').each(function(check) {
+                     if(check.checked) numberChecked++;
+                });
+                if(numberChecked > maxSelection) {
+                    return JotForm.errored(input, JotForm.texts.maxSelectionsError + maxSelection + '.');
+                }
+            }
+
+            if(vals.include('disallowPast')) {
+                var id = input.id.split('year_').last();
+                var inputtedDate = JotForm.getDateValue(id).split('T')[0];
+                var dat =  new Date();
+                var month = (dat.getMonth()+1 < 10)? '0'+(dat.getMonth()+1):dat.getMonth()+1;
+                var day = (dat.getDate() < 10) ? '0' + dat.getDate() : dat.getDate();
+                var currentDate = dat.getFullYear() + "-" + month + "-" + day;
+
+                if(JotForm.checkValueByOperator('before', JotForm.strToDate(currentDate), JotForm.strToDate(inputtedDate))) {
+                    return JotForm.errored(input, JotForm.texts.pastDatesDisallowed);
+                }
+            }
+
+            //Emre confirmation email (36639)
+            if (vals.include("Email_Confirm")) {
+                //console.log("if (vals.include(\"Email_Confirm\")) {");
+                var idEmail = input.id.replace(/.*_(\d+)(?:_confirm)?/gim, '$1'); //confirm email id is like "input_4_confirm"
+                if(($('input_' + idEmail).value != $('input_' + idEmail + '_confirm').value)){
+                    return JotForm.errored(input, JotForm.texts.confirmEmail);
+                } else if (($('input_' + idEmail + '_confirm').value) && (!reg.email.test($('input_' + idEmail + '_confirm').value))) {
+                    return JotForm.errored(input, JotForm.texts.email);
+                }
+            }
+            if (vals.include("required")) {
+                if (input.tagName == 'INPUT' && input.readAttribute('type') == "file") { // Upload
+                    if(input.value.empty() && !input.uploadMarked){
+                        return JotForm.errored(input, JotForm.texts.required);
+                    }else{
+                        return JotForm.corrected(input);
+                    }
+                } else if (input.tagName == "INPUT" && (input.readAttribute('type') == "radio" || input.readAttribute('type') == "checkbox")) {
+
+                    if($(input.parentNode).hasClassName('form-matrix-values')){ // This is in a matrix
+                        
+                        var ty = input.readAttribute('type');
+                        var matrixRows = {};
+                        var oneChecked = false;
+                        input.up('table').select('input').each(function(e){
+                            if(!(e.name in matrixRows)){matrixRows[e.name] = false;}
+                            if(matrixRows[e.name] !== true){matrixRows[e.name] = e.checked;}
+                            if(matrixRows[e.name] === true){oneChecked = true;}
+                        });
+                        if(vals.include("requireOneAnswer")) {
+                          if(!oneChecked) 
+                            return JotForm.errored(input, JotForm.texts.requireOne);
+                        } else if( ! $H(matrixRows).values().all()){
+                            return JotForm.errored(input, JotForm.texts.requireEveryRow);
+                        } else {
+                            return JotForm.corrected(input);
+                        }
+                    
+                    }else {
+                        var baseInputName = input.name.substr(0,input.name.indexOf('['));
+                        var otherInputName = baseInputName + '[other]';
+                        var checkboxArray = [];
+                            // If 'Other' input exists;
+                            if (document.getElementsByName(otherInputName)[0]) {
+                                // Assign all checkboxes including 'Other' to array
+                                checkboxArray = $A(document.getElementsByName(baseInputName + '[]')); 
+                                checkboxArray[checkboxArray.length] = document.getElementsByName(otherInputName)[0];
+                                    // Validate each checkbox
+                                if ( ! checkboxArray.map(function(e){ return e.checked; }).any()) {
+                                        return JotForm.errored(input, JotForm.texts.required);
+                                }
+                            } else {
+                                if ( ! $A(document.getElementsByName(input.name)).map(function(e){ return e.checked; }).any()) {
+                                    return JotForm.errored(input, JotForm.texts.required);
+                                }
+                            }
+                        
+                    }
+                } else if((input.tagName == "INPUT" || input.tagName == "SELECT") && $(input.parentNode).hasClassName('form-matrix-values')) {
+                        var matrixRows = {};
+                        var oneEntry = false;
+
+                        input.up('table').select(input.tagName).each(function(e){
+                            if(!(e.name in matrixRows)){matrixRows[e.name] = false;}
+                            if(matrixRows[e.name] !== true){matrixRows[e.name] = (e.value && !e.value.strip(" ").empty());}
+                            if(matrixRows[e.name] === true){oneEntry = true;}
+                        });
+                        if(vals.include("requireEveryRow") && ! $H(matrixRows).values().all()) {
+                            return JotForm.errored(input, JotForm.texts.requireEveryRow);
+                        } else if(vals.include("requireOneAnswer") && !oneEntry) {
+                            return JotForm.errored(input, JotForm.texts.requireOne);
+                        } else {
+                            return JotForm.corrected(input);
+                        }
+                } else if (input.name && input.name.include("[")) {
+                    try{
+                        var cont = $this.getContainer(input);
+                        // Ozan, bugfix: 133419, both input and select fields should be selected
+                        var checkValues = cont.select('input,select[name*=' + input.name.replace(/\[.*$/, '') + ']').map(function(e){
+                            // If this is an address field and country is not United States or Canada 
+                            // then don't require state name
+                            if(e.hasClassName('form-address-state')){
+                                var country = cont.select('.form-address-country')[0].value;
+                                if(country != 'United States' && country != 'Canada' && country != 'Please Select'){
+                                    e.removeClassName('form-validation-error');
+                                    e.__skipField = true;
+                                    return false;
+                                }
+                            }else{
+                                if(e.__skipField){
+                                    e.__skipField = false;
+                                }
+                            }
+                            
+                            // If this is a custom quantity textbox
+                            if(e.id.match(/input_[0-9]_quantity_[0-9]+_[0-9]+/) && e.type == 'text') {
+                                var cb = $(((e.id.replace('_quantity', '')).match(/input_[0-9]_[0-9]+/))[0]);
+                                // If product selected and quantity is not valid
+                                if(cb.checked && (isNaN(e.value) || e.value == 0 || e.value.empty()) ) {
+                                    e.addClassName('form-validation-error');
+                                    return true;
+                                }
+                            }
+                            
+                            if(e.className.include('validate[required]') && JotForm.isVisible(e)){
+                                if(e.value.empty() || e.value.strip() == 'Please Select'){
+                                    e.addClassName('form-validation-error');
+                                    return true;
+                                }
+                            }
+                            e.removeClassName('form-validation-error');
+                            return false;
+                        });
+                        
+                        if (checkValues.any()) {
+                            return JotForm.errored(input, JotForm.texts.required);
+                        }
+                    }catch(e){
+                        // This can throw errors on internet explorer
+                        JotForm.error(e);
+                        return JotForm.corrected(input);
+                    }
+                }
+                if(input.__skipField){
+                    return JotForm.corrected(input);
+                }
+                if(input.tagName.toLowerCase() === 'textarea' && input.hasClassName('form-custom-hint')) {
+                    return JotForm.errored(input, JotForm.texts.required);
+                }
+                if ( (!input.value || input.value.strip(" ").empty() || input.value.replace('<br>', '').empty() || input.value == 'Please Select') && !(input.readAttribute('type') == "radio" || input.readAttribute('type') == "checkbox") && !$(input.parentNode).hasClassName('form-matrix-values')) {
+                    return JotForm.errored(input, JotForm.texts.required);
+                }
+
+                vals = vals.without("required");
+                
+            } else if (input.value.empty()) {
+                // if field is not required and there is no value 
+                // then skip other validations
+                return true;
+            }
+            
+            if (!vals[0]) {
+                return true;
+            }
+            
+            switch (vals[0]) {
+                case "Email":
+                    if (!reg.email.test(input.value)) {
+                        return JotForm.errored(input, JotForm.texts.email);
+                    }
+                    break;
+                case "Alphabetic":
+                    if (!reg.alphabetic.test(input.value)) {
+                        return JotForm.errored(input, JotForm.texts.alphabetic);
+                    }
+                    break;
+                case "Numeric":
+                    if (!reg.numeric.test(input.value) && !reg.numericDotStart.test(input.value)) {
+                        return JotForm.errored(input, JotForm.texts.numeric);
+                    }
+                    break;
+                case "AlphaNumeric":
+                    if (!reg.alphanumeric.test(input.value)) {
+                        return JotForm.errored(input, JotForm.texts.alphanumeric);
+                    }
+                    break;
+                case "Url":
+                    if (!reg.url.test(input.value)) {
+                        return JotForm.errored(input, JotForm.texts.url);
+                    }
+                    break;
+                default:
+                    // throw ("This validation is not valid (" + vals[0] + ")");
+            }
+            return JotForm.corrected(input);
+        };
+        var validatorEvent = function(e){
+            setTimeout(function(){ // to let focus event to work
+                if($this.lastFocus && ($this.lastFocus == input || $this.getContainer($this.lastFocus) != $this.getContainer(input))){
+                    input.validateInput();
+                }else if(input.type == "hidden"){
+                    input.validateInput(); // always run on hidden elements
+                }
+            }, 10);
+        };
+        
+        if(input.type == 'hidden'){
+            input.observe('change', validatorEvent);
+        }else{
+            input.observe('blur', validatorEvent);
+        }
+
+        if(input.up('.form-spinner')) {
+            var spinnerEvent = function() {input.validateInput();};
+            input.up('.form-spinner').down('.form-spinner-up').observe('click', spinnerEvent);
+            input.up('.form-spinner').down('.form-spinner-down').observe('click', spinnerEvent);                  
+        }
+
+    },
+
+
     /**
      * Initiate facebook login operations
      * Check if user is already loggedin

@@ -463,7 +463,7 @@
 	  box-sizing: border-box;
 	  -webkit-box-sizing: border-box; 
 	  -moz-box-sizing: border-box;
-	  border:1px solid transparent;
+	  border: 1px solid #CCC;
 	  border-top-left-radius: 5px;
 	  border-bottom-left-radius: 5px;
 	  -webkit-border-top-left-radius: 5px;
@@ -509,10 +509,10 @@
 	.signup input[type=text]:focus {
 	  background-color:#fff;
 	  color:#999;
-	  border:1px solid #ddd;
-	  -webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);
-	  -moz-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);
-	  box-shadow:inset 0 1px 2px rgba(0,0,0,0.1); 
+	  border: 1px solid rgba(82,168,236,.8);
+	  -webkit-box-shadow:inset 0 0 2px rgba(82,168,236,.8);
+	  -moz-box-shadow:inset 0 0px 2px rgba(82,168,236,.8);
+	  box-shadow:inset 0 0px 3px #ccc; 
 	  outline:none;
 	}
 	
@@ -590,14 +590,14 @@
 	
 	/*states*/
 	input[type=text], textarea {
-	  background:#f3f3f3;
+	  background:#fff;
 	  -webkit-appearance: none;
 	  border:1px solid #ccc; 
 	  color:#999; 
 	  font: 13px/18px Arial, Helvetica, sans-serif;
 	}
 	input[type=text].required,textarea.required {
-	  background:#f3f3f3 url(../images/input-required-light.png) right 13px no-repeat;
+	  background:#fff url(../images/input-required-light.png) right 13px no-repeat;
 	}
 	input[type=text]:hover,textarea:hover {
 	  background-color:#eee;
@@ -1241,7 +1241,7 @@
   #footer .content ul {
   float: left;
   padding: 0 5px;
-  margin: 0px 0px 16px 0px;
+  margin: 0px 1px 16px 25px; 
   }
   #footer .content ul.navigation li {
   float: left;

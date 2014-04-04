@@ -433,9 +433,10 @@
 	----------------------------*/
 	.signup{width:290px;margin:auto;}
 	.signup input[type="text"],.signup input[type=submit].signupSubmit {width: 100%;-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius:5px;}
-	
-	
-	
+	.form-input {display: block; width: 290px;}
+	.form-submit-button, .form-submit-reset, .form-submit-print, .form-screen-button{width:100%;height:60px; margin-bottom: 20px;}
+	.form-submit-button{border-radius: 5px;}
+	.form-section{float:none;}
 	/*blog
 	----------------------------*/
 	
