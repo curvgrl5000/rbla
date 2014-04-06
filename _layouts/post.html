@@ -6,6 +6,7 @@
     <div class="content clearfix">
     	<h1><span>{{page.title}}</span></h1>
       <!--post content-left-->
+    	
     	<div class="content-inner-left">
         <!--start post-->	
         <div class="blog-post">
@@ -84,7 +85,7 @@
               <span>Recent Posts</span>
             </h6>
             <ul>
-              {%  for post in site.posts offset: 0 limit: 10 %}
+              {%  for post in site.posts offset: 0 limit: 5 %}
               <li>
                 <a href="{{ post.url }}">{{page.title}}</a>
                 <p class="date">

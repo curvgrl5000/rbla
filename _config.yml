@@ -7,11 +7,18 @@ vimeo: vimeo.com
 youtube: youtube.com
 
 permalink: /:categories/:title
-permalink: /blog/:year/:month/:day/:title
+permalink: /blog/:year/:month/:day/:title 
 
 categories: 
   - tutorials
   - cheatsheets
-  - blog
+  - general tech
 
 tags: ["Git"]
+
+gems: ['jekyll/itafroma/archive']
+
+archive:
+  layout: archive
+  path: /blog/
+  title: Blog Archive

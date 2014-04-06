@@ -1,12 +1,16 @@
 {% include header_posts.html %} 
 
-<h1 class="category">{{ page.title }}</h1>
-<ul class="posts">
-{% for post in site.categories[page.category] %}
-    <div>{{ post.date | date_to_html_string }}</div>
-    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-    <div class="categories">Filed under {{ post.categories | category_links }}</div>
-{% endfor %}
-</ul>
-
+<div id="blog" class="page odd">
+  <!--start content - left-->
+  <div class="content clearfix">
+    <h1 class="category"><span>Category: {{ page.category | capitalize }}</span></h1>
+    <ul class="posts">
+      {% for post in site.categories[page.category] %}
+          <div>{{ post.date | date_to_html_string }}</div>
+          <h5><a href="{{ post.url }}"><span>{{ post.title }}</span></a></h5>
+          <div class="categories">Filed under {{ post.categories | category_links }}</div>
+      {% endfor %}
+    </ul>
+  </div>
+</div>  
 {% include footer.html %}
