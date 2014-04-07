@@ -1,0 +1,11 @@
+---
+layout: post
+title:  "Rolling Back with Git"
+date:   2014-03-10 14:26:51
+video: http://www.youtube.com/embed/U8GBXvdmHT4
+category: "core basics"
+tags: [Git] 
+comments: true
+---
+
+Here's where we'll be talking about Pro-GIT
