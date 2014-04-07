@@ -13,20 +13,30 @@ permalink: /blog/
     <div class="content-inner-left">
       <div class="blog-post">
         <div class="blog-post-content">
-          {% for post in site.posts limit:6 %} 
+          {% for post in site.posts %} 
             <div class="blog-post-type video"></div>
             <div class="blog-post-content-inner">
-              <h5><span><a href="{{post.url}}">{{post.title}}</a></h5>
               <ul class="posts">
-                <li>{{ post.date | date_to_html_string }}</li>
-                <li class="categories">Filed under {{ post.categories | category_links }}</li> 
+                <div>{{ post.date | date_to_html_string }}</div>
+                <h5><span><a href="{{post.url}}">{{post.title}}</a></h5>
+                <div class="categories">Filed under {{ post.categories | category_links }}</div> 
               </ul>
             </div><!-- end blog-post-content-inner -->
-         {% endfor %}
+          {% endfor %}
         </div><!-- end blog-post-content -->
       </div><!-- end blog-post -->
+    
+      <!--start pagination-->
+      <div class="blog-pagination">	
+        <ul>
+          <li><a class="active" href="">1</a></li>
+          <!-- <li><a href="">2</a></li>
+          <li><a href="">3</a></li>
+          <li><a href="">4</a></li> -->
+        </ul>
+      </div>    
     </div>
-        
+            
     <!--start sidebar-->
     <div id="sidebar" class="left">
       <ul>
@@ -37,20 +47,20 @@ permalink: /blog/
           </h6>
           <ul>
           <!-- THIS IS HOW TO REACH INTO A SITE'S CATEGORY FOLDER AND LINK TO TO IT -->
-            {% for post in site.categories['core basics']  %}
+            {% for post in site.categories['core basics'] limit:1  %}
             <li>
               {{ post.categories | category_links | capitalize }}
             </li>
             {% endfor %}
         
-            {% for post in site.categories['cheatsheets'] %} 
+            {% for post in site.categories['cheatsheets'] limit:1 %} 
             <li>
               {{ post.categories | category_links | capitalize }}
             </li>
             {% endfor %}
         
             <!-- THIS IS HOW TO REACH INTO A SITE'S 'CATEGORIES' FOLDER AND LINK TO TO IT SEE CATEGORY GENERATOR -->
-            {% for post in site.categories['tutorials'] %}
+            {% for post in site.categories['tutorials'] limit:1 %}
             <li>
               {{ post.categories | category_links | capitalize }}
             </li>
@@ -65,18 +75,6 @@ permalink: /blog/
           {% include TAG/tags_list %}
         </li>
       </ul>
-    </div>
-    <!--end sidebar-->
-    
-    <!--start pagination-->
-    <div class="blog-pagination">	
-      <ul>
-        <li><a class="active" href="">1</a></li>
-        <li><a href="">2</a></li>
-        <li><a href="">3</a></li>
-        <li><a href="">4</a></li>
-      </ul>
-    </div>
+    </div><!--end sidebar-->
   </div>   
- </div>
 </div>

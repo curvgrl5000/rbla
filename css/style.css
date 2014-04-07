@@ -1076,7 +1076,7 @@
 	   color:#eee !important;
 	 }
 	 #sidebar ul li.widget-tag-cloud a:hover { 
-	   background:#FC7022; 
+	   background:#E56869; 
 	   color:#fff !important;
 	 }
 	 #sidebar ul li input[type=text].sidebar-searchform { 
@@ -1581,7 +1581,7 @@
 	.page.odd h4 span a,
 	.page.odd h5 span a,
 	.page.odd h6 span a {
-	  color:#66;
+	  color:#666;
 	}
 	
 
@@ -1617,6 +1617,16 @@
 	.page.even h5 span a,
 	.page.even h6 span a {
 	  color:#666;
+	}
+	
+	.page.even h1 span a:hover,
+	.page.even h2 span a:hover,
+	.page.even h3 span a:hover,
+	.page.even h4 span a:hover,
+	.page.even h5 span a:hover,
+	.page.even h6 span a:hover {
+	  color:#E56869;
+	  
 	}
 		
 		
@@ -1779,6 +1789,29 @@
  	.pd-90-l { padding-left: 90px}
  	.pd-95-l { padding-left: 95px}
  	.pd-100-l{ padding-left: 100px}
+ 	
+ 	
+ 	.pd-5-top  { padding-top: 5px}     
+ 	.pd-10-top { padding-top: 10px}
+ 	.pd-15-top { padding-top: 15px}
+ 	.pd-20-top { padding-top: 20px}
+ 	.pd-25-top { padding-top: 25px}
+ 	.pd-30-top { padding-top: 30px}
+ 	.pd-35-top { padding-top: 35px}
+ 	.pd-40-top { padding-top: 40px}
+ 	.pd-45-top { padding-top: 45px}
+ 	.pd-50-top { padding-top: 50px}
+ 	.pd-55-top { padding-top: 55px}
+ 	.pd-60-top { padding-top: 60px}
+ 	.pd-65-top { padding-top: 65px} 
+ 	.pd-70-top { padding-top: 70px}
+ 	.pd-75-top { padding-top: 75px}
+ 	.pd-80-top { padding-top: 80px}
+ 	.pd-85-top { padding-top: 85px}
+ 	.pd-90-top { padding-top: 90px}
+ 	.pd-95-top { padding-top: 95px}
+ 	.pd-100-top{ padding-top: 100px}
+ 	
  	
  	
  
