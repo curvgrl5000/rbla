@@ -12,7 +12,7 @@ permalink: /blog/:year/:month/:day/:title
 categories: 
   - tutorials
   - cheatsheets
-  - general tech
+  - core basics
 
 tags: ["Git"]
 

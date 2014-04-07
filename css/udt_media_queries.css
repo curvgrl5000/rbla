@@ -154,6 +154,8 @@
 	.highlight .info-container .info .info-inner{max-width:640px; margin:auto;}
 	.highlight .info-container .video{width:640px !important;height:360px !important;}	
 	.highlight .info-container .info .info-inner .video{width:307px !important;height:172px !important;}
+	.highlight .info-container .info .info-inner .video{width:100% !important;height:235px !important;}
+	
 	
 	
 	/*blog

@@ -111,7 +111,7 @@ title: RailsBridge LA
                 </p>
                 <div id="home">
                   <ul class="posts pd-60-l">
-                    {% for post in site.posts %}
+                    {% for post in site.posts limit:1 %}
                     <li>
                       <span>{{ post.date | date_to_string }}</span> 
                       &raquo; <a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a>

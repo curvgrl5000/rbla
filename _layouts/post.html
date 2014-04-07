@@ -87,9 +87,9 @@
             <ul>
               {%  for post in site.posts offset: 0 limit: 5 %}
               <li>
-                <a href="{{ post.url }}">{{page.title}}</a>
+                <a href="{{ post.url }}">{{post.title}}</a>
                 <p class="date">
-                  {{page.date | date: "%a, %b %d, %y"}}
+                  {{post.date | date: "%a, %b %d, %y"}}
                 </p>
               </li>
               {% endfor %}                        
@@ -103,23 +103,22 @@
             </h6>
             <ul>
             <!-- THIS IS HOW TO REACH INTO A SITE'S CATEGORY FOLDER AND LINK TO TO IT -->
-              {% for post in site.categories['blog'] %}
-              <li>
-                <a href="{{site.baseurl}}{{site.categories[0]}}">{{post.category | capitalize }}</a>
-              </li>
+              {% for post in site.categories['cheatsheets'] limit:1 %} 
+                <li>
+                  {{ post.categories | category_links | capitalize }}                
+                </li>
+              {% endfor %}
+              
+              {% for post in site.categories['core basics'] limit:1 %}
+                <li>
+                  {{ post.categories | category_links | capitalize }}                
+                </li>
               {% endfor %}
           
-              {% for post in site.categories['cheatsheets'] %} 
-              <li>
-                <a href="{{site.baseurl}}{{site.categories[0]}}">{{post.category | capitalize }}</a>
-              </li>
-              {% endfor %}
-          
-              <!-- THIS IS HOW TO REACH INTO A SITE'S 'CATEGORIES' FOLDER AND LINK TO TO IT SEE CATEGORY GENERATOR -->
-              {% for post in site.categories['tutorials'] %}
-              <li>
-                {{ post.categories | category_links | capitalize }}
-              </li>
+              {% for post in site.categories['tutorials'] limit:1 %}
+                <li>
+                  {{ post.categories | category_links | capitalize }}
+                </li>
               {% endfor %}
             </ul>                        
           </li>
