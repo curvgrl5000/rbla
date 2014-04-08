@@ -87,7 +87,7 @@
             <ul>
               {%  for post in site.posts offset: 0 limit: 5 %}
               <li>
-                <a href="{{ site.baseurl}}/{{ post.url }}">{{post.title}}</a>
+                <a href="{{ site.baseurl}}{{ post.url }}">{{post.title}}</a>
                 <p class="date">
                   {{post.date | date: "%a, %b %d, %y"}}
                 </p>
