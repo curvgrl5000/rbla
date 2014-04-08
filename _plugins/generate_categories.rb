@@ -1,3 +1,4 @@
+require 'pry'
 module Jekyll
 
   # The CategoryIndex class creates a single category page for the specified category.
@@ -152,7 +153,10 @@ module Jekyll
     #
     # Returns string
     def category_links(categories)
+      baseurl = @context.registers[:site].config['baseurl'] || "/"
       base_dir = @context.registers[:site].config['category_dir']
+      base_dir = File.join(baseurl, base_dir)
+
       categories = categories.sort!.map do |category|
         category_dir = GenerateCategories.category_dir(base_dir, category)
         # Make sure the category directory begins with a slash.
