@@ -6,12 +6,22 @@ baseurl: /rbla
 vimeo: vimeo.com
 youtube: youtube.com
 
-permalink: /:categories/:title
-permalink: /blog/:year/:month/:day/:title
+permalink: /blog/:categories/:title
+permalink: /blog/:year/:month/:day/:title 
 
 categories: 
-  -tutorials
+  - tutorials
   - cheatsheets
-  - blog
+  - core basics
 
 tags: ["Git"]
+
+gems: ['jekyll/itafroma/archive']
+
+archive:
+  layout: archive
+  path: /blog/
+  title: Blog Archive 
+  
+paginate: 5
+paginate_path: "blog/page:num"

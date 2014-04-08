@@ -350,7 +350,7 @@
 	  padding-top:12px;
 	}
 	.sync { 
-	  height:50px;
+	  height:60px;
 	  background: url(../images/cloud-icon.png) 0 11px no-repeat;
 	  line-height:14px;
 	  padding-left:75px; 
@@ -463,7 +463,7 @@
 	  box-sizing: border-box;
 	  -webkit-box-sizing: border-box; 
 	  -moz-box-sizing: border-box;
-	  border:1px solid transparent;
+	  border: 1px solid #CCC;
 	  border-top-left-radius: 5px;
 	  border-bottom-left-radius: 5px;
 	  -webkit-border-top-left-radius: 5px;
@@ -509,10 +509,10 @@
 	.signup input[type=text]:focus {
 	  background-color:#fff;
 	  color:#999;
-	  border:1px solid #ddd;
-	  -webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);
-	  -moz-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);
-	  box-shadow:inset 0 1px 2px rgba(0,0,0,0.1); 
+	  border: 1px solid rgba(82,168,236,.8);
+	  -webkit-box-shadow:inset 0 0 2px rgba(82,168,236,.8);
+	  -moz-box-shadow:inset 0 0px 2px rgba(82,168,236,.8);
+	  box-shadow:inset 0 0px 3px #ccc; 
 	  outline:none;
 	}
 	
@@ -590,26 +590,26 @@
 	
 	/*states*/
 	input[type=text], textarea {
-	  background:#f3f3f3;
+	  background:#fff;
 	  -webkit-appearance: none;
-	  border:1px solid #e6e6e6; 
+	  border:1px solid #ccc; 
 	  color:#999; 
 	  font: 13px/18px Arial, Helvetica, sans-serif;
 	}
 	input[type=text].required,textarea.required {
-	  background:#f3f3f3 url(../images/input-required-light.png) right 13px no-repeat;
+	  background:#fff url(../images/input-required-light.png) right 13px no-repeat;
 	}
 	input[type=text]:hover,textarea:hover {
 	  background-color:#eee;
 	  color:#666;
 	}
-	input[type=text]:focus,textarea:focus {
+	input[type=text]:focus,textarea:focus, .form-validation-error:focus {
 	  background-color:#fff;
 	  color:#999;
-	  border:1px solid #ddd;
-	  -webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);
-	  -moz-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);
-	  box-shadow:inset 0 1px 2px rgba(0,0,0,0.1); 
+	  border: 1px solid rgba(82,168,236,.8);
+	  -webkit-box-shadow:inset 0 0 2px rgba(82,168,236,.8);
+	  -moz-box-shadow:inset 0 0px 2px rgba(82,168,236,.8);
+	  box-shadow:inset 0 0px 3px #ccc; 
 	  outline:none;
 	}
 	
@@ -667,7 +667,7 @@
 	.blog-post-content .blog-post-type {
 	  width:45px;
 	  height:45px;
-	  background:#FC7022 url(../images/post-type.png) 0 0 no-repeat;
+	  background:#E56869 url(../images/post-type.png) 0 0 no-repeat;
 	  float:left; 
 	  margin-right:20px;
 	}
@@ -881,6 +881,9 @@
 	  margin-bottom:0px !important;
 	  border-bottom:none !important;
 	}
+	.categories a{
+	  text-transform: capitalize;
+	}
 	
 /*pagination*/	
   .blog-post, #sidebar ul li, 
@@ -957,7 +960,7 @@
 	  text-transform:uppercase;
 	}
 	#sidebar ul li ul li a:hover { 
-	  color:#FC7022;
+	  color:#E56869;
 	  text-decoration:underline;
 	} 
 	
@@ -1073,7 +1076,7 @@
 	   color:#eee !important;
 	 }
 	 #sidebar ul li.widget-tag-cloud a:hover { 
-	   background:#FC7022; 
+	   background:#E56869; 
 	   color:#fff !important;
 	 }
 	 #sidebar ul li input[type=text].sidebar-searchform { 
@@ -1100,7 +1103,15 @@
 	   -moz-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);
 	   box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);
 	 }
-		
+	 
+	 /*forms */
+	 select {
+   width: 220px;
+   border: 1px solid #BBB;
+   }
+   select, input[type="file"] {
+   height: 28px;
+   } 
 	
 		
 	
@@ -1230,7 +1241,7 @@
   #footer .content ul {
   float: left;
   padding: 0 5px;
-  margin: 0px 0px 16px 0px;
+  margin: 0px 1px 16px 25px; 
   }
   #footer .content ul.navigation li {
   float: left;
@@ -1461,7 +1472,7 @@
 	  line-height: 20px;
 	}
 	p.info-focus {
-	  font:18px/22px "ff-basic-gothic-web-pro", sans-serif;
+	  font:17px/22px "ff-basic-gothic-web-pro", sans-serif;
 	  margin-bottom:30px;
 	}
 
@@ -1570,7 +1581,7 @@
 	.page.odd h4 span a,
 	.page.odd h5 span a,
 	.page.odd h6 span a {
-	  color:#66;
+	  color:#666;
 	}
 	
 
@@ -1606,6 +1617,16 @@
 	.page.even h5 span a,
 	.page.even h6 span a {
 	  color:#666;
+	}
+	
+	.page.even h1 span a:hover,
+	.page.even h2 span a:hover,
+	.page.even h3 span a:hover,
+	.page.even h4 span a:hover,
+	.page.even h5 span a:hover,
+	.page.even h6 span a:hover {
+	  color:#E56869;
+	  
 	}
 		
 		
@@ -1768,6 +1789,29 @@
  	.pd-90-l { padding-left: 90px}
  	.pd-95-l { padding-left: 95px}
  	.pd-100-l{ padding-left: 100px}
+ 	
+ 	
+ 	.pd-5-top  { padding-top: 5px}     
+ 	.pd-10-top { padding-top: 10px}
+ 	.pd-15-top { padding-top: 15px}
+ 	.pd-20-top { padding-top: 20px}
+ 	.pd-25-top { padding-top: 25px}
+ 	.pd-30-top { padding-top: 30px}
+ 	.pd-35-top { padding-top: 35px}
+ 	.pd-40-top { padding-top: 40px}
+ 	.pd-45-top { padding-top: 45px}
+ 	.pd-50-top { padding-top: 50px}
+ 	.pd-55-top { padding-top: 55px}
+ 	.pd-60-top { padding-top: 60px}
+ 	.pd-65-top { padding-top: 65px} 
+ 	.pd-70-top { padding-top: 70px}
+ 	.pd-75-top { padding-top: 75px}
+ 	.pd-80-top { padding-top: 80px}
+ 	.pd-85-top { padding-top: 85px}
+ 	.pd-90-top { padding-top: 90px}
+ 	.pd-95-top { padding-top: 95px}
+ 	.pd-100-top{ padding-top: 100px}
+ 	
  	
  	
  

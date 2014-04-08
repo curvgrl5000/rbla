@@ -12,6 +12,7 @@
         <!-- Custom CSS -->
         <link rel="stylesheet" href="{{ site.baseurl}}/css/flexslider.css"/>
         <link rel="stylesheet" href="{{ site.baseurl}}/css/main.css">
+        <link rel="stylesheet" href="{{ site.baseurl}}/css/form.css" />
         <link rel="stylesheet" href="{{ site.baseurl}}/css/style.css" /> 
         <link rel="stylesheet" href="{{ site.baseurl}}/css/udt_shortcodes.css" />
         <link rel="stylesheet" href="{{ site.baseurl}}/css/udt_media_queries.css" />
@@ -23,8 +24,15 @@
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
         <script type="text/javascript" src="{{ site.baseurl}}/js/jquery.lazyload.js"></script>
+        <script type="text/javascript" src="{{ site.baseurl}}/js/jquery.fancybox-1.3.4.pack.js"></script>
         <script type="text/javascript" src="{{ site.baseurl}}/js/common.js"></script>
-        <script type="text/javascript" src="{{ site.baseurl}}/js/jquery.tweet.js"></script>
+        <script type="text/javascript" src="{{ site.baseurl}}/js/udt_shortcodes.js"></script>
+        
+        <script type="text/javascript" src="{{ site.baseurl}}/js/prototype.js?v=3.2.1171"></script>
+        <script type="text/javascript" src="{{ site.baseurl}}/js/json2.js?v=3.2.1171"></script>
+        <script type="text/javascript" src="{{ site.baseurl}}/js/protoplus.js?v=3.2.1171"></script>
+        <script type="text/javascript" src="{{ site.baseurl}}/js/protoplus-ui.js?v=3.2.1171"></script>
+        <script type="text/javascript" src="{{ site.baseurl}}/js/jotform.js?v=3.2.1171"></script>
         <script type="text/javascript" src="//use.typekit.net/two3pcx.js"></script>
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
         
@@ -51,13 +59,23 @@
         				count: 3,
         				fetch: 20,
         				filter: function(t){ return ! /^@\w+/.test(t["tweet_raw_text"]); },
-        				username: "udfrance"
+        				username: "rbla"
         			  });
         			});
 
 
         			//tweet buttons
         			 !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+               
+               
+               //jotform functionality
+               JotForm.init(function(){
+                  $('input_1').hint('Your Name');
+                  $('input_2').hint('Your Email');
+                  $('input_4').hint('Your Message');
+               });
+
+
 
         </script>
     
@@ -88,6 +106,7 @@
                 <li><a class="navigateTo" href="{{ site.baseurl}}/#signup">Sign Up</a></li>
               	{% capture location %}{{ page.url | remove_first:'/' | split:'/' | first }}{% endcapture %}
               	<li><a {% if location == 'blog' %}class="active" {% endif %}href="{{ site.baseurl}}/blog/">Blog</a></li>
+              	<li><a {% if location == 'tutorials' %}class="active" {% endif %}href="{{ site.baseurl}}/tutorials/">Tutorials</a></li>
               	<li><a {% if location == 'contact' %}class="active" {% endif %}href="{{ site.baseurl}}/contact/">Contact</a></li>
               </ul> <!-- end navigation  -->
       		  </div> <!-- end inner  -->
