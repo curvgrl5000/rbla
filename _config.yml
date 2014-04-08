@@ -2,7 +2,7 @@ name: RailsBridge LA
 markdown: redcarpet
 pygments: true
 baseurl: /rbla
-category_dir: /rbla
+category_dir: /rbla/categories
 
 vimeo: vimeo.com
 youtube: youtube.com
