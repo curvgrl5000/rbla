@@ -13,7 +13,7 @@
             <div class="blog-post-content-inner">
               <ul class="posts">
                 <div>{{ post.date | date_to_html_string }}</div>
-                <h5><a href="{{ post.url }}"><span>{{ post.title }}</span></a></h5>
+                <h5><a href="{{site.baseurl}}/{{ post.url }}"><span>{{ post.title }}</span></a></h5>
                 <div class="categories">Filed under {{ post.categories | category_links }}</div>
               </ul>
             </div><!-- end blog-post-content-inner -->
