@@ -3,8 +3,6 @@
 
 	Theme Name: Encore - html - v.1
 	Type: Layout css
-	Author: unlimitDesign
-	Author URI: http://udthemes.com
 
 /*------------------------------------------------------
 
@@ -1471,6 +1469,11 @@
 	  margin-bottom:30px; 
 	  line-height: 20px;
 	}
+	p.tuts {
+	  margin-bottom: 15px; 
+	  line-height: 18px;
+	}
+	
 	p.info-focus {
 	  font:17px/22px "ff-basic-gothic-web-pro", sans-serif;
 	  margin-bottom:30px;
@@ -1812,6 +1815,49 @@
  	.pd-95-top { padding-top: 95px}
  	.pd-100-top{ padding-top: 100px}
  	
+ 	 .cheat-sheets .red-bkgrnd {
+      background-color: #A80000;
+      -webkit-border-radius: 15px;
+      -moz-border-radius: 15px;
+      border-radius: 15px;
+      padding: 10px 20px 30px 20px;
+      margin: 0px;    
+  }
+  
+  .cheat-sheets span.strong.em {
+    font-weight: 600;
+    font-style: italic;
+    font-style: italic;
+    padding-right: 3px;
+    color: #D10000;
+  }
+  
+  
+  .git-map {
+    background-color: #CDCFD0;
+    height: 410px;
+    margin-bottom: 20px;
+  }
+  .git-four {
+    background: #CDCFD0 url("/images/command_line_basics.png") no-repeat 0px 0px;
+    background-size: 100%;
+    background-color: #CDCFD0;
+  }
+  
+ 	.page.odd .cheat-sheets .sml-title {
+ 	  color: #FFF;
+ 	  font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 3px;
+ 	}
+  .page.odd .cheat-sheets h2 {
+    font-family: "ff-cocon-web-pro";
+    font-style: italic;
+    font-size: 180%;
+    line-height: 23px;
+    color: #302828;
+    margin-bottom: 20px;
+  }
  	
  	
  

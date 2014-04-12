@@ -6,67 +6,37 @@ permalink: /tutorials/
 <div id="tutorial" class="page odd">
   <!--start content -->
   <div class="content clearfix">      
-
-    <div class="cheat-sheets span12">   
-      <h2><span>Tutorials</span></h2>
+    <div class="cheat-sheets">   
+      <h1><span>Tutorials</span></h1>
+        
+  		<div class="column_one_half tutorials">          
+  		  <h6><span>Learn to love the Terminal</span></h6>
+        <div class="git-map git-four"></div>
+      </div> <!-- //end span6  --> 
       
-      <div class="column_two_thirds last red-bkgrnd" id="opacity-90">
-        <h4><span>Learn to love the Terminal</span></h4>
-  			
-  			<dl class="accordion">
-  				<dt><a href="#"><span>+</span> Top Title</a></dt>
-  				<dd style="">
-  					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,</p>
-  				</dd>
-				
-  				<dt><a href="#"><span>+</span> Second Title Here</a></dt>
-  				<dd style="">
-            <div class="video"><iframe width="100%" height="450px" src="http://player.vimeo.com/video/45519219?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=0&amp;loop=0" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
-  					<div style="clear:both;"></div>
-  				</dd>
-				
-  				<dt><a href="#"><span>+</span> Third Title Here</a></dt>
-  				<dd style="">
-  					<div class="column_one_half">
-  						<h5><span>ContentTitle</span></h5>
-  						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
-  					</div>
-  					<div class="column_one_half last">
-  						<h5><span>AnotherTitle</span></h5>
-  						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
-  					</div>
-  					<div style="clear:both;"></div>
-  				</dd>
-  			</dl>
-  			<div class="column_one_third">
-          <div class="git-map git-four"></div>
-        </div> <!-- //end span6  -->
-        
-  			
-  			<div class="clearfix"></div>
-        
-        <h5><span>CHEATSHEET:</span></h5>
-        <h2><span>COMMAND LINE BASICS</span></h2>
+      <div class="column_one_half last red-bkgrnd" id="opacity-90">
+        <h5 class="sml-title">CHEATSHEET:</h5>
+        <h2>COMMAND LINE BASICS</h2>
   			<dl class="accordion">
   				<dt><a href="#"><span>+</span> What is the Command Line?</a></dt>
   				<dd style="">
-            <p class = italics>
+            <p class="tuts">
               <span class="strong em">Many of us are used to using GUIS</span> (Graphical User Interfaces), but learning how to use the 
               CLI ( Command Line Interface ), is essential for programming.  Common names include the Shell, CLI,
                Terminal and Console. But exactly what is the Command Line? At it’s core, it’s simply the place 
                where you type commands to the computer. 
               <a href="http://en.wikipedia.org/wiki/Command-line_interface">Wikipedia</a> defines the Terminal this way:
             </p>
-            <p>
+            <p class="tuts">
               “A command-line interface (CLI) is a means of interaction with a computer program where the user 
               (or client) issues commands to the program in the form of successive lines of text (command lines). 
               A command-line interface is one type of text-based user interface.”
             </p>  
-            <p>
+            <p class="tuts">
               <span class="strong em">On a Mac,</span> launch the Terminal from the utilities folder inside of your main Applications folder.
               Apple Mac OS X[4] and many Linux distributions have the Bash implementation of the Unix shell.
             </p>
-            <p>
+            <p class="tuts">
               <span class="strong em">On MS Windows</span> users use the Command Prompt or the PowerShell. Android uses a Unix shell derived 
               from Ash with commands from the separate toolbox.
             </p>
@@ -76,89 +46,102 @@ permalink: /tutorials/
 				                   
   				<dt><a href="#"><span>+</span> The syntax of the Command Line</a></dt>
   				<dd style="">
-            <p>
+            <p class="tuts">
               <span class="strong em">Most commands have three parts</span> and start with the $ symbol.<br>
               The Utility or Command Name / The Flags or Options / The Argument(s) <br>
             </p>
             <div class="coding">
               <h6 class="steps">$ ls -1 ~/Desktop</h6>
             </div>
-            <p>Okay, let's break each part down:</p>
-            <p><span class="strong em">$</span> is the common symbol for SELECT, which indicates that you’re ready to type 
+            <p class="tuts">Okay, let's break each part down:</p>
+            <p class="tuts">
+              <span class="strong em">$</span> is the common symbol for SELECT, which indicates that you’re ready to type 
               commands into the command line. You don’t have to type this, it’s inherited with the prompt.
             </p>
-            <p><span class="strong em">ls</span> is THE UTILITY. Generally known as “commands” as they 
+            <p class="tuts">
+              <span class="strong em">ls</span> is THE UTILITY. Generally known as “commands” as they 
               are indicating what you want the computer to do. In this case “ls” is the command to list the contents 
               of directories.
             </p>
-            <p><span class="strong em">-1</span> is the FLAG or OPTION. This changes or alters how a utility may 
+            <p class="tuts">
+              <span class="strong em">-1</span> is the FLAG or OPTION. This changes or alters how a utility may 
               operate slightly. Usually the default works just fine, but flags allow you to modify them to your liking. 
               They start with one or two dashes. In this case, the option “-1” means one file per line.
             </p>
-            <p><span class="strong em">~/Desktop</span> is the ARGUMENT to the utility. Arguments are used to define 
+            <p class="tuts">
+              <span class="strong em">~/Desktop</span> is the ARGUMENT to the utility. Arguments are used to define 
               exactly what the utility might need to know for certain actions, and there is no 
               clear default setting. In this case, the argument tells the utility which directory to list.
             </p>
-            <p>
+            <p class="tuts">
               To get a list of all commands, type this:<br>
             </p>
             <div class="coding">
               <h6 class="steps">$ man command</h6>
             </div>
-            <p>FYI: Man means manual.</p>  
+            <p class="tuts">FYI: Man means manual.</p>  
   				</dd>
   				
-  				<dt><a href="#"><span>+</span>Most Common Commands</a></dt>
+  				<dt><a href="#"><span>+</span> Most Common Commands</a></dt>
   				<dd style="">
-            <p>
+            <p class="tuts">
               <span class="strong em">Remember guys,</span> you're ready to go when you see the '$' in the terminal. You're now
               ready to code. <br>
             </p>
-            <p><span class="strong em">ls</span> Lists what is in the current directory.</p>
-            <p><span class="strong em">pwd</span> Print Working Directory, gives you the full path of where you are.</p>
-            <p><span class="strong em">cd</span> Change Directory, allows you to go to another directory, remember you have to
-              define this utility with a path, for instance cd ~/my_machine/new_path.</p>
-            <p><span class="strong em">cd ..</span> Change Directory, but you want to go up a directory vs. down a directory.</p>
-            <p><span class="strong em">irb</span> Interactive Ruby, which you have to have installed. Now watch for the prompt! 
+            <p class="tuts">
+              <span class="strong em">ls</span> Lists what is in the current directory.
+            </p>
+            <p class="tuts">
+              <span class="strong em">pwd</span> Print Working Directory, gives you the full path of where you are.
+            </p>
+            <p class="tuts">
+              <span class="strong em">cd</span> Change Directory, allows you to go to another directory, remember you have to
+              define this utility with a path, for instance cd ~/my_machine/new_path.
+            </p>
+            <p class="tuts">
+              <span class="strong em">cd ..</span> Change Directory, but you want to go up a directory vs. down a directory.
+            </p>
+            <p class="tuts">
+              <span class="strong em">irb</span> Interactive Ruby, which you have to have installed. Now watch for the prompt! 
               When launching the irb, the prompt will change from '$' to '>'. That means you have to exit irb with control D, to 
-              get back to the former context.</p>
-            <p><span class="strong em">mkdir</span> Make Directory, allows you to make a folder.</p>
-            <p><span class="strong em">rails new app_name</span> Rails New Application Name, after you've installed Rails, 
+              get back to the former context.
+            </p>
+            <p class="tuts">
+              <span class="strong em">mkdir</span> Make Directory, allows you to make a folder.
+            </p>
+            <p class="tuts">
+              <span class="strong em">rails new app_name</span> Rails New Application Name, after you've installed Rails, 
               this command will create the entire directory structure of a rails application. Rails is the Gem, App_Name is just 
               a placeholder for the name you'll be giving the app.
             </p>
-            <p><span class="strong em">rails server or rails s</span> Rails Server which launches a local server, you then open
-              a browser window and type: localhost:3000 and bam you've got a local version of your work.</p>
-            <p><span class="strong em">exit</span> Exits a terminal window.</p>
-            <p><span class="strong em">man -k "topic"</span>Manual Lookup Topic, looks up and displays what you're 
+            <p class="tuts">
+              <span class="strong em">rails server or rails s</span> Rails Server which launches a local server, you then open
+              a browser window and type: localhost:3000 and bam you've got a local version of your work.
+            </p>
+            <p class="tuts">
+              <span class="strong em">exit</span> Exits a terminal window.
+            </p>
+            <p class="tuts">
+              <span class="strong em">man -k "topic"</span>Manual Lookup Topic, looks up and displays what you're 
               looking for in quotes.
             </p>
-					</div>
-          <!-- <div class="column_one_half last">
-            <h5><span>AnotherTitle</span></h5>
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
-          </div>
-          <div style="clear:both;"></div> -->
-				</dd>
-  			<dt><a href="#"><span>+</span>More Online Resources</a></dt>
-  			<dd style="">
-          <p>
-            <span class="strong em">If you ever get stuck,</span> go online to any one of these resources. Don't be afraid to ask for help!
-          </p>
-          <p>
-            <span class="strong em"><a href="http://stackoverflow.com/">Stack Overflow</a></span> is a great place to post a question.<br>
-            <span class="strong em"><a href="http://en.wikipedia.org/wiki/List_of_Unix_utilities#List/">Wiki List of Unix Commands</a></span> 
-            is a great place to read about the history and the use of the command line.<br>
-            <span class="strong em"><a href="http://ss64.com/osx/">Mac User List</a></span> of Unix Commands <br>
-            <span class="strong em"><a href="0http://ss64.com/">ss64.com</a></span> is another great for resource for everyone.<br>
-          </p>
-        </dd>
-  		</dl>
-  		<div class="clearfix"></div>
-      <!-- social networks -->
-      <div class="canvas">
-      </div>
-    </div> <!-- //span5 red-bkgrnd   -->
-  </div> <!-- // end cheat-sheets span11   -->
-</div>
+					</dd>
+          
+          <dt><a href="#"><span>+</span> More Online Resources</a></dt>
+  			  <dd style="">
+            <p class="tuts">
+              <span class="strong em">If you ever get stuck,</span> go online to any one of these resources. Don't be afraid to ask for help!
+            </p>
+            <p class="tuts">
+              <span class="strong em"><a href="http://stackoverflow.com/">Stack Overflow</a></span> is a great place to post a question.<br>
+              <span class="strong em"><a href="http://en.wikipedia.org/wiki/List_of_Unix_utilities#List/">Wiki List of Unix Commands</a></span> 
+              is a great place to read about the history and the use of the command line.<br>
+              <span class="strong em"><a href="http://ss64.com/osx/">Mac User List</a></span> of Unix Commands <br>
+              <span class="strong em"><a href="0http://ss64.com/">ss64.com</a></span> is another great for resource for everyone.<br>
+            </p>
+          </dd>
+        </dl>
+			</div>
+    </div>    
+  </div>
 </div>  

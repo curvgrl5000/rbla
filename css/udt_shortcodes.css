@@ -40,7 +40,8 @@
 	
 	.column_one_half, .column_one_third, .column_one_fourth, .column_two_thirds, .column_three_fourths{float:left;margin-right:4%;overflow:hidden; position:relative;margin-bottom:30px;}
 	.column_one_half p:last-child, .column_one_third p:last-child, .column_one_fourth p:last-child, .column_two_thirds p:last-child, .column_three_fourths p:last-child{margin-bottom:0;}
-
+	  
+	
 	
 		/* widths
 		-----------------------------*/	
@@ -51,6 +52,9 @@
 		.column_three_fourths{width:74%;}
 		.last{margin:0; clear:right;}
 		.margin-50-r { margin-right: 50px;}
+		
+		.tutorials { width:42%; } 
+  	
     		
 	
 	/*BLOCKQUOES*/	
@@ -971,7 +975,7 @@ text-decoration:none;text-transform:uppercase;padding:0 24px;border:0;cursor:poi
 			color:#fff;
 		}
 		.accordion dd {
-			padding:26px 20px 10px;
+			padding:15px 15px 10px;
 			border:1px solid #e2e2e2;
 			border-top:0;
 			margin:0 0 3px 0;

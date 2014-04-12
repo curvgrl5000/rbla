@@ -109,7 +109,12 @@
 	.homepage .content{max-width:674px;padding-bottom:100px;}
 	.page .content{max-width:674px;padding:140px 0 100px 0;}
 	.page .highlight{background-attachment:scroll; background-position:center center;}
-		
+	.git-four {
+    background: #CDCFD0 url("/images/command_line_basics.png") no-repeat 0px 0px;
+    background-size: 100%;
+    background-color: #CDCFD0;
+    height: 340px;
+  }	
 	/*----------------------------
 	ii.-- Header
 	-----------------------------*/
@@ -208,7 +213,12 @@
 	.homepage .content{max-width:420px;padding-bottom:100px;}
 	.page .content{max-width:420px;padding:140px 0 100px 0;}
 	.page .highlight{background-attachment:scroll; background-position:center center;}
-		
+	.git-four {
+    background: #CDCFD0 url("/images/command_line_basics.png") no-repeat 0px 0px;
+    background-size: 100%;
+    background-color: #CDCFD0;
+    height: 460px;
+  }	
 	/*----------------------------
 	ii.-- Header
 	-----------------------------*/
@@ -354,6 +364,30 @@
 	.homepage .content{max-width:290px;padding-bottom:100px;}
 	.page .content{max-width:290px;padding:140px 0 100px 0;}
 	.page .highlight{background-attachment:scroll; background-position:center center;}
+  .git-four {
+    background: #CDCFD0 url("/images/command_line_basics.png") no-repeat 0px 0px;
+    background-size: 100%;
+    background-color: #CDCFD0;
+    height: 340px;
+  }
+   .cheat-sheets .red-bkgrnd {
+      background-color: #A80000;
+      -webkit-border-radius: 15px;
+      -moz-border-radius: 15px;
+      border-radius: 15px;
+      padding: 10px 20px 30px 20px;
+      margin: 0px;
+      width: 87%;    
+  }
+  .accordion dt {
+		padding:8px 16px;
+		border:1px solid #ddd;
+		background:#ddd;
+		border-top-left-radius:3px;
+		border-top-right-radius:3px;
+	}
+	
+ 	
 
 	/*----------------------------
 	ii.-- Header
