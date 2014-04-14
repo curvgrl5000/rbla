@@ -62,7 +62,7 @@
 .btn-group {
   font-size: 0; // Hack to remove whitespace that results from using inline-block
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   display: inline-block;
   @include ie7-inline-block();
 }

@@ -194,6 +194,13 @@
 	.highlight h6{font-size:25px;line-height:25px; text-align:center;}
 
 
+  /*tutorials
+  ----------------------------*/
+
+  .git-map {
+    height: 329px;
+  }
+
 }
 
 
@@ -315,7 +322,7 @@
 	iv. TYPOGRAPHY & LINKS
 	--------------------------------------------------------*/
 
-	h1{font-size:32px;line-height:32px;}
+	h1{font-size:31px;line-height:31px; text-align: center;}
 	h2{font-size:30px;line-height:30px;}
 	h3{font-size:28px;line-height:28px;}
 	h4{font-size:26px;line-height:26px;}
@@ -347,11 +354,21 @@
 	blockquote { width:370px !important; margin-right:0 !important; }
 	.accordion blockquote, .tabs blockquote { width:340px !important; margin-right:0 !important; }
 
+  /*tutorials
+  ----------------------------*/
+
+  .git-map {
+    height: 440px;
+  }
+
 }
+
+
 
 /*Mobile Layout: Portrait Container width:320px
 
 -----------------------------------------------*/
+
 
 @media only screen and (max-width: 479px){
 
@@ -499,14 +516,19 @@
 	.thumb.xsmall{max-width:100% !important;float:none !important; margin-left:0px;margin-right:0px;}
 	.thumb.xsmall img{width:auto; float:none;}
 	
+	/*tutorials
+	----------------------------*/
 	
+	.git-map {
+    height: 310px;
+  }
 	
 	/*--------------------------------------------------------
 	iv. TYPOGRAPHY & LINKS
 	--------------------------------------------------------*/
 
 	
-	h1{font-size:32px;line-height:32px;}
+	h1{font-size:32px;line-height:32px; text-align: center;}
 	h2{font-size:30px;line-height:30px;}
 	h3{font-size:28px;line-height:28px;}
 	h4{font-size:26px;line-height:26px;}
@@ -539,3 +561,4 @@
 	.accordion blockquote, .tabs blockquote { width:209px !important; margin-right:0 !important; }
 
 }
+

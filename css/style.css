@@ -1844,21 +1844,29 @@
     font-style: italic;
     background-color: #000;
     padding-left: 10px;
-    font-size: 115%;
+    font-size: 100%;
     font-weight: 500;
   }
-  
   .git-map {
     background-color: #CDCFD0;
     height: 410px;
     margin-bottom: 20px;
+  }
+  .git-one {
+    background: #CDCFD0 url("/images/what_is_git.png") no-repeat 0 -10px;
+    background-size: 99%;
+    background-position-y: 20px;
+  }
+  .git-two {
+    background: #CDCFD0 url("/images/git_started.png") 0px 0px no-repeat;
+    background-size: 100%;
+    background-position: center;
   }
   .git-four {
     background: #CDCFD0 url("/images/command_line_basics.png") no-repeat 0px 0px;
     background-size: 100%;
     background-color: #CDCFD0;
   }
-  
  	.page.odd .cheat-sheets .sml-title {
  	  color: #FFF;
  	  font-size: 14px;
@@ -1873,7 +1881,32 @@
     color: #302828;
     margin-bottom: 20px;
   }
- 	
+ 	.canvas {
+    position: relative;
+    margin: auto;
+    top: 15px;
+    height: 65px;
+  }
+  #twitter {
+    background-image: url("/images/jewels.png");
+    background-size: 67px;
+    float: left;
+    width: 50px;
+    height: 45px;
+    margin-right: -10px;
+    padding: 12px 3px 2px 18px;
+    position: relative;
+  }
+  #github {
+    background-image: url("/images/jewels.png");
+    background-size: 67px;
+    float: left;
+    width: 50px;
+    height: 45px;
+    margin-right: -20px;
+    padding: 13px 3px 2px 19px;
+    position: relative;
+  }
  	
  
 				
