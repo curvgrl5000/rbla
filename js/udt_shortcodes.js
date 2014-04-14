@@ -4,8 +4,8 @@ jQuery(document).ready(function($) {
 	$('.accordion > dt').css({'border-bottom-left-radius':'3px','border-bottom-right-radius':'3px','margin-bottom':'3px'});
 	
 	$('.accordion > dt > a').click(function() {
-		$(this).parent().parent().children('dd').slideUp();
-		$(this).parent().parent().children('dt').removeClass('active');
+	  $(this).parent().parent().children('dd').slideUp();
+	  $(this).parent().parent().children('dt').removeClass('active');
 		$(this).parent().parent().children('dt').css({'border-bottom-left-radius':'3px','border-bottom-right-radius':'3px','margin-bottom':'3px'});
 		$(this).parent().parent().children('dt').find('a span').html('+');
 		$(this).parent().animate({'border-bottom-left-radius':'0','border-bottom-right-radius':'0','margin-bottom':'0'});

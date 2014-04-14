@@ -1472,6 +1472,7 @@
 	p.tuts {
 	  margin-bottom: 15px; 
 	  line-height: 18px;
+	  font-size: 15px;
 	}
 	
 	p.info-focus {
@@ -1821,17 +1822,31 @@
       -moz-border-radius: 15px;
       border-radius: 15px;
       padding: 10px 20px 30px 20px;
-      margin: 0px;    
+      margin: 0px;
+      overflow: visible;    
   }
   
   .cheat-sheets span.strong.em {
     font-weight: 600;
     font-style: italic;
-    font-style: italic;
     padding-right: 3px;
     color: #D10000;
   }
+  .cheat-sheets span.strong {
+    font-weight: 600;
+    color: #D10000;
+  }
   
+  .coding h6.steps {
+    line-height: 26px;
+    margin-bottom: 15px;
+    color: #0F0;
+    font-style: italic;
+    background-color: #000;
+    padding-left: 10px;
+    font-size: 115%;
+    font-weight: 500;
+  }
   
   .git-map {
     background-color: #CDCFD0;
