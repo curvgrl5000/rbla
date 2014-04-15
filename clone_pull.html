@@ -1,0 +1,110 @@
+---
+layout: tutorials
+title: RailsBridge LA
+permalink: /tutorials/clone_pull/
+---
+<div id="tutorial" class="page odd">
+  <!--start content -->
+  <div class="content clearfix">      
+    <div class="cheat-sheets">   
+      <h1><span>Cloning into a new directory</span></h1>
+        
+  		<div class="column_one_half tutorials">          
+        <div class="git-map git-one"></div>
+      </div> <!-- //end span6  --> 
+      
+      <div class="column_one_half last red-bkgrnd" id="opacity-90">
+        <h5 class="sml-title">CHEATSHEET:</h5>
+        <h2>HOW TO CLONE, FETCH, and PULL</h2>
+  			
+  			<dl class="accordion">
+  				<dt><a href="#"><span>+</span> Git Clone</a></dt>
+  				<dd style="">
+            <p class="tuts">
+              In the command line 'git clone'</span> will copy a repo into a newly created directory,
+              and creates remote-tracking branches for each branch in the cloned repository.
+            </p>
+            <p class="tuts">
+              This command additionally creates a remote called 'origin' for the repo cloned from, 
+              and sets up a local branch based on the remote's active branch (usually master). It also
+              creates remote-tracking branches for all the branches in the repository.
+            </p>
+            
+            <div class="coding">
+              <h6 class="steps">
+                $ cd /newfolder<br>
+                $ git clone git@github.com:username/Project-Name.git<br>
+                $ git branch<br>
+                  * master<br>
+                remoteBranch<br>
+              </h6>
+            </div>
+          </dd>
+				
+  				<dt><a href="#"><span>+</span> Git Fetch</a></dt>
+  				<dd style="">
+            <p class="tuts">
+              <span class="strong em">A current local repo</span> with a remote set up for the current project, 
+              you can git fetch<REMOTENAME>. Git fetch is similar to pull, but it will not do any merging.
+            </p>
+            <p class="tuts">
+              Fetch does not make any changes to local branches, so you will need
+              to merge a remote branch with a paired local branch to incorporate new fetch changes.    
+            </p>
+            <div class="coding">
+              <h6 class="steps">
+                $ git fetch<br>
+              </h6>
+            </div>
+  				</dd>
+  				
+  				<dt><a href="#"><span>+</span> Git Pull</a></dt>
+  				<dd style="">
+            <p class="tuts">
+              <span class="strong em">Git Pull</span> will pull down from a remote and instantly merge into the branch you're
+              in when you make the request. Pull is a high-level request, that runs 'fetch' and
+              'merge' by default.
+            </p>
+            <p class="tuts">
+              Similar to git fetch, you can use git <REMOTENAME> <BRANCHNAME> to fetch a specific
+              branch and merge it into your current local branch. For one-time pull from other 
+              user's repos, you can use a URL in place of a remote name.
+          </p>
+          <div class="coding">
+            <h6 class="steps">
+              $ git pull origin master<br>
+            </h6>
+          </div>
+					</dd>
+        </dl> <!--end of dl  -->
+			
+		    <div class="btn-group dropup">
+        <button class="btn">Next Cheatsheet</button>
+        <button class="btn dropdown-toggle" data-toggle="dropdown">
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href="{{ site.baseurl}}/tutorials">Command Line Basics</a></li>
+          <li><a href="{{ site.baseurl}}/tutorials/git">Using Git with Repos</a></li>
+          <li><a href="{{ site.baseurl}}/tutorials/install_git">How to Install Git</a></li>
+          <li><a href="{{ site.baseurl}}/tutorials/git_repo">How to Create a Git Repository</a></li>  
+          <li><a href="{{ site.baseurl}}/tutorials/clone_pull">How to Clone Fetch and Pull</a></li>
+          <li><a href="{{ site.baseurl}}/tutorials/merge_branches">Create and Merge Git Branches</a></li>   
+          <li><a href="{{ site.baseurl}}/tutorials/rollback">How to Rollback a Git Repository</a></li>
+          <li><a href="{{ site.baseurl}}/tutorials/deploy_to_heroku">Deploying to Heroku</a></li>
+          <li><a href="{{ site.baseurl}}/tutorials/rvm">RVM: Ruby Version Control</a></li>
+          <li><a href="{{ site.baseurl}}/tutorials/basic_ruby">Basic Ruby</a></li>
+          <li><a href="{{ site.baseurl}}/tutorials/scaffolding">Scaffolding Basics</a></li>
+          <li><a href="{{ site.baseurl}}/tutorials/basic_testing">Overview of Basic Testing</a></li>
+        </ul>
+      </div> <!-- //btn-group dropup  -->
+
+        <!-- social networks -->
+        <div class="canvas">
+          <a href="https://twitter.com/railsbridgela" id="tweet" target="_blank"></a>
+          <a href="https://github.com/railsbridge" id="github" target="_blank"></a>
+        </div>
+			</div> <!-- end of red background -->
+    </div>    
+  </div>
+</div>

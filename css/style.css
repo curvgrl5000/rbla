@@ -1862,6 +1862,52 @@
     background-size: 100%;
     background-position: center;
   }
+  .git-three {                                                                                  
+    background: #CDCFD0 url("/images/git_a_repository.png") no-repeat;
+    background-size: 100%;
+  }
+  .git-three-repo {
+    background: #fff url("/images/create_a_repo_logo.png") no-repeat;
+    height: 85px;
+    background-size: 55%;
+    background-position: center;
+  }
+  .git-three-naming {
+    background: #fff url("/images/create_a_repo_naming.png") no-repeat;
+    height: 65px;
+    background-size: 100%;
+    background-position-x: 0px;
+  }
+  .git-three-description {
+    background: white url("/images/create_a_repo_description.png") no-repeat;
+    height: 85px;
+    background-size: 170%;
+    background-position-x: -8px;
+  }
+  .git-three-public {
+    background: white url("/images/create_a_repo_public.png") no-repeat;
+    height: 125px;
+    background-size: 105%;
+    background-position-x: -8px;
+  }
+  .git-three-initiate {
+    background: white url("/images/create_a_repo_initiate.png") no-repeat;
+    height: 100px;
+    background-size: 100%;
+    background-position-x: -8px;
+  }
+  .git-three-readme {
+    background: white url("/images/create_repo_readme2.png") no-repeat;
+    height: 285px;
+    background-size: 95%;
+    background-position-x: 0px;
+  }
+  .git-three-create {
+    background: white url("/images/create_a_repo_button.png") no-repeat;
+    height: 55px;
+    background-size: 35%;
+    background-position-x: -8px;
+  }
   .git-four {
     background: #CDCFD0 url("/images/command_line_basics.png") no-repeat 0px 0px;
     background-size: 100%;
@@ -1887,7 +1933,10 @@
     top: 15px;
     height: 65px;
   }
-  #twitter {
+  .gem {
+    max-width: 170%;
+  }
+  #tweet {
     background-image: url("/images/jewels.png");
     background-size: 67px;
     float: left;

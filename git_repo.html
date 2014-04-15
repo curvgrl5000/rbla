@@ -1,0 +1,258 @@
+---
+layout: tutorials
+title: RailsBridge LA
+permalink: /tutorials/git_repo/
+---
+<div id="tutorial" class="page odd">
+  <!--start content -->
+  <div class="content clearfix">      
+    <div class="cheat-sheets">   
+      <h1><span>Creating a Repo is Easy</span></h1>
+        
+  		<div class="column_one_half tutorials">          
+        <div class="git-map git-three"></div>
+      </div> <!-- //end span6  --> 
+      
+      <div class="column_one_half last red-bkgrnd" id="opacity-90">
+        <h5 class="sml-title">CHEATSHEET:</h5>
+        <h2>CREATE A GIT REPOSITORY</h2>
+  			
+  			<dl class="accordion">
+  				<dt><a href="#"><span>+</span> Initializing a Repo from an Existing Directory</a></dt>
+  				<dd style="">
+            <p class="tuts">
+              If you're starting from an existing project in Git, you need to go to that project's directory in the terminal.
+              Go ahead and navigate into that directory with 'cd /name of directory'. Then type the following:
+            </p>
+            <div class="coding">
+              <h6 class="steps">
+                $ git init
+              </h6>
+            </div>
+            <p class="tuts">
+              This creates a subdirectory named '.git' that contains all the needed files for a Git repo. So far you've installed Git, and
+              now you have to begin tracking your project. Go ahead and type the following: 
+            </p>  
+            <div class="coding">
+              <h6 class="steps">
+                $ git add .<br>
+                $ git commit -m 'your first commit is typed here, this is sample copy'
+              </h6>
+            </div>
+            <p class="tuts">
+              Now it's time to track changes to your project. As you edit your files,
+              Git sees them as modified since your last commit. Go ahead and make a change to a file, or add a file in
+              the project, and type this:
+            </p>
+            <div class="coding">
+              <h6 class="steps">
+                $ git status<br>
+              </h6>
+            </div>
+            <p class="tuts">
+              At this point, you should see that Git has noticed a change in your directory. Untracked changes will remain that way
+              until you commit them. When you 'git commit' them, you are staging changes, then tracking them. These two states are the key
+              concepts that manage your style of development. A common life cycle that repeats itself often.
+            </p>
+            <p class="tuts">
+              The best practice is to 'git commit' all changes with a clear description, annotating them for future observation. So when 
+              you or others revisit a change you've committed, you understand exactly what you've done.
+            </p>
+            <p class="tuts"> 
+              If you haven't made any changes, you'll see the following:
+            </p>              
+            <div class="coding">
+              <h6 class="steps">
+                $ git status<br>
+                nothing to commit (working directory clean)
+              </h6>
+            </div>
+            <p class="tuts"> 
+              This means nothing has changed and there are no new files in your working directory. Now go ahead and add a change or 
+              file to your directory and type 'git status'.
+            </p>              
+            <div class="coding">
+              <h6 class="steps">
+                $ git status<br>
+                # On branch master
+                # Changes not staged for commit:
+                (use "git add <file>..." to updated what will be committed)
+                (use "git checkout -- <file>..." to discard changes in working directory)
+                modified:  /name_of_file_changed.erb
+                no changes added to commit (use "git add" and/or "git commit -a")
+              </h6>
+            </div>
+            <p class="tuts"> 
+              You should see the name of the file you've added. Go ahead and stage the file: git commit -m or git add  . then
+              add your description of the change in quotes: "I added a file to test git."
+              Congratulations, you're now tracking files. For more info: go to 
+              <span class="strong em"><a href="http://git-scm.com/">Pro Git</a></span>a great resource for all about Git.
+            </p>              
+          </dd>
+				
+  				<dt><a href="#"><span>+</span> 1. Creating a 'Repo' on Github</a></dt>
+  				<dd style="">
+            <p class="tuts">
+              When you create a project on Github, you will need to clone this repo to your local repository.
+              See the next Cheatsheet: <span class="strong em"><a href="/clone_a_repository_path">How to Clone a Git Repository</a></span>
+              for info on how do this, after you've gone through the following steps.
+            </p>
+            <p class="tuts">
+              <span class="strong em"><a href="https://github.com">Github</a></span> is a place to put your project, you'll need a Github account
+              to do this. Once you have an account set up, you'll then create a repository for each project.
+            </p>
+            <p class="tuts">
+              Anyhow, first create a new repository in your Github account. It's the first graphic just right of your name
+              in the top upper-right of your browser window. 
+            </p>
+            <div class="git-three-repo"></div>
+  				</dd>
+  				
+  				<dt><a href="#"><span>+</span>2. Next, Name your 'Repo'</a></dt>
+  				<dd style="">
+            <p class="tuts">
+              Name your repository with a simple, easy to understand name. It will save you hours of guessing.
+            </p>
+            <div class="git-three-naming"></div>
+					</dd>
+          
+          <dt><a href="#"><span>+</span>3. Okay, Now Describe your Project</a></dt>
+  			  <dd style="">
+            <p class="tuts">
+              Describing your project is optional but when working with others it's quite useful.
+            </p>
+            <div class="git-three-description"></div>
+          </dd>
+          
+          <dt><a href="#"><span>+</span> 4. Make your Repo Public or Private</a></dt>
+  			  <dd style="">
+            <p class="tuts">
+              Simply check a radio button to activate the settings. Making projects Public means everyone 
+              can see them, while making projects Private will require an invitation to others to see and join your 
+              project - useful when you're working with clients.
+            </p> 
+            <div class="git-three-public"></div>            
+          </dd>
+        
+          <dt><a href="#"><span>+</span> 5. Initializing the Repo with a README file</a></dt>
+  			  <dd style="">
+            <p class="tuts">
+              If you check the button "Initialize this repository with a README", this will allow you to 
+              clone the repo from the command line, or from the repository's front page immediately.
+            </p> 
+            <div class="git-three-initiate"></div><br>
+            <p class="tuts">
+              From the repo's front page, choose the "Clone in Mac" button and it will launch the Github App, where you'll be able to manage 
+              all repos through the Gitbhub GUI. If you don't have the Github app, you'll be prompted to download it.            </p>            
+          </dd>
+          
+          <dt><a href="#"><span>+</span> 6. Final Step: Create your Repository</a></dt>
+  			  <dd style="">
+            <p class="tuts">
+              Then click the button and you're all done.
+            </p> 
+            <div class="git-three-create"></div>
+          </dd>
+          
+          <dt><a href="#"><span>+</span> Another Way to Create your Repo - Step One</a></dt>
+  			  <dd style="">
+            <p class="tuts">
+              You can start at the command line and create your local repository first.
+            </p>
+            <p class="tuts">
+              Create your directory, install git and initialize your repo with a README file, where you describe your project, 
+              add documentation and provide contact information. All extremely useful from the get go.
+            </p>
+            <div class="git-three-readme"></div>
+            <p class="tuts"> 
+              Okay so here's what's happening:<br> 
+              mkdir (makes the directory) <br>
+              '~' (the tilde is your home directory, where the project will be nested)<br> 
+              '/Project-Folder' (is simply the name of the Project's folder)<br>
+              'cd/Project-Folder (changes the directory, now you're inside that folder) <br>
+              'git init' (initializes a git repository)<br> 
+              'touch README' (is the utility that creates the README file.)
+            </p>
+            <p class="tuts"> 
+              Now open the new README file from a text editor, and add a greeting "Yay Railsbridge!"
+              Save it and close the file. You've added a file, time to commit that change!
+            </p>
+            <div class="coding">
+              <h6 class="steps">
+                $ git add README<br>
+                # Stages your README file, adding it to the list of files to be committed<br>
+                $ git commit -m 'first commit'<br>
+                # Commits your files, adding the message "first commit"
+              </h6>
+            </div>
+            <p class="tuts"> 
+              Now we have to push the commit, remember it's only local. Go to the next step.
+            </p>
+          </dd>
+          
+          <dt><a href="#"><span>+</span> Another Way to Create your Repo - Step Two</a></dt>
+  			  <dd style="">
+            <p class="tuts">
+              Everything you've done so far has been local, which means nothing is on Github yet. Have your username handy, which
+              is basicly the name of your account for this next step.
+            </p>
+            <p class="tuts">
+              To connect your local repo to your GitHub account, you'll need to set up a remote for your repo and then
+              push your commits to it:
+            </p>
+            <div class="coding">
+              <h6 class="steps">
+                $ git remote add origin: https://github.com/username/Name-of-App.git<br>
+                  # Creates a remote named "origin" pointing at your GitHub repository.<br>
+                $ git push origin master<br>
+                  # Sends your commits in the "master" branch to Github
+              </h6>
+            </div>
+            <p class="tuts"> 
+              Go back to your repository on Github and you'll see your README file has been added. From this point forward, 
+              to push commits to your Gibhub repo, follow this recipe (only when working solo):
+            </p>
+            <div class="coding">
+              <h6 class="steps">
+                $ git status <br>
+                  # Do this at the beginning of each session to make sure you've committed all changes <br>
+                $ git commit -m "the change description" <br>
+                  # If there is a change, then commit and stage it, if there's no change then keep working and when your ready
+                  git commit the new change <br>
+                $ git push origin master <br>
+                  # Finally push any new commits to the remote repo <br>
+              </h6>
+            </div>
+          </dd>
+        </dl> <!--end of dl  -->
+			
+		    <div class="btn-group dropup">
+        <button class="btn">Next Cheatsheet</button>
+        <button class="btn dropdown-toggle" data-toggle="dropdown">
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href="{{ site.baseurl}}/tutorials">Command Line Basics</a></li>
+          <li><a href="{{ site.baseurl}}/tutorials/git">Using Git with Repos</a></li>
+          <li><a href="{{ site.baseurl}}/tutorials/install_git">How to Install Git</a></li>
+          <li><a href="{{ site.baseurl}}/tutorials/git_repo">How to Create a Git Repository</a></li>  
+          <li><a href="{{ site.baseurl}}/tutorials/clone_pull">How to Clone Fetch and Pull</a></li>
+          <li><a href="{{ site.baseurl}}/tutorials/merge_branches">Create and Merge Git Branches</a></li>   
+          <li><a href="{{ site.baseurl}}/tutorials/rollback">How to Rollback a Git Repository</a></li>
+          <li><a href="{{ site.baseurl}}/tutorials/deploy_to_heroku">Deploying to Heroku</a></li>
+          <li><a href="{{ site.baseurl}}/tutorials/rvm">RVM: Ruby Version Control</a></li>
+          <li><a href="{{ site.baseurl}}/tutorials/basic_ruby">Basic Ruby</a></li>
+          <li><a href="{{ site.baseurl}}/tutorials/scaffolding">Scaffolding Basics</a></li>
+          <li><a href="{{ site.baseurl}}/tutorials/basic_testing">Overview of Basic Testing</a></li>
+        </ul>
+      </div> <!-- //btn-group dropup  -->
+
+        <!-- social networks -->
+        <div class="canvas">
+          <a href="https://twitter.com/railsbridgela" id="tweet" target="_blank"></a>
+          <a href="https://github.com/railsbridge" id="github" target="_blank"></a>
+        </div>
+			</div> <!-- end of red background -->
+    </div>    
+  </div>
+</div>
