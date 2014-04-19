@@ -340,7 +340,8 @@
 	.play {
 	  height:50px;
 	  background: url(../images/button-app-play.png) 0 0 no-repeat;
-	  line-height:14px;padding-left:65px; 
+	  line-height:14px;
+	  padding-left:65px; 
 	  float:left; 
 	  color:#666; 
 	  font-weight:bold; 
@@ -350,12 +351,12 @@
 	.sync { 
 	  height:60px;
 	  background: url(../images/cloud-icon.png) 0 11px no-repeat;
-	  line-height:14px;
+	  line-height:16px;
 	  padding-left:75px; 
 	  float:left; 
 	  color:#666; 
 	  font-weight: bold; 
-	  font-size:16px;
+	  font-size:13px;
 	  padding-top:12px;
 	}
 	
@@ -1714,12 +1715,13 @@
  .company{
    font-style: italic;
    text-align: center;
+   display: none;
  }
  
  .circular {
   margin: auto;
- 	width: 100px;
- 	height: 100px;
+ 	width: 99px;
+ 	height: 99px;
  	border-radius: 150px;
  	-webkit-border-radius: 150px;
  	-moz-border-radius: 150px;
@@ -1815,6 +1817,28 @@
  	.pd-90-top { padding-top: 90px}
  	.pd-95-top { padding-top: 95px}
  	.pd-100-top{ padding-top: 100px}
+ 	
+ 	.mg-bottom-0  { margin-bottom: 0px;}
+ 	.mg-bottom-5  { margin-bottom: 5px;}
+ 	.mg-bottom-10 { margin-bottom: 10px;}
+ 	.mg-bottom-15 { margin-bottom: 15px;}
+ 	.mg-bottom-20 { margin-bottom: 20px;}
+ 	.mg-bottom-25 { margin-bottom: 25px;}
+ 	.mg-bottom-30 { margin-bottom: 30px;}
+ 	.mg-bottom-35 { margin-bottom: 35px;}
+ 	.mg-bottom-40 { margin-bottom: 40px;}
+ 	.mg-bottom-45 { margin-bottom: 45px;}
+ 	.mg-bottom-50 { margin-bottom: 50px;}
+ 	.mg-bottom-55 { margin-bottom: 55px;}
+ 	.mg-bottom-60 { margin-bottom: 60px;}
+ 	.mg-bottom-65 { margin-bottom: 65px;} 
+ 	.mg-bottom-70 { margin-bottom: 70px;}
+ 	.mg-bottom-75 { margin-bottom: 75px;}
+ 	.mg-bottom-80 { margin-bottom: 80px;}
+ 	.mg-bottom-85 { margin-bottom: 85px;}
+ 	.mg-bottom-90 { margin-bottom: 90px;}
+ 	.mg-bottom-95 { margin-bottom: 95px;}
+ 	.mg-bottom-100{ margin-bottom: 100px;}
  	
  	 .cheat-sheets .red-bkgrnd {
       background-color: #A80000;
