@@ -225,18 +225,18 @@ jQuery(document).ready(function(){
 								   
         'transitionIn'        : lightboxTransition,
         'transitionOut'       : lightboxTransition,
-		'padding'			  : '0',	
-		'titlePosition'		  : 'outside',
-		'width'			      : videoWidth,
-		'height'			  : videoHeight,
-		'overlayOpacity'      : overlayOpacity,
-		'overlayColor'        : overlayColor,
+		    'padding'			  : '0',	
+		    'titlePosition'		  : 'outside',
+		    'width'			      : videoWidth,
+		    'height'			  : videoHeight,
+		    'overlayOpacity'      : overlayOpacity,
+		    'overlayColor'        : overlayColor,
         'autoscale'           : false,
         'type'                : 'iframe',
-		'swf'           	  : {
-		'wmode'               : 'transparent',
-		'allowfullscreen'  	: 'true'},
-		'titleFormat'		: function(title, currentArray, currentIndex, currentOpts) {  
+		    'swf'           	  : {
+		    'wmode'               : 'transparent',
+		    'allowfullscreen'  	: 'true'},
+		    'titleFormat'		: function(title, currentArray, currentIndex, currentOpts) {  
 						
 		
 			var obj = currentArray[ currentIndex ] //get current image
