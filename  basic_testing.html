@@ -1,0 +1,151 @@
+---
+layout: tutorials
+title: RailsBridge LA
+permalink: /tutorials/basic_testing/
+---
+<div id="tutorial" class="page odd">                                                        a
+  <!--start content -->
+  <div class="content clearfix">      
+    <div class="cheat-sheets">   
+      <h1><span>Local & Remote Environments</span></h1>
+        
+  		<div class="column_one_half tutorials">          
+        <div class="git-map git-one"></div>
+      </div> <!-- //end span6  --> 
+      
+      <div class="column_one_half last red-bkgrnd" id="opacity-90">
+        <h5 class="sml-title">CHEATSHEET:</h5>
+        <h2>USING GIT WITH REPOS</h2>
+  			
+  			<dl class="accordion">
+  				<dt><a href="#"><span>+</span> What is Git?</a></dt>
+  				<dd style="">
+            <p class="tuts">
+              <span class="strong em"><a href="http://git-scm.com/">Git</a></span> is a distributed open source Version Control System 
+              that tracks content such as files and directories. Git allows the creation of a history for a collection of files, 
+              and stores the file content in BLOBs (binary large objects); which are captured in states that are fully accessible.
+            </p>
+            <p class="tuts">
+              The state of a project might be a different collection of files or different content within the files. States can be saved
+              as "Branches", which are akin to a copied file.
+            </p>  
+            <p class="tuts">
+              Since a distributed version control system has no central server, every local copy contains the full history of 
+              a project and is stored in a "Commit Object". Every time you make a modification, you have to "Commit" the change.
+            </p>
+            <p class="tuts">
+              The "Commit File" keeps track of all versions including the author, committer and comments about the updated changes, 
+              plus any "Parent" commits that directly precede it allowing to revert back to any point in a project's code history. 
+              Git can be used from the command line or terminal.
+            </p>
+          </dd>
+				
+				                   
+  				<dt><a href="#"><span>+</span> What are Repositories?</a></dt>
+  				<dd style="">
+            <p class="tuts">
+              <span class="strong em">A repository</span> is a central place where data is stored and maintained for safe keeping. 
+              A repository can be a place where multiple databases or files are located for distribution over a network, or a repository 
+              can be a location that is directly accessible to the user without having to travel across a network.
+            </p>
+            <p class="tuts">
+              The open source community uses repositories to allow software to be found easier and a safe, trusted place to 
+              organize projects that a team can work with. Repositories can be set up locally; on one's computer or remotely; 
+              on a server in the cloud, like Github or Heroku.
+            </p>
+  				</dd>
+  				
+  				<dt><a href="#"><span>+</span> What are Local Repositories?</a></dt>
+  				<dd style="">
+            <p class="tuts">
+              <span class="strong em">Local repositories</span> are the local copy of a project on one's computer. 
+              Using Git allows one to clone or fork a repository, e.g. create an exact copy of a repository with a complete history. 
+            </p> 
+            <p class="tuts">
+              Owners of repositories can sync changes from their local copy to a remote copy by Pulling and Posting; which creates 
+              the basic work flow of software development.
+            </p>
+					</dd>
+          
+          <dt><a href="#"><span>+</span> What are Remote Repositories?</a></dt>
+  			  <dd style="">
+            <p class="tuts">
+              <span class="strong em">Remote repositories</span> are the remote copy of a project located on another computer or host like Github 
+              or Heroku. The "source" repository is often distributed by way of a URL; which describes where the repository is located and what 
+              protocol ( http, ssh, git, etc.). 
+            </p>
+            <p class="tuts">
+              The source is known os the Branch Master and with a series of Git commands, a user will periodically update or "Git Pull" 
+              to retrieve new updates
+              from the remote repository, then continue working locally and send or "Git Push" new changes or "Commits" to contribute to 
+              shared repositories.
+            </p>
+          </dd>
+          
+          <dt><a href="#"><span>+</span> What is Github?</a></dt>
+  			  <dd style="">
+            <p class="tuts">
+              <span class="strong em"><a href="https://github.com/">Github </a></span>is an open source project that manages and 
+              stores revisions of projects. It's literally a Git repository hosting service, with many of it's own features, 
+              such as wikis and basic task management tools 
+              for every project.
+            </p> 
+            <p class="tuts">  
+              The flagship functionality is "forking" or copying a repository from one user's account to another; which enables a 
+              user to modify a project in a user's own account.
+            </p> 
+            <p class="tuts">  
+              If you make changes you'd like to share, you can send a notification called a "pull request" to the original owner, then with a 
+              click of a button, merge the changes found in your repo with the original repository.
+            </p>
+            <p class="tuts">
+              It makes contribution management easier allowing for both open-source and private repositories to have a place for
+              both development discussions and patch distribution.<br>
+              <a href="https://github.com/" target="_blank">Create your Github Account today!</a>
+            </p>
+          </dd>
+          
+          <dt><a href="#"><span>+</span> What is Heroku?</a></dt>
+  			  <dd style="">
+            <p class="tuts">
+              <span class="strong em"><a href="http://www.heroku.com/">Heroku</a></span> is a cloud application platform and a brand new way 
+              of building and deploying web apps due to it's ease of use. Programmers can spend all of their time in development vs managing servers 
+              - a huge win by most accounts.
+            </p>
+            <p class="tuts">
+              This focus on productivity makes development both easier and painless to build and run cloud applications.
+              Designed as an open-source project in Ruby on Rails, the workflow is well documented and works seamlessly with Git.
+            </p>
+          </dd>
+        </dl> <!--end of dl  -->
+			
+		    <div class="btn-group dropup">
+        <button class="btn">Next Cheatsheet</button>
+        <button class="btn dropdown-toggle" data-toggle="dropdown">
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href="{{ site.baseurl}}/tutorials">Command Line Basics</a></li>
+          <li><a href="{{ site.baseurl}}/tutorials/git">Using Git with Repos</a></li>
+          <li><a href="{{ site.baseurl}}/tutorials/install_git">How to Install Git</a></li>
+          <li><a href="{{ site.baseurl}}/tutorials/git_repo">How to Create a Git Repository</a></li>
+          <li><a href="{{ site.baseurl}}/tutorials/clone_pull">How to Clone Fetch and Pull</a></li>
+          <li><a href="{{ site.baseurl}}/tutorials/merge_branches">Create and Merge Git Branches</a></li>
+          <li><a href="{{ site.baseurl}}/tutorials/rollback">How to Rollback a Git Repository</a></li>
+          <li><a href="{{ site.baseurl}}/tutorials/deploy_to_heroku">Deploying to Heroku</a></li>
+          <li><a href="{{ site.baseurl}}/tutorials/rvm">RVM: Ruby Version Control</a></li>
+          <li><a href="{{ site.baseurl}}/tutorials/basic_ruby">Basic Ruby</a></li>
+          <li><a href="{{ site.baseurl}}/tutorials/scaffolding">Scaffolding Basics</a></li>
+          <li><a class="active" href="{{ site.baseurl}}/tutorials/basic_testing">Overview of Basic Testing</a></li>
+        </ul>
+      </div> <!-- //btn-group dropup  -->
+
+        <!-- social networks -->
+        <div class="canvas">
+          <a href="https://twitter.com/railsbridgela" id="tweet" target="_blank"></a>
+          <a href="https://github.com/railsbridge" id="github" target="_blank"></a>
+        </div>
+			</div> <!-- end of red background -->
+    </div>    
+  </div>
+</div>
