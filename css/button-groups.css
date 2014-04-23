@@ -211,6 +211,21 @@
   white-space: nowrap;   
 }
 
+.dropdown-menu li a.active {
+  text-decoration: none;
+  color: #FFF;
+  background-color: #D36666;
+  border-radius: 4px;
+  background-color: #D05E5E;
+  background-image: -moz-linear-gradient(top, #d36666, #cd5252);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#D36666), to(#CD5252));
+  background-image: -webkit-linear-gradient(top, #D36666, #CD5252);
+  background-image: -o-linear-gradient(top, #d36666, #cd5252);
+  background-image: linear-gradient(to bottom, #D36666,#CD5252);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFD36666', endColorstr='#FFCD5252', GradientType=0);
+}
+
 .dropdown-menu li{
   line-height: 20px;
 }
