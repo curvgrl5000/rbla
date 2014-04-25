@@ -25,5 +25,5 @@ archive:
   path: /blog/
   title: Blog Archive 
   
-paginate: 5
+paginate: 1
 paginate_path: "blog/page:num"

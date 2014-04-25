@@ -64,15 +64,42 @@
         </div>
      
         <!--start pagination-->
-        <div class="blog-post-navigation">	
+        <!-- <div class="blog-post-navigation"> 
           <div id="previous-post">
-            <a href="">&#171; Prev Post Title</a>
-          </div>
-       
+            {% if paginator.previous_page %}
+              {% if paginator.previous_page == 1 %}
+              <a href="/" title="Previous Page">&#171; Prev Post Title</a>
+              {% else %}
+              <a href="/page{{ paginator.previous_page }}/" title="Previous Page">&laquo; Previous</a>
+              {% endif %}
+            {% endif %}
+          </div>  
+                 
           <div id="next-post">
-            <a href="">Next Post Title &#187;</a>
+            {% if paginator.next_page %} 
+            <a href="/page{{ paginator.next_page }}/" title="Next Page">Next &raquo;</a>
+            {% endif %}
+          </div>
+        </div> -->
+            
+          <div class="blog-post-navigation">	
+          <div id="previous-post">
+            {% if paginator.previous_page %}
+              {% if paginator.previous_page == 1 %}
+              <a href="/" title="Previous Page">&#171; Prev Post Title</a>
+              {% else %}
+              <a href="/page{{ paginator.previous_page }}/" title="Previous Page">&laquo; Previous</a>
+              {% endif %}
+            {% endif %}
+          </div>  
+                 
+          <div id="next-post">
+            {% if paginator.next_page %} 
+            <a href="/page{{ paginator.next_page }}/" title="Next Page">Next &raquo;</a>
+            {% endif %}
           </div>
         </div>
+      
       </div>
       <!--start content - left-->
          
