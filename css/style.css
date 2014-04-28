@@ -1465,7 +1465,7 @@
 	  text-decoration:none;
 	}
 	a:hover{
-	  color:#222;
+	  color:#666;
 	}
 	p {
 	  margin-bottom:30px; 
@@ -1608,7 +1608,15 @@
 	.page.even h6 a {
 	  color:#666;
 	}
-	.page.even span,
+	.page.even h1 a:hover,
+	.page.even h2 a:hover,
+	.page.even h3 a:hover,
+	.page.even h4 a:hover,
+	.page.even h5 a:hover,
+	.page.even h6 a:hover {
+	  color:#E56869;
+	}
+	.page.even h1 span,
 	.page.even h2 span,
 	.page.even h3 span,
 	.page.even h4 span,
@@ -1616,13 +1624,13 @@
 	.page.even h6 span { 
 	  color:#666;
 	}
-	.page.even h1 span a,
-	.page.even h2 span a,
-	.page.even h3 span a,
-	.page.even h4 span a,
-	.page.even h5 span a,
-	.page.even h6 span a {
-	  color:#666;
+	.page.even h1 a:hover span,
+	.page.even h2 a:hover span,
+	.page.even h3 a:hover span,
+	.page.even h4 a:hover span,
+	.page.even h5 a:hover span,
+	.page.even h6 a:hover span  {
+	  color:#E56869 !important;
 	}
 	
 	.page.even h1 span a:hover,
@@ -1632,7 +1640,6 @@
 	.page.even h5 span a:hover,
 	.page.even h6 span a:hover {
 	  color:#E56869;
-	  
 	}
 		
 		

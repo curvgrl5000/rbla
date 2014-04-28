@@ -41,7 +41,7 @@
         </h6>
         <ul>
         <!-- THIS IS HOW TO REACH INTO A SITE'S CATEGORY FOLDER AND LINK TO TO IT -->
-          {% for post in site.categories['core basics'] limit:1 %}
+          {% for post in site.categories['core-basics'] limit:1 %}
           <li>
             {{ post.categories | category_links | capitalize }}
           </li>

@@ -7,7 +7,7 @@
         <li><a class="navigateTo pd-25-r" href="{{ site.baseurl}}/#homepage">Welcome</a></li>
         <li><a class="navigateTo pd-25-r" href="{{ site.baseurl}}/#features-1">Meetups</a></li>
         <li><a class="navigateTo pd-25-r" href="{{ site.baseurl}}/#features-2">Mentors</a></li>
-        <li><a class="navigateTo pd-25-r" href="#signup">Sign Up</a></li>
+        <li><a class="navigateTo pd-25-r" href="{{ site.baseurl}}/#signup">Sign Up</a></li>
         
         {% capture location %}{{ page.url | remove_first:'/' | split:'/' | first }}{% endcapture %}
         <li class="pd-25-r"><a {% if location == 'blog' %}class="active" {% endif %}href="/blog/">Blog</a></li>

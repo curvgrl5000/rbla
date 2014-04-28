@@ -30,7 +30,7 @@
                     <li>Posted by: <a href="#">{{ member.name }}</a></li>
                   {% endfor %}
                   <li class="separator">|</li>
-                  {% for post in site.categories[page.category] %}
+                  {% for post in site.categories[page.category] limit:1 %}
                     <li>In <span>{{ post.categories | category_links | capitalize }}</span></li> 
                   {% endfor %}
                 </ul>
@@ -82,24 +82,21 @@
           </div>
         </div> -->
             
-          <div class="blog-post-navigation">	
-          <div id="previous-post">
+        <div class="blog-post-navigation"> <!-- test  -->
+          <div class="pagination">
             {% if paginator.previous_page %}
-              {% if paginator.previous_page == 1 %}
-              <a href="/" title="Previous Page">&#171; Prev Post Title</a>
-              {% else %}
-              <a href="/page{{ paginator.previous_page }}/" title="Previous Page">&laquo; Previous</a>
-              {% endif %}
+              <a href="/page{{ paginator.previous_page }}" class="previous">&#171; Previous</a>
+            {% else %}
+              <a href="/page{{ paginator.previous_page }}" class="previous"><span class="previous">&#171; Previous</span></a>
             {% endif %}
-          </div>  
-                 
-          <div id="next-post">
-            {% if paginator.next_page %} 
-            <a href="/page{{ paginator.next_page }}/" title="Next Page">Next &raquo;</a>
+            <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+            {% if paginator.next_page %}
+              <a href="/page{{ paginator.next_page }}" class="next">Next &raquo;</a>
+            {% else %}
+              <a href="/page{{ paginator.next_page }}" class="next"><span class="next ">Next &raquo;</span></a>
             {% endif %}
-          </div>
+           </div>
         </div>
-      
       </div>
       <!--start content - left-->
          
@@ -136,7 +133,7 @@
                 </li>
               {% endfor %}
               
-              {% for post in site.categories['core basics'] limit:1 %}
+              {% for post in site.categories['core-basics'] limit:1 %}
                 <li>
                   {{ post.categories | category_links | capitalize }}                
                 </li>
