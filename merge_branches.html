@@ -7,7 +7,7 @@ permalink: /tutorials/merge_branches/
   <!--start content -->
   <div class="content clearfix">      
     <div class="cheat-sheets">   
-      <h1><span>Cloning into a new directory</span></h1>
+      <h1><span>Create and merge branches</span></h1>
         
   		<div class="column_one_half tutorials">          
         <div class="git-map git-one"></div>
@@ -15,47 +15,90 @@ permalink: /tutorials/merge_branches/
       
       <div class="column_one_half last red-bkgrnd" id="opacity-90">
         <h5 class="sml-title">CHEATSHEET:</h5>
-        <h2>HOW TO CLONE, FETCH, and PULL</h2>
+        <h2>WHAT IS A BRANCH, HOW TO CREATE A BRANCH AND MERGE THEM</h2>
   			
   			<dl class="accordion">
-  				<dt><a href="#"><span>+</span> Git Clone</a></dt>
+  				<dt><a href="#"><span>+</span> What is a Branch?</a></dt>
   				<dd style="">
             <p class="tuts">
-              <span class="strong em">Typing 'git clone' in the command line</span> will copy a repo into a newly created directory,
-              and creates remote-tracking branches for each branch in the cloned repository.
+              <span class="strong em">Git stores data as snapshots</span> and commits are essentially pointers
+              to each progressive commit. A Git 'branch' is nearly synonymous to a 'head', which means that every branch
+              represents one 'head' and can represent an entire ancestoral history of commits preceding that 'head'.
+              A branch can be considered the context you're working in. Switching branches means you're switching contexts.  
             </p>
             <p class="tuts">
-              This command additionally creates a remote called 'origin' for the repo cloned from, 
-              and sets up a local branch based on the remote's active branch (usually master). It also
-              creates remote-tracking branches for all the branches in the repository.
+              You can also think of a 'head' as the 'current branch'. And when you switch branches with 'git checkout',
+              the 'head' now points to the tip of the new branch. Each commit stores the latest change to a branch,
+              which allows you to go back and forth in a project, within the context of a branch, within the same directory. 
+             </p>
+             <p class="tuts">  
+              Say for instance you're working with a group of other programmers. Each of your team members has 
+              been assigned a specific task. To be able to work on the same 'repo', everyone needs to create a new branch. This allows for 
+              everyone to work on the project locally or independently, making changes and testing thier code before merging back to 
+              the 'master branch'. 
+             </p>
+             <p class="tuts">  
+              When merge conflicts arise, a 'repo' can be rolled back to a previous commit and the conflict can be
+              explored on an individual branch. That's essentially how branches can be used. There are other uses, but this being
+              the fundamental and most common use. 
+             </p>
+             <p class="tuts">
+              You can always find out which branch you're on, by typing 'git branch', which lists the available branches.
+              The starred branch is the one you're currently on. 
             </p>
-            
             <div class="coding">
               <h6 class="steps">
-                $ cd /newfolder<br>
-                $ git clone git@github.com:username/Project-Name.git<br>
                 $ git branch<br>
-                  * master<br>
-                remoteBranch<br>
+                $ * master<br>
               </h6>
             </div>
           </dd>
 				
-  				<dt><a href="#"><span>+</span> Git Fetch</a></dt>
+  				<dt><a href="#"><span>+</span> Create a New Branch</a></dt>
   				<dd style="">
             <p class="tuts">
-              <span class="strong em">A current local repo</span> with a remote set up for the current project, 
-              you can git fetch<REMOTENAME>. Git fetch is similar to pull, but it will not do any merging.
-            </p>
-            <p class="tuts">
-              Fetch does not make any changes to local branches, so you will need
-              to merge a remote branch with a paired local branch to incorporate newly 'fetched' changes.    
+              <span class="strong em">You can create a new branch</span> by running 'git branch name_of_branch'.
+              Then run 'git branch' to see which branch we are still on.
             </p>
             <div class="coding">
               <h6 class="steps">
-                $ git fetch<br>
+                $ git branch test<br>
+                $ git branch<br>
+                * master
               </h6>
             </div>
+            <p class="tuts">
+              Okay, so we are still on the 'master' branch. Now let's switch to the new branch, 'test'.
+              That's easy, simply run 'git checkout test'.
+            </p>
+            <div class="coding">
+              <h6 class="steps">
+                $ git checkout test<br>
+                $ git branch<br>
+                $ master<br>
+                $ * test
+              </h6>
+             </div>
+             <p class="tuts">
+               Now we've switched to the 'test' branch. Go ahead add a file to the test branch, by running
+               'git add README testing.rb', then commit your change and switch back to the master branch and 
+               list the contents. 
+             </p>
+             <div class="coding">
+               <h6 class="steps">
+                 $ git add . README testing.rb <br>
+                 $ git commit -m "added a file"<br>
+                 $ git checkout master<br>
+                 $ ls
+               </h6>
+              </div>
+              <p class="tuts">
+                This last commmand, 'ls' will list what is in the current directory of the 'master'; however anything
+                added to the previous branch that has not bee merged to 'master' are not longer there. Rember, you're 
+                now in the Master brahcn, or current contest.
+              </p>
+            </div>
+ THIS IS WHERE I LEFT OFF.
   				</dd>
   				
   				<dt><a href="#"><span>+</span> Git Pull</a></dt>
