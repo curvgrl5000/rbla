@@ -15,41 +15,39 @@ permalink: /tutorials/merge_branches/
       
       <div class="column_one_half last red-bkgrnd" id="opacity-90">
         <h5 class="sml-title">CHEATSHEET:</h5>
-        <h2>WHAT IS A BRANCH, HOW TO CREATE A BRANCH AND MERGE THEM</h2>
+        <h2>WHAT IS A BRANCH?, CREATE A NEW BRANCH, MERGING BRANCHES</h2>
   			
   			<dl class="accordion">
   				<dt><a href="#"><span>+</span> What is a Branch?</a></dt>
   				<dd style="">
             <p class="tuts">
               <span class="strong em">Git stores data as snapshots</span> and commits are essentially pointers
-              to each progressive commit. A Git 'branch' is nearly synonymous to a 'head', which means that every branch
-              represents one 'head' and can represent an entire ancestoral history of commits preceding that 'head'.
-              A branch can be considered the context you're working in. Switching branches means you're switching contexts.  
+              to each progressive commit. You can think of a branch as the context you're working in. And switching branches 
+              means you're switching contexts. 
+            </p>  
+            <p class="tuts">  
+              A Git 'branch' is nearly synonymous to a 'head', which means that every branch represents one 'head' and can 
+              represent an entire ancestoral history of commits preceding that 'head' in an isolated development environment.
             </p>
             <p class="tuts">
               You can also think of a 'head' as the 'current branch'. And when you switch branches with 'git checkout',
               the 'head' now points to the tip of the new branch. Each commit stores the latest change to a branch,
-              which allows you to go back and forth in a project, within the context of a branch, within the same directory. 
-             </p>
-             <p class="tuts">  
-              Say for instance you're working with a group of other programmers. Each of your team members has 
-              been assigned a specific task. To be able to work on the same 'repo', everyone needs to create a new branch. This allows for 
-              everyone to work on the project locally or independently, making changes and testing thier code before merging back to 
-              the 'master branch'. 
-             </p>
-             <p class="tuts">  
-              When merge conflicts arise, a 'repo' can be rolled back to a previous commit and the conflict can be
-              explored on an individual branch. That's essentially how branches can be used. There are other uses, but this being
-              the fundamental and most common use. 
-             </p>
-             <p class="tuts">
+              which allows you to go back and forth in a project, within the context of a branch.
+            </p>
+            <p class="tuts">  
+              Say for instance you're working with a group of programmers. Each of your team mates has been assigned a new feature. 
+              To work with the same 'repo', you create a dedicated branch and then switch into it, allowing you to work independently
+              before merging your work to the 'master' branch.  
+            </p>
+            <p class="tuts">
               You can always find out which branch you're on, by typing 'git branch', which lists the available branches.
               The starred branch is the one you're currently on. 
             </p>
             <div class="coding">
               <h6 class="steps">
                 $ git branch<br>
-                $ * master<br>
+                $ master<br>
+                $ * new_feature
               </h6>
             </div>
           </dd>
@@ -57,8 +55,8 @@ permalink: /tutorials/merge_branches/
   				<dt><a href="#"><span>+</span> Create a New Branch</a></dt>
   				<dd style="">
             <p class="tuts">
-              <span class="strong em">You can create a new branch</span> by running 'git branch name_of_branch'.
-              Then run 'git branch' to see which branch we are still on.
+              <span class="strong em">You can create a new branch</span> by running 'git branch test'.
+              Now go ahead and run 'git branch' which will note the active branch with an asterick.
             </p>
             <div class="coding">
               <h6 class="steps">
@@ -68,8 +66,8 @@ permalink: /tutorials/merge_branches/
               </h6>
             </div>
             <p class="tuts">
-              Okay, so we are still on the 'master' branch. Now let's switch to the new branch, 'test'.
-              That's easy, simply run 'git checkout test'.
+              We've created a new branch 'test', but we are still on the 'master' branch. Let's switch to the new branch, 'test'.
+              That's easy, simply run 'git checkout test'. And then run 'git branch' to see which branch we're on.
             </p>
             <div class="coding">
               <h6 class="steps">
@@ -78,46 +76,60 @@ permalink: /tutorials/merge_branches/
                 $ master<br>
                 $ * test
               </h6>
-             </div>
-             <p class="tuts">
-               Now we've switched to the 'test' branch. Go ahead add a file to the test branch, by running
-               'git add README testing.rb', then commit your change and switch back to the master branch and 
-               list the contents. 
-             </p>
-             <div class="coding">
-               <h6 class="steps">
-                 $ git add . README testing.rb <br>
-                 $ git commit -m "added a file"<br>
-                 $ git checkout master<br>
-                 $ ls
-               </h6>
-              </div>
-              <p class="tuts">
-                This last commmand, 'ls' will list what is in the current directory of the 'master'; however anything
-                added to the previous branch that has not bee merged to 'master' are not longer there. Rember, you're 
-                now in the Master brahcn, or current contest.
-              </p>
             </div>
- THIS IS WHERE I LEFT OFF.
+            <p class="tuts">
+              Next create a file called testing.rb in your project, then stage it by running 'git add testing.rb', and commit your 
+              change. Now switch back to the master branch, with 'git checkout master'. 
+              Finally list the contents of this branch by running 'ls'.
+            </p>
+            <div class="coding">
+              <h6 class="steps">
+                $ git add testing.rb  <br>
+                $ git commit -m "added a file testing.rb"<br>
+                $ git checkout master<br>
+                $ ls
+              </h6>
+            </div>
+            <p class="tuts">
+              This last commmand, 'ls' will list what is in the current directory of the 'master' branch; however anything
+              added to the test branch will not be listed. 
+            </p>
+            <p class="tuts">  
+              Remember, you're now in the 'master' branch and you haven't merged
+              branches yet. When you're ready to merge 'test' you can do so by running 'git merge test'. 
+            </p>
   				</dd>
   				
-  				<dt><a href="#"><span>+</span> Git Pull</a></dt>
+  				<dt><a href="#"><span>+</span> Merging Branches</a></dt>
   				<dd style="">
             <p class="tuts">
-              <span class="strong em">Git Pull</span> will pull down from a remote and instantly merge into the branch you're
-              in when you make the request. Pull is a high-level request, that runs 'fetch' and
-              'merge' by default.
+              <span class="strong em">To Merge</span> a branch you first need to start in the 'master'
+              branch, then run the 'git merge' command. This will join two development histories together
+              into a single branch. 
             </p>
+            <p class="tuts">  
+              Then when the two branches have merged, it's a common workflow to delete
+              the working branch, in this case you would be deleting the 'test' branch.
+            </p>
+            <div class="coding">
+              <h6 class="steps">
+                $ git checkout master<br>
+                $ git merge test<br>
+                $ git branch -d test
+              </h6>
+            </div>
             <p class="tuts">
-              Similar to git fetch, you can use git <REMOTENAME> <BRANCHNAME> to fetch a specific
-              branch and merge it into your current local branch. For one-time pull from other 
-              user's repos, you can use a URL in place of a remote name.
-          </p>
-          <div class="coding">
-            <h6 class="steps">
-              $ git pull origin master<br>
-            </h6>
-          </div>
+              When there is a conflict, git will prevent the branches from merging. You can then run 'git status'
+              which will show you the files that need to be resolved. 
+            </p>
+            <p class="tuts">  
+              Typically small features are used for 
+              'fast-foward' merges and larger ones are called 3-way merges that include larger feature branches.
+            </p>
+            <p class="tuts">  
+              For more info,<a href="http://git-scm.com/book/ca/Git-Branching-Basic-Branching-and-Merging"> Pro-Git</a> does a grat
+              job of describing the basics of branching and merging.
+            </p>
 					</dd>
         </dl> <!--end of dl  -->
 			
