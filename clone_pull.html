@@ -15,7 +15,7 @@ permalink: /tutorials/clone_pull/
       
       <div class="column_one_half last red-bkgrnd" id="opacity-90">
         <h5 class="sml-title">CHEATSHEET:</h5>
-        <h2>HOW TO CLONE, FETCH, and PULL</h2>
+        <h2>CLONE, FETCH, PULL and PUSH</h2>
   			
   			<dl class="accordion">
   				<dt><a href="#"><span>+</span> Git Clone</a></dt>
@@ -69,36 +69,50 @@ permalink: /tutorials/clone_pull/
               Similar to git fetch, you can use git <REMOTENAME> <BRANCHNAME> to fetch a specific
               branch and merge it into your current local branch. For one-time pull from other 
               user's repos, you can use a URL in place of a remote name.
-          </p>
-          <div class="coding">
-            <h6 class="steps">
-              $ git pull origin master<br>
-            </h6>
-          </div>
+            </p>
+            <div class="coding">
+              <h6 class="steps">
+                $ git pull origin master<br>
+              </h6>
+            </div>
+					</dd>
+					
+					<dt><a href="#"><span>+</span> Git Push</a></dt>
+  				<dd style="">
+            <p class="tuts">
+              <span class="strong em">Git Push</span> is the command that pushes your local repository to a
+              remote repository. It's the opposite of 'git fetch', where fetching imports commits to your local
+              branch, pushing exports commits to remote branches. Here we're creating a destination branch, which 
+              prevents you from overwriting commits when it results in a non-fast-forwward merge. 
+            </p>
+            <div class="coding">
+              <h6 class="steps">
+                $ git push remote_name branch_name><br>
+              </h6>
+            </div>
+            <p class="tuts">
+              A 'remote' repo with a destination of a push operation can be an URL or the name of a remote.
+              Typically URls contain info about the transport process and the address of the remote server,
+              and the path to the repo. You can think of 'git push' essentially the same command as 'git merge master'
+              from nside the remote repo. For example: 
+            </p>
+            <div class="coding">
+              <h6 class="steps">
+                $ git checkout master<br>
+                $ git fetch origin master<br>
+                $ git checkout master<br>
+              </h6>
+            </div>
+            <p class="tuts">
+              To stay in sync with a remote repo, git prevents you from overwriting the remote 'origin master' wiht a non-fast foward merge.
+              Basically it means git is forcing you to first download the origin master, then work loacally and then merge locally before
+              pushing back to the remote branch. We'll be pushing to both Github and Heroku in the next cheatsheet
+            </p>
 					</dd>
         </dl> <!--end of dl  -->
-			
-		    <div class="btn-group dropup">
-        <button class="btn">Next Cheatsheet</button>
-        <button class="btn dropdown-toggle" data-toggle="dropdown">
-          <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu">
-          <li><a href="{{ site.baseurl}}/tutorials">Command Line Basics</a></li>
-          <li><a href="{{ site.baseurl}}/tutorials/git">Using Git with Repos</a></li>
-          <li><a href="{{ site.baseurl}}/tutorials/install_git">How to Install Git</a></li>
-          <li><a href="{{ site.baseurl}}/tutorials/git_repo">How to Create a Git Repository</a></li>  
-          <li><a class="active" href="{{ site.baseurl}}/tutorials/clone_pull">How to Clone Fetch and Pull</a></li>
-          <li><a href="{{ site.baseurl}}/tutorials/merge_branches">Create and Merge Git Branches</a></li>   
-          <li><a href="{{ site.baseurl}}/tutorials/rollback">How to Rollback a Git Repository</a></li>
-          <li><a href="{{ site.baseurl}}/tutorials/deploy_to_heroku">Deploying to Heroku</a></li>
-          <li><a href="{{ site.baseurl}}/tutorials/rvm">RVM: Ruby Version Control</a></li>
-          <li><a href="{{ site.baseurl}}/tutorials/basic_ruby">Basic Ruby</a></li>
-          <li><a href="{{ site.baseurl}}/tutorials/scaffolding">Scaffolding Basics</a></li>
-          <li><a href="{{ site.baseurl}}/tutorials/basic_testing">Overview of Basic Testing</a></li>
-        </ul>
-      </div> <!-- //btn-group dropup  -->
-
+			  
+			  {% include button_dropup.html %}  
+		  
         <!-- social networks -->
         <div class="canvas">
           <a href="https://twitter.com/railsbridgela" id="tweet" target="_blank"></a>

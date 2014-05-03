@@ -107,8 +107,6 @@
               	{% capture location %}{{ page.url | remove_first:'/' | split:'/' | first }}{% endcapture %}
               	<li><a {% if location == 'blog' %}class="active" {% endif %}href="{{ site.baseurl}}/blog/">Blog</a></li>
               	<li><a {% if location == 'tutorials' %}class="active" {% endif %}href="{{ site.baseurl}}/tutorials/">Tutorials</a></li>
-              	<!-- <li><a class="navigateTo" href="#tuts">Tutorials</a></li> -->
-                
               	<li><a {% if location == 'contact' %}class="active" {% endif %}href="{{ site.baseurl}}/contact/">Contact</a></li>
               	
               </ul> <!-- end navigation  -->

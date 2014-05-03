@@ -220,27 +220,8 @@ permalink: /tutorials/install_git/
           </dd>
         </dl> <!--end of dl  -->
 			
-		    <div class="btn-group dropup">
-        <button class="btn">Next Cheatsheet</button>
-        <button class="btn dropdown-toggle" data-toggle="dropdown">
-          <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu">
-          <li><a href="{{ site.baseurl}}/tutorials">Command Line Basics</a></li>
-          <li><a href="{{ site.baseurl}}/tutorials/git">Using Git with Repos</a></li>
-          <li><a class="active" href="{{ site.baseurl}}/tutorials/install_git">How to Install Git</a></li>
-          <li><a href="{{ site.baseurl}}/tutorials/git_repo">How to Create a Git Repository</a></li>  
-          <li><a href="{{ site.baseurl}}/tutorials/clone_pull">How to Clone Fetch and Pull</a></li>
-          <li><a href="{{ site.baseurl}}/tutorials/merge_branches">Create and Merge Git Branches</a></li>   
-          <li><a href="{{ site.baseurl}}/tutorials/rollback">How to Rollback a Git Repository</a></li>
-          <li><a href="{{ site.baseurl}}/tutorials/deploy_to_heroku">Deploying to Heroku</a></li>
-          <li><a href="{{ site.baseurl}}/tutorials/rvm">RVM: Ruby Version Control</a></li>
-          <li><a href="{{ site.baseurl}}/tutorials/basic_ruby">Basic Ruby</a></li>
-          <li><a href="{{ site.baseurl}}/tutorials/scaffolding">Scaffolding Basics</a></li>
-          <li><a href="{{ site.baseurl}}/tutorials/basic_testing">Overview of Basic Testing</a></li>
-        </ul>
-      </div> <!-- //btn-group dropup  -->
-
+		    {% include button_dropup.html %}  
+		    
         <!-- social networks -->
         <div class="canvas">
           <a href="https://twitter.com/railsbridgela" id="tweet" target="_blank"></a>
