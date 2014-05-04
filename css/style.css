@@ -1765,13 +1765,13 @@
   }
   
   .coding h6.steps {
-    line-height: 26px;
+    line-height: 30px;
     margin-bottom: 15px;
     color: #0F0;
     font-style: italic;
     background-color: #000;
     padding-left: 10px;
-    font-size: 100%;
+    font-size: 120%;
     font-weight: 500;
   }  
   .git-map {

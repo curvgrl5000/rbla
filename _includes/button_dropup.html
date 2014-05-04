@@ -5,7 +5,7 @@
   </button>
   <ul class="dropdown-menu">
     {% capture location %}{{ page.url | remove_first:'/' | split:'/' | last }}{% endcapture %}
-    <li><a {% if location == 'tutorials' %}class="active" {% endif %}href="{{ site.baseurl}}/tutorials/">Command Line Basics</a></li>
+    <li><a {% if location == 'command_line_basics' %}class="active" {% endif %}href="{{ site.baseurl}}/tutorials/command_line_basics">Command Line Basics</a></li>
     <li><a {% if location == 'git' %}class="active" {% endif %}href="{{ site.baseurl}}/tutorials/git">Using Git with Repos</a></li>
     <li><a {% if location == 'install_git' %}class="active" {% endif %}href="{{ site.baseurl}}/tutorials/install_git">How to Install Git</a></li>
     <li><a {% if location == 'git_repo' %}class="active" {% endif %}href="{{ site.baseurl}}/tutorials/git_repo">How to Create a Git Repository</a></li>
