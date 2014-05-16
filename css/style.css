@@ -1581,11 +1581,17 @@
 	.page.odd span,.page.odd h2 span,.page.odd h3 span,.page.odd h4 span,.page.odd h5 span,.page.odd h6 span {
 	  color:#666;
 	}
+	.page.odd span.active,.page.odd h2 span.active,.page.odd h3 span.active,.page.odd h4 span.active,.page.odd h5 span.active,.page.odd h6 span.active {
+	  color:#fff;
+	}
+	.page.odd span.test,.page.odd h2 span.test,.page.odd h3 span.test,.page.odd h4 span.test,.page.odd h5 span.test,.page.odd h6 span.test {
+	  color: #666;
+	}
 	.page.odd h1 span a,
 	.page.odd h2 span a,
 	.page.odd h3 span a,
 	.page.odd h4 span a,
-	.page.odd h5 span a,
+	.page.odd h5 span a,                                         
 	.page.odd h6 span a {
 	  color:#666;
 	}
@@ -1765,13 +1771,13 @@
   }
   
   .coding h6.steps {
-    line-height: 30px;
+    line-height: 18px;
     margin-bottom: 15px;
     color: #0F0;
     font-style: italic;
     background-color: #000;
-    padding-left: 10px;
-    font-size: 120%;
+    padding: 5px 0 5px 10px;
+    font-size: 100%;
     font-weight: 500;
   }  
   .git-map {
