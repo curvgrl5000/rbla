@@ -1769,17 +1769,33 @@
     font-weight: 600;
     color: #0590A6;   /*blue for sass*/
   }
-  
+  .coding h6.steps span.accent {
+    color: #AEAEAE;  /*#0F0 */
+  }
+  .coding h6.steps span.code {
+    color: #2BE;  /*#0F0 */
+  }
+  .coding h6.steps span.code_sml {
+    color: #2BE;  /*#0F0 */
+    font-size: 11px;
+  }
+  .coding h6.steps pre {
+    color: #fff;  /*#0F0 */
+    white-space: pre-line;
+  }
+  .coding h6.steps pre span.tag {
+    color: pink;  /*#0F0 */
+  }
   .coding h6.steps {
     line-height: 18px;
     margin-bottom: 15px;
-    color: #0F0;
-    font-style: italic;
-    background-color: #000;
+    color: #fff;
+    background-color: #555;
     padding: 5px 0 5px 10px;
     font-size: 100%;
     font-weight: 500;
-  }  
+  }
+  
   .git-map {
     background-color: #CDCFD0;
     height: 410px;

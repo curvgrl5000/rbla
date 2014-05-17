@@ -7,7 +7,7 @@ permalink: /tutorials/deploy_to_heroku/
   <!--start content -->
   <div class="content clearfix">      
     <div class="cheat-sheets">   
-      <h1><span>Local & Remote Environments</span></h1>
+      <h1><span>Deploying An App to Heroku</span></h1>
         
   		<div class="column_one_half tutorials">          
         <div class="git-map git-one"></div>
@@ -18,105 +18,469 @@ permalink: /tutorials/deploy_to_heroku/
         <h2>DEPLOYING TO HEROKU</h2>
   			
   			<dl class="accordion">
-  				<dt><a href="#"><span>+</span> What is Git?</a></dt>
+  				<dt><a href="#"><span>+</span> What is Heroku?</a></dt>
   				<dd style="">
             <p class="tuts">
-              <span class="strong em"><a href="http://git-scm.com/">Git</a></span> is a distributed open source Version Control System 
-              that tracks content such as files and directories. Git allows the creation of a history for a collection of files, 
-              and stores the file content in BLOBs (binary large objects); which are captured in states that are fully accessible.
+              <span class="strong em"><a href="https://www.heroku.com">Heroku</a></span> is a cloud application platform, (PaaS) and is one of the first cloud platforms 
+              that initially supporting only Ruby. Since it's development in 2007, it has added support for Python, Java, Node.js, 
+              Clojure, Perl and most recently Php. 
+            </p>
+            <p class="tuts"> 
+              As of 2001, <a href="http://vimeo.com/61043050">Yukihiro Matsumoto</a>, the chief designer of the Ruby programming language, 
+              joined the company as the Chief Architect of Ruby.
             </p>
             <p class="tuts">
-              The state of a project might be a different collection of files or different content within the files. States can be saved
-              as "Branches", which are akin to a copied file.
+              The mission of the company is to make it easy and painless to build and run cloud apps. The service is offered
+              to developers to allow them to spend time on code vs. depolyment scripts, managing servers and what is known
+              as continuous integration. 
             </p>  
             <p class="tuts">
-              Since a distributed version control system has no central server, every local copy contains the full history of 
-              a project and is stored in a "Commit Object". Every time you make a modification, you have to "Commit" the change.
-            </p>
-            <p class="tuts">
-              The "Commit File" keeps track of all versions including the author, committer and comments about the updated changes, 
-              plus any "Parent" commits that directly precede it allowing to revert back to any point in a project's code history. 
-              Git can be used from the command line or terminal.
+              Founded in 2007 by Orion Henry, James Lindenbaum and Adam Wiggns, it has since grown into a team with a 'maniacal focus'
+              to developer productivity. 
             </p>
           </dd>
-				
-				                   
-  				<dt><a href="#"><span>+</span> What are Repositories?</a></dt>
+  				<dt><a href="#"><span>+</span> Why does Heroku Do?</a></dt>
   				<dd style="">
             <p class="tuts">
-              <span class="strong em">A repository</span> is a central place where data is stored and maintained for safe keeping. 
-              A repository can be a place where multiple databases or files are located for distribution over a network, or a repository 
-              can be a location that is directly accessible to the user without having to travel across a network.
+              <span class="strong em">Setting up a server</span> is still relatively difficult to maintain and configure.
+              And it can be pretty stressful to develop an application, let alone handle the server administration all under
+              a tight deadline.
             </p>
             <p class="tuts">
-              The open source community uses repositories to allow software to be found easier and a safe, trusted place to 
-              organize projects that a team can work with. Repositories can be set up locally; on one's computer or remotely; 
-              on a server in the cloud, like Github or Heroku.
+              Heroku provides an alternative by making it easy to update and deploy an application, by pushing your repo
+              to a remote Heroku repository. Which means you don't have to worry about infrastructure; you just focus on your application.    
+            </p>
+            <p class="tuts">
+              Offered as a free open source solution, deployment is truly a breeze and with a great web interface, its easy to 
+              add other services through add-ons.    
+            </p>
+            <p class="tuts">
+              Scaling ultimately triggers a pay-per-use account. However; your development cycle
+              is generally enjoyed at no cost and less hassle than traditional setups.    
             </p>
   				</dd>
   				
-  				<dt><a href="#"><span>+</span> What are Local Repositories?</a></dt>
+  				<dt><a href="#"><span>+</span> 1. Start by creating a Heroku account</a></dt>
   				<dd style="">
             <p class="tuts">
-              <span class="strong em">Local repositories</span> are the local copy of a project on one's computer. 
-              Using Git allows one to clone or fork a repository, e.g. create an exact copy of a repository with a complete history. 
+              <span class="strong em">1. <a href="https://signup.heroku.com/signup/dc">Sign Up</a> for a Heroku Account.</span> Once you've done 
+              this, you'll be logging into your account before you push to your respective repo. Go on to the next step.
             </p> 
+					</dd>
+					
+					<dt><a href="#"><span>+</span> 2. Download the Heroku Toolkit</a></dt>
+  				<dd style="">
             <p class="tuts">
-              Owners of repositories can sync changes from their local copy to a remote copy by Pulling and Posting; which creates 
-              the basic work flow of software development.
+              <span class="strong em">Install the <a href="https://devcenter.heroku.com/articles/quickstart#step-2-install-the-heroku-toolbelt">Toolkit</a> 
+              for your Operating System.</span> From the dropdown menu, you'll get a choice of operating systems: Mac Os X, Windows, Debian/Ubuntu or Standalone. 
+              Once you're done with the installation process, go on to the next step.
+            </p> 
+					</dd>
+					
+					<dt><a href="#"><span>+</span> 3. Login</a></dt>
+  				<dd style="">
+            <p class="tuts">
+              3. Login. After you've installed the Toolbelt you'll have access to the Heroku command from your terminal. From there you'll 
+              authenticate using the email and password you used when you created your account. <br>
+              Type, "Heroku login", and fill in your credentials.
             </p>
+            <div class="coding">
+              <h6 class="steps">
+                <span class="accent">$</span>&nbsp &nbsp heroku login<br>
+                <span class="code">Enter your Heroku credentials.<br>
+                Email: adam@example.com<br>
+                Password:<br>
+                Could not find an existing public key.<br>
+                Would you like to generate one? [Yn]<br>
+                Generating new SSH public key.<br>
+                Uploading ssh public key /Users/adam/.ssh/id_rsa.pub<br></span>
+              </h6>
+            </div>
 					</dd>
           
-          <dt><a href="#"><span>+</span> What are Remote Repositories?</a></dt>
+          <dt><a href="#"><span>+</span> 4. Write your App</a></dt>
   			  <dd style="">
             <p class="tuts">
-              <span class="strong em">Remote repositories</span> are the remote copy of a project located on another computer or host like Github 
-              or Heroku. The "source" repository is often distributed by way of a URL; which describes where the repository is located and what 
-              protocol ( http, ssh, git, etc.). 
+              <span class="strong em">To Run on Heroku</span> your app must be configured to use a Postgres database,
+              and all your dependencies must be declared in your 'Gemfile' and have the 'rails_12factor gem in the production
+              group of your 'Gemfile'. 
             </p>
             <p class="tuts">
-              The source is known os the Branch Master and with a series of Git commands, a user will periodically update or "Git Pull" 
-              to retrieve new updates
-              from the remote repository, then continue working locally and send or "Git Push" new changes or "Commits" to contribute to 
-              shared repositories.
+              If you're starting from an existing app, now would be a good time to upgrade to Rails 4,
+              before continuing. Check to see which version of rails your using by running this command:
+            </p>
+            <div class="coding">
+              <h6 class="steps">
+                <span class="accent">$</span>&nbsp &nbsp rails -v
+              </h6>
+            </div>
+            <p class="tuts">
+              If you need to upgrade to rails 4.0, go ahead and run the following command:
+            </p>
+            <div class="coding">
+              <h6 class="steps">
+                <span class="accent">$</span>&nbsp &nbsp gem install rails &nbsp - - no-ri &nbsp- - no-rdoc<br>
+                <span class="code">Successfully installed rails-4.1.0<br>
+                1 gem installed</span>
+              </h6>
+             </div>
+            <p class="tuts">
+              Then create your new app:
+            </p>
+            <div class="coding">
+              <h6 class="steps">
+                <span class="accent">$</span>&nbsp &nbsp rails new myapp &nbsp - - database=postgresql
+              </h6>
+            </div>
+            <p class="tuts">  
+              Once the operation is finished, go ahead and cd into your directory:
+            </p>            
+            <div class="coding">
+              <h6 class="steps">
+                <span class="accent">$</span>&nbsp &nbsp cd myapp
+              </h6>
+            </div>
+            <p class="tuts">
+              You'll notice that we are creating the app with PostgresSQL, which maintains parity
+              between your development and deployment environments. 
+            <p class="tuts">
+              For more informaton on the details of why this change is needed and how to configure your app to run postgres locally,
+              go to <a href="https://devcenter.heroku.com/articles/sqlite3">why you cannot use Sqlite3 on Heroku</a>.
+           </dd> 
+           
+           <dt><a href="#"><span>+</span> 5. Create a Static Page</a></dt>
+           <dd style="">
+             <p class="tuts">
+               <span class="strong em">Rails 4 no longer has a static index page in production, </span> 
+                which means there will not be a root page in production, so you need to create one. First create a contoller, 
+                'welcome', for our home page. 
+             </p>
+             <div class="coding">
+               <h6 class="steps">
+                 <span class="accent">$</span>&nbsp &nbsp rails generate controller welcome
+               </h6>
+              </div>
+              <p class="tuts">
+                Next, create an index page in app/views/welcome/index.html.erb, and type:
+              </p>
+              <div class="coding">
+                <h6 class="steps">
+                  <pre>
+                    <span class="tag">&lt;h2&gt;</span>
+                     &nbsp &nbsp Hello World
+                     <span class="tag">&lt;h2&gt;</span>
+                     <span class="tag">&lt;p&gt;</span>
+                     &nbsp &nbsp The time is now: <span class="error">&lt;</span><%= Time.now %><span class="error">&gt;</span>
+                     <span class="tag">&lt;/p&gt;</span>
+                  </pre> 
+                </h6> 
+              </div>
+              <p class="tuts">
+                Now we need to route to this action by editing the file config/routes.rb, go ahead and type:
+              </p>
+              <div class="coding">
+                <h6 class="steps">
+                  root &nbsp <span class="code">'welcome#index'</span>
+                </h6>
+              </div>
+             <p class="tuts">
+               Let's launch the server to see the page:
+             </p>
+             <div class="coding">
+               <h6 class="steps">
+                 <span class="accent">$</span>&nbsp &nbsp rails server
+               </h6>
+             </div>
+             <p class="tuts">
+               Launch a browser and type http://localhost:3000. You should see your page! If you don't, you will need
+               to debug by using the logs that are output by your server in the terminal.
+             </p>
+          </dd>
+          
+          <dt><a href="#"><span>+</span> 6. Adding Heroku Gems for Rails 4.0</a></dt>
+  			  <dd style="">
+            <p class="tuts">
+              <span class="strong em">Heroku gems</a></span> were previously relied on the Rails plugin system;
+              which has been removed from Rails 4. To enable features, such as static asset serving on Heroku,
+              go ahead and add 'rails_12factor' gem to the end of the gemfile.<br>
+              At the end of the Gemfile add:
+            </p> 
+            <div class="coding">
+              <h6 class="steps">
+                <pre>
+                  gem &nbsp<span class="string"><span class="code">'rails_12'</span>, <span class="tag">group : &nbsp<span class="tag">: production</span>
+                </pre> 
+              </h6> 
+            </div>
+            <p class="tuts">  
+              Then run:
+            </p>
+            <div class="coding">
+              <h6 class="steps">
+                <span class="accent">$</span>&nbsp &nbsp bundle install
+              </h6>
+            </div>
+            <p class="tuts">  
+              For more info on Rails integration go to Heroku's <a href="https://devcenter.heroku.com/articles/ruby-support#injected-plugins">Ruby Support page</a>
             </p>
           </dd>
           
-          <dt><a href="#"><span>+</span> What is Github?</a></dt>
+          <dt><a href="#"><span>+</span> 7. Specify your Ruby Version</a></dt>
   			  <dd style="">
             <p class="tuts">
-              <span class="strong em"><a href="https://github.com/">Github </a></span>is an open source project that manages and 
-              stores revisions of projects. It's literally a Git repository hosting service, with many of it's own features, 
-              such as wikis and basic task management tools 
-              for every project.
-            </p> 
-            <p class="tuts">  
-              The flagship functionality is "forking" or copying a repository from one user's account to another; which enables a 
-              user to modify a project in a user's own account.
-            </p> 
-            <p class="tuts">  
-              If you make changes you'd like to share, you can send a notification called a "pull request" to the original owner, then with a 
-              click of a button, merge the changes found in your repo with the original repository.
+              <span class="strong em">Rails 4 requires Ruby 1.9.3</span> or above. Heroku has a recent version of Ruby installed, 
+              however you can specify an exact version by using the ruby DSL in your Gemfile. Go ahead and use Ruby 2.1.1, 
+              and add this to your Gemfile.
             </p>
             <p class="tuts">
-              It makes contribution management easier allowing for both open-source and private repositories to have a place for
-              both development discussions and patch distribution.<br>
-              <a href="https://github.com/" target="_blank">Create your Github Account today!</a>
+              At the end of Gemfile add:
+            </p>
+            <div class="coding">
+              <h6 class="steps">
+                <pre>
+                  ruby &nbsp <span class="string"><span class="code">"2.1.1"</span>
+                </pre> 
+              </h6> 
+            </div>
+            <p class="tuts">
+              You should also be running the same version of Ruby locally. You can verify by running 'ruby -v'. You can get more information on 
+              specifying your Ruby version on Heroku here.
             </p>
           </dd>
           
-          <dt><a href="#"><span>+</span> What is Heroku?</a></dt>
+          <dt><a href="#"><span>+</span> 8. Store your App in Git</a></dt>
   			  <dd style="">
             <p class="tuts">
-              <span class="strong em"><a href="http://www.heroku.com/">Heroku</a></span> is a cloud application platform and a brand new way 
-              of building and deploying web apps due to it's ease of use. Programmers can spend all of their time in development vs managing servers 
-              - a huge win by most accounts.
+              Heroku relies on git, a distributed source control managment tool, for deploying your project. If your project is not already 
+              in git first verify that git is on your system:
             </p>
+            <div class="coding">
+              <h6 class="steps">
+                <pre>
+                  <span class="accent">$</span>&nbsp git &nbsp - - help
+                  <span class="code_sml">usage: git [--version] [--help] [-c name=value]</span>
+                  <span class="code_sml">           [--exec-path[=&lt;path&gt;]] [--html-path] [--man-path] [--info-path]</span>
+                  <span class="code_sml">           [-p|--paginate|--no-pager] [--no-replace-objects] [--bare]</span>
+                  <span class="code_sml">           [--git-dir=&lt;path&gt;] [--work-tree=&lt;path&gt;] [--namespace=&lt;name&gt;]</span>
+                  <span class="code_sml">           &lt;command&gt; [&lt;args&gt;]</span>
+                  <span class="code_sml"></span>
+                  <span class="code">The most commonly used git commands are:</span>
+                  <span class="code" style="padding-right: 32px;">add</span><span class="code"> Add file contents to the index</span>
+                  <span class="code" style="padding-right: 23px;">bisect</span><span class="code">Find by binary search the change that</span>
+                  <span class="code" style="padding-left: 62px;">introduced a bug</span>
+                  <span class="code" style="padding-right: 16px;">branch</span><span class="code">List, create, or delete branches</span>
+                </pre>
+              </h6>
+            </div>
             <p class="tuts">
-              This focus on productivity makes development both easier and painless to build and run cloud applications.
-              Designed as an open-source project in Ruby on Rails, the workflow is well documented and works seamlessly with Git.
+              Now run these commands in your Rails app directory to initialize and commit your code to git:
+            </p>
+            <div class="coding">
+              <h6 class="steps">
+                <span class="accent">$</span>&nbsp &nbsp git init<br>
+                <span class="accent">$</span>&nbsp &nbsp git add .<br>
+                <span class="accent">$</span>&nbsp &nbsp git commit -m "first commit"<br>
+              </h6>  
+            </div>
+            <p class="tuts">
+             Now check the status of the project with git in the teminal:
+            </p>
+            <div class="coding">
+              <h6 class="steps">
+                <span class="accent">$</span>&nbsp &nbsp git status<br>
+                <span class="code"># On branch master<br>
+                nothing to commit, working directory clean<br>
+                Now that your application is committed to git you can deploy to Heroku</span>
             </p>
           </dd>
+          
+          <dt><a href="#"><span>+</span> 9. Deploy your application to Heroku</a></dt>
+  			  <dd style="">
+            <p class="tuts">
+              Make sure you are in the directory that contains your Rails app, then create an app on Heroku:
+            </p>
+            <div class="coding">
+              <h6 class="steps">
+                <span class="accent">$</span>&nbsp &nbsp heroku create<br>
+                <span class="code">Creating warm-wave-1943... done, stack is cedar<br>
+                http://warm-wave-1943.herokuapp.com/ | git@heroku.com:warm-wave-1943.git<br>
+                Git remote heroku added</span>
+              </h6>
+            </div>
+            <p class="tuts">
+              You can verify that the remote was added to your project by running
+            </p>
+            <div class="coding">
+              <h6 class="steps">
+                <span class="accent">$</span>&nbsp &nbsp git config -e<br>
+              </h6>  
+            </div>
+            <p class="tuts">
+              If you see fatal: not in a git directory then you are likely not in the correct directory. 
+              Otherwise you may deploy your code. After you deploy your code, you will need to migrate your 
+              database, make sure it is properly scaled and use logs to debug any issues that come up.
+            </p>
+            <p class="tuts">
+              Deploy your code:
+            </p>
+            <div class="coding">
+              <h6 class="steps">
+                <span class="accent">$</span>&nbsp &nbsp git push heroku master<br>
+                <span class="code">Initializing repository, done.<br>
+                -----> Ruby app detected<br>
+                -----> Compiling Ruby/Rails<br>
+                -----> Using Ruby version: ruby-2.1.1<br>
+                -----> Installing dependencies using 1.5.2
+                       Running: bundle install --without development:test --path vendor/bundle --binstubs vendor/bundle/bin -j4 --deployment<br>
+                       Fetching gem metadata from https://rubygems.org/..........<br>
+                       Fetching additional metadata from https://rubygems.org/..<br>
+                       Using json (1.8.1)<br>
+                       Installing i18n (0.6.9)<br>
+                       Installing rake (10.3.0)<br>
+                       Installing builder (3.2.2)<br>
+                       Installing minitest (5.3.3)<br>
+                       Installing thread_safe (0.3.3)<br>
+                       Installing mime-types (1.25.1)<br>
+                       Installing erubis (2.7.0)<br>
+                       Installing polyglot (0.3.4)<br>
+                       Installing arel (5.0.1.20140414130214)<br>
+                       Installing execjs (2.0.2)<br>
+                       Installing coffee-script-source (1.7.0)<br>
+                       Installing rack (1.5.2)<br>
+                       Installing hike (1.2.3)<br>
+                       Using bundler (1.5.2)<br>
+                       Installing thor (0.19.1)<br>
+                       Installing multi_json (1.9.2)<br>
+                       Installing tilt (1.4.1)<br>
+                       Installing rails_serve_static_assets (0.0.2)<br>
+                       Installing rails_stdout_logging (0.0.3)<br>
+                       Installing sass (3.2.19)<br>
+                       Installing rdoc (4.1.1)<br>
+                       Installing tzinfo (1.1.0)<br>
+                       Installing uglifier (2.5.0)<br>
+                       Installing treetop (1.4.15)<br>
+                       Installing coffee-script (2.2.0)<br>
+                       Installing rack-test (0.6.2)<br>
+                       Installing rails_12factor (0.0.2)<br>
+                       Installing sprockets (2.11.0)<br>
+                       Installing sdoc (0.4.0)<br>
+                       Installing activesupport (4.1.0)<br>
+                       Installing mail (2.5.4)<br>
+                       Installing activemodel (4.1.0)<br>
+                       Installing jbuilder (2.0.6)<br>
+                       Installing actionview (4.1.0)<br>
+                       Installing activerecord (4.1.0)<br>
+                       Installing actionpack (4.1.0)<br>
+                       Installing sprockets-rails (2.1.3)<br>
+                       Installing actionmailer (4.1.0)<br>
+                       Installing railties (4.1.0)<br>
+                       Installing coffee-rails (4.0.1)<br>
+                       Installing jquery-rails (3.1.0)<br>
+                       Installing turbolinks (2.2.2)<br>
+                       Installing sass-rails (4.0.3)<br>
+                       Installing rails (4.1.0)<br>
+                       Installing pg (0.17.1)<br>
+                       Your bundle is complete!<br>
+                       Gems in the groups development and test were not installed.<br>
+                       It was installed into ./vendor/bundle<br>
+                       Post-install message from rdoc:<br>
+                       Depending on your version of ruby, you may need to install ruby rdoc/ri data:<br>
+                       <= 1.8.6 : unsupported<br>
+                       = 1.8.7 : gem install rdoc-data; rdoc-data --install<br>
+                       = 1.9.1 : gem install rdoc-data; rdoc-data --install<br>
+                       >= 1.9.2 : nothing to do! Yay!<br>
+                       Bundle completed (48.17s)<br>
+                       Cleaning up the bundler cache.<br>
+                -----> Preparing app for Rails asset pipeline<br>
+                       Running: rake assets:precompile<br>
+                       I, [2014-04-17T17:54:07.273555 #1263]  INFO -- : Writing /tmp/build_8945fb34-0238-41d7-a2fd-4402581a95fe/public/assets/application-10faafa06109fa14582542ac1852f5c5.js<br>
+                       I, [2014-04-17T17:54:07.338617 #1263]  INFO -- : Writing /tmp/build_8945fb34-0238-41d7-a2fd-4402581a95fe/public/assets/application-9cc0575249625b8d8648563841072913.css<br>
+                       Asset precompilation completed (11.26s)<br>
+                       Cleaning assets<br>
+                       Running: rake assets:clean<br>
+                -----> WARNINGS:<br>
+                       No Procfile detected, using the default web server (webrick)<br>
+                       https://devcenter.heroku.com/articles/ruby-default-web-server<br>
+                -----> Discovering process types<br>
+                       Procfile declares types -> (none)<br>
+                       Default types for Ruby  -> console, rake, web, worker<br>
+                       <br>
+                -----> Compressing... done, 21.9MB<br>
+                -----> Launching... done, v6<br>
+                       http://warm-wave-1943.herokuapp.com/ deployed to Heroku<br>
+                       <br>
+                To git@heroku.com:warm-wave-1943.git<br>
+                 * [new branch]      master -> master</span>
+              </h6>  
+            </div>
+            <p class="tuts">
+              It is always a good idea to check to see if there are any warnings or errors in the output. 
+              If everything went well you can migrate your database.
+            </p>
+          </dd>
+          
+          <dt><a href="#"><span>+</span> 10. Migrate Your Database</a></dt>
+  			  <dd style="">
+            <p class="tuts">
+              <span class="strong em">If you are using the database</span> in your application you need to manually migrate the database by running:
+            </p>
+            <div class="coding">
+              <h6 class="steps">
+                <span class="accent">$</span>&nbsp &nbsp heroku run rake db:migrate<br>
+              </h6>
+              <p class="tuts">
+                Any commands after the heroku run will be executed on a Heroku dyno.
+              </p>
+            </div>
+          </dd>
+          
+          <dt><a href="#"><span>+</span> 11. Visit your application</a></dt>
+  			  <dd style="">
+            <p class="tuts">
+              <span class="strong em">You’ve deployed your code to Heroku.</span> You can now instruct Heroku 
+              to execute a process type. Heroku does this by running the associated command in a dyno - a lightweight 
+              container which is the basic unit of composition on Heroku.
+            </p>
+            <p class="tuts">
+              Let’s ensure we have one dyno running the web process type:
+            </p>
+            <div class="coding">
+              <h6 class="steps">
+                <span class="accent">$</span>&nbsp &nbsp heroku ps:scale web=1<br>
+              </h6>
+            </div>
+            <p class="tuts">
+              You can check the state of the app’s dynos. The heroku ps command lists the running dynos of your application:
+            </p>
+            <div class="coding">
+              <h6 class="steps">
+                <span class="accent">$</span>&nbsp &nbsp heroku ps<br>
+                <span class="code">=== web (1X): `bin/rails server -p $PORT -e $RAILS_ENV`
+                web.1: starting 2014/04/17 12:54:20 (~ 3s ago)</span>
+              </h6>
+            </div>
+            <p class="tuts">
+              Here, one dyno is running.
+            </p>
+            <p class="tuts">
+              We can now visit the app in our browser with heroku open.
+            </p>
+            <div class="coding">
+              <h6 class="steps">
+                <span class="accent">$</span>&nbsp &nbsp heroku open<br>
+                <span class="code">Opening warm-wave-1943... done</span>
+              </h6>
+            </div>
+            <p class="tuts">
+              You should now see the “Hello World” text we inserted above.
+            </p>
+            <p class="tuts">
+              Heroku gives you a default web url for simplicty while you are developing. 
+              When you are ready to scale up and use Heroku for production you can add 
+              your own <a href="https://devcenter.heroku.com/articles/custom-domains">Custom Domain</a>.
+            </p>
+          </dd>
+
         </dl> <!--end of dl  -->
 			  
 			  {% include button_dropup.html %}  
