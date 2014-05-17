@@ -26,7 +26,7 @@ permalink: /tutorials/git_repo/
             </p>
             <div class="coding">
               <h6 class="steps">
-                $ git init
+                <span class="accent">$</span>&nbsp &nbsp git init
               </h6>
             </div>
             <p class="tuts">
@@ -35,8 +35,8 @@ permalink: /tutorials/git_repo/
             </p>  
             <div class="coding">
               <h6 class="steps">
-                <div class="accent">$</div> git add .<br>
-                $ git commit -m 'your first commit is typed here, this is sample copy'
+                <span class="accent">$</span>&nbsp &nbsp git add .<br>
+                <span class="accent">$</span>&nbsp &nbsp git commit -m 'your first commit is typed here, this is sample copy'
               </h6>
             </div>
             <p class="tuts">
@@ -46,7 +46,7 @@ permalink: /tutorials/git_repo/
             </p>
             <div class="coding">
               <h6 class="steps">
-                $ git status<br>
+                <span class="accent">$</span>&nbsp &nbsp git status<br>
               </h6>
             </div>
             <p class="tuts">
@@ -63,30 +63,30 @@ permalink: /tutorials/git_repo/
             </p>              
             <div class="coding">
               <h6 class="steps">
-                $ git status<br>
-                nothing to commit (working directory clean)
+                <span class="accent">$</span>&nbsp &nbsp git status<br>
+                <span class="code">nothing to commit (working directory clean)</span>
               </h6>
             </div>
             <p class="tuts"> 
-              This means nothing has changed and there are no new files in your working directory. Now go ahead and add a change or 
-              file to your directory and type 'git status'.
+              This means nothing has changed and there are no new files in your working directory. Now go ahead and make a change to a file or 
+              add a file to your directory and type 'git status'.
             </p>              
             <div class="coding">
               <h6 class="steps">
-                $ git status<br>
-                # On branch master
+                <span class="accent">$</span>&nbsp &nbsp git status<br>
+                <span class="code"># On branch master
                 # Changes not staged for commit:
                 (use "git add <file>..." to updated what will be committed)
                 (use "git checkout -- <file>..." to discard changes in working directory)
                 modified:  /name_of_file_changed.erb
-                no changes added to commit (use "git add" and/or "git commit -a")
+                no changes added to commit (use "git add" and/or "git commit -a")</span>
               </h6>
             </div>
             <p class="tuts"> 
               You should see the name of the file you've added. Go ahead and stage the file: git commit -m or git add  . then
               add your description of the change in quotes: "I added a file to test git."
               Congratulations, you're now tracking files. For more info: go to 
-              <span class="strong em"><a href="http://git-scm.com/">Pro Git</a></span>a great resource for all about Git.
+              <span class="strong em"><a href="http://git-scm.com/">Pro Git</a></span> a great resource for all about Git.
             </p>              
           </dd>
 				
@@ -163,7 +163,21 @@ permalink: /tutorials/git_repo/
               Create your directory, install git and initialize your repo with a README file, where you describe your project, 
               add documentation and provide contact information. All extremely useful from the get go.
             </p>
-            <div class="git-three-readme"></div>
+            
+            <div class="coding">
+              <h6 class="steps">
+                <span class="accent">$</span>&nbsp &nbsp mkdir ~/Fabulous-Project<br>
+                <span class="code"># Creates a directory for your project called<br> 
+                  "Fabulous Project" in your user directory<br></span>
+                <span class="accent">$</span>&nbsp &nbsp cd ~/Fabulous-Project<br>
+                <span class="code"># Changes the current working directory to your newly created directory</span><br>
+                <span class="accent">$</span>&nbsp &nbsp git init<br>
+                <span class="code"># Sets up the necessary git files<br></span>
+                <span class="accent">$</span>&nbsp &nbsp touch README<br>
+                <span class="code"># Creates a file called "README" in your<br>
+                  "Fabulous-Project" directory<br></span>
+              </h6>
+            </div>
             <p class="tuts"> 
               Okay so here's what's happening:<br> 
               mkdir (makes the directory) <br>
@@ -179,10 +193,10 @@ permalink: /tutorials/git_repo/
             </p>
             <div class="coding">
               <h6 class="steps">
-                $ git add README<br>
-                # Stages your README file, adding it to the list of files to be committed<br>
-                $ git commit -m 'first commit'<br>
-                # Commits your files, adding the message "first commit"
+                <span class="accent">$</span>&nbsp &nbsp git add README<br>
+                <span class="code"># Stages your README file, adding it to the list of files to be committed<br></span>
+                <span class="accent">$</span>&nbsp &nbsp git commit -m 'first commit'<br>
+                <span class="code"># Commits your files, adding the message "first commit"</span>
               </h6>
             </div>
             <p class="tuts"> 
@@ -202,10 +216,10 @@ permalink: /tutorials/git_repo/
             </p>
             <div class="coding">
               <h6 class="steps">
-                $ git remote add origin: https://github.com/username/Name-of-App.git<br>
-                  # Creates a remote named "origin" pointing at your GitHub repository.<br>
-                $ git push origin master<br>
-                  # Sends your commits in the "master" branch to Github
+                <span class="accent">$</span>&nbsp &nbsp git remote add origin: https://github.com/username/Name-of-App.git<br>
+                <span class="code"># Creates a remote named "origin" pointing at your GitHub repository.<br></span>
+                <span class="accent">$</span>&nbsp &nbsp git push origin master<br>
+                <span class="code"># Sends your commits in the "master" branch to Github</span>
               </h6>
             </div>
             <p class="tuts"> 
@@ -214,13 +228,13 @@ permalink: /tutorials/git_repo/
             </p>
             <div class="coding">
               <h6 class="steps">
-                $ git status <br>
-                  # Do this at the beginning of each session to make sure you've committed all changes <br>
-                $ git commit -m "the change description" <br>
-                  # If there is a change, then commit and stage it, if there's no change then keep working and when your ready
-                  git commit the new change <br>
-                $ git push origin master <br>
-                  # Finally push any new commits to the remote repo <br>
+                <span class="accent">$</span>&nbsp &nbsp git status <br>
+                <span class="code"># Do this at the beginning of each session to make sure you've committed all changes <br></span>
+               <span class="accent">$</span>&nbsp &nbsp git commit -m "the change description" <br>
+                <span class="code"># If there is a change, then commit and stage it, if there's no change then keep working and when your ready
+                  git commit the new change</span><br>
+                <span class="accent">$</span>&nbsp &nbsp git push origin master <br>
+                <span class="code"># Finally push any new commits to the remote repo</span><br>
               </h6>
             </div>
           </dd>

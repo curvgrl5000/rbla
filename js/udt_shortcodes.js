@@ -7,8 +7,9 @@ jQuery(document).ready(function($) {
     $(this).parent().next().slideToggle();
     $(this).parent().parent().children('dt').removeClass('active');
     $(this).parent().parent().children('dt').css({'border-bottom-left-radius':'3px','border-bottom-right-radius':'3px','margin-bottom':'3px'});
-		$(this).parent().parent().children('dt').find('a span').html('+');
+		$(this).parent().parent().children('dt').find('a span').html('+').removeClass('active');
 		$(this).parent().animate({'border-bottom-left-radius':'0','border-bottom-right-radius':'0','margin-bottom':'0'});
+	  $(this).children('span').addClass('active');
 	  $(this).parent().addClass('active');
 	  return false;
     });
