@@ -7,7 +7,7 @@ permalink: /tutorials/merge_branches/
   <!--start content -->
   <div class="content clearfix">      
     <div class="cheat-sheets">   
-      <h1><span>Create and merge branches</span></h1>
+      <h1><span>Create and Merge Branches</span></h1>
         
   		<div class="column_one_half tutorials">          
         <div class="git-map git-one"></div>
@@ -45,9 +45,9 @@ permalink: /tutorials/merge_branches/
             </p>
             <div class="coding">
               <h6 class="steps">
-                $ git branch<br>
-                $ master<br>
-                $ * new_feature
+                <span class="accent">$</span>&nbsp &nbsp git branch<br>
+                <span class="code">master</span><br>
+                <span class="code">* new_feature</span>
               </h6>
             </div>
           </dd>
@@ -60,9 +60,10 @@ permalink: /tutorials/merge_branches/
             </p>
             <div class="coding">
               <h6 class="steps">
-                $ git branch test<br>
-                $ git branch<br>
-                * master
+                <span class="accent">$</span>&nbsp &nbsp git branch test<br>
+                <span class="accent">$</span>&nbsp &nbsp git branch<br>
+                <span class="code">* master</span><br>
+                <span class="code">test</span>
               </h6>
             </div>
             <p class="tuts">
@@ -71,32 +72,32 @@ permalink: /tutorials/merge_branches/
             </p>
             <div class="coding">
               <h6 class="steps">
-                $ git checkout test<br>
-                $ git branch<br>
-                $ master<br>
-                $ * test
+                <span class="accent">$</span>&nbsp &nbsp git checkout test<br>
+                <span class="accent">$</span>&nbsp &nbsp git branch<br>
+                <span class="code">master</span><br>
+                <span class="code">* test</span>
               </h6>
             </div>
             <p class="tuts">
-              Next create a file called testing.rb in your project, then stage it by running 'git add testing.rb', and commit your 
+              Next create a file called 'testing.rb' in your project, then stage it by running 'git add testing.rb', and commit your 
               change. Now switch back to the master branch, with 'git checkout master'. 
               Finally list the contents of this branch by running 'ls'.
             </p>
             <div class="coding">
               <h6 class="steps">
-                $ git add testing.rb  <br>
-                $ git commit -m "added a file testing.rb"<br>
-                $ git checkout master<br>
-                $ ls
+                <span class="accent">$</span>&nbsp &nbsp git add testing.rb  <br>
+                <span class="accent">$</span>&nbsp &nbsp git commit -m "added a file testing.rb"<br>
+                <span class="accent">$</span>&nbsp &nbsp git checkout master<br>
+                <span class="accent">$</span>&nbsp &nbsp ls
               </h6>
             </div>
             <p class="tuts">
-              This last commmand, 'ls' will list what is in the current directory of the 'master' branch; however anything
+              Remember, 'ls' will list what is in the current directory of the 'master' branch; however anything
               added to the test branch will not be listed. 
             </p>
             <p class="tuts">  
-              Remember, you're now in the 'master' branch and you haven't merged
-              branches yet. When you're ready to merge 'test' you can do so by running 'git merge test'. 
+              Now you're in the 'master' branch but you haven't merged branches yet. When you're ready to merge 
+              'test' you can do so by running 'git merge test'. 
             </p>
   				</dd>
   				
@@ -113,21 +114,27 @@ permalink: /tutorials/merge_branches/
             </p>
             <div class="coding">
               <h6 class="steps">
-                $ git checkout master<br>
-                $ git merge test<br>
-                $ git branch -d test
+                <span class="accent">$</span>&nbsp &nbsp git checkout master<br>
+                <span class="accent">$</span>&nbsp &nbsp git merge test<br>
+                <span class="accent">$</span>&nbsp &nbsp git branch -d test
               </h6>
             </div>
             <p class="tuts">
               When there is a conflict, git will prevent the branches from merging. You can then run 'git status'
               which will show you the files that need to be resolved. 
             </p>
+            <div class="coding">
+              <h6 class="steps">
+                <span class="accent">$</span>&nbsp &nbsp git status<br>
+              </h6>
+            </div>
+            
             <p class="tuts">  
-              Typically small features are used for 
-              'fast-foward' merges and larger ones are called 3-way merges that include larger feature branches.
+              Typically small features are used for 'fast-foward' merges and larger ones are called 3-way merges 
+              that include larger feature branches.
             </p>
             <p class="tuts">  
-              For more info,<a href="http://git-scm.com/book/ca/Git-Branching-Basic-Branching-and-Merging"> Pro-Git</a> does a grat
+              For more info,<a href="http://git-scm.com/book/ca/Git-Branching-Basic-Branching-and-Merging"> Pro-Git</a> does a great
               job of describing the basics of branching and merging.
             </p>
 					</dd>

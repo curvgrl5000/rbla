@@ -7,7 +7,7 @@ permalink: /tutorials/deploy_to_heroku/
   <!--start content -->
   <div class="content clearfix">      
     <div class="cheat-sheets">   
-      <h1><span>Deploying An App to Heroku</span></h1>
+      <h1><span>Deploying an App to Heroku</span></h1>
         
   		<div class="column_one_half tutorials">          
         <div class="git-map git-one"></div>
@@ -72,7 +72,8 @@ permalink: /tutorials/deploy_to_heroku/
   				<dd style="">
             <p class="tuts">
               <span class="strong em">Install the <a href="https://devcenter.heroku.com/articles/quickstart#step-2-install-the-heroku-toolbelt">Toolkit</a> 
-              for your Operating System.</span> From the dropdown menu, you'll get a choice of operating systems: Mac Os X, Windows, Debian/Ubuntu or Standalone. 
+              for your Operating System.</span><br>
+              From the dropdown menu, you'll get a choice of operating systems: Mac Os X, Windows, Debian/Ubuntu or Standalone. 
               Once you're done with the installation process, go on to the next step.
             </p> 
 					</dd>
@@ -82,7 +83,7 @@ permalink: /tutorials/deploy_to_heroku/
             <p class="tuts">
               3. Login. After you've installed the Toolbelt you'll have access to the Heroku command from your terminal. From there you'll 
               authenticate using the email and password you used when you created your account. <br>
-              Type, "Heroku login", and fill in your credentials.
+              Type, 'heroku login', and fill in your credentials.
             </p>
             <div class="coding">
               <h6 class="steps">
@@ -102,8 +103,8 @@ permalink: /tutorials/deploy_to_heroku/
   			  <dd style="">
             <p class="tuts">
               <span class="strong em">To Run on Heroku</span> your app must be configured to use a Postgres database,
-              and all your dependencies must be declared in your 'Gemfile' and have the 'rails_12factor gem in the production
-              group of your 'Gemfile'. 
+              and all your dependencies must be declared in your Gemfile and have the 'rails_12factor gem in the production
+              group of your Gemfile. 
             </p>
             <p class="tuts">
               If you're starting from an existing app, now would be a good time to upgrade to Rails 4,
@@ -176,7 +177,7 @@ permalink: /tutorials/deploy_to_heroku/
                 </h6> 
               </div>
               <p class="tuts">
-                Now we need to route to this action by editing the file config/routes.rb, go ahead and type:
+                Now we need to route to this action by editing the file config/routes.rb. Type:
               </p>
               <div class="coding">
                 <h6 class="steps">
@@ -184,7 +185,7 @@ permalink: /tutorials/deploy_to_heroku/
                 </h6>
               </div>
              <p class="tuts">
-               Let's launch the server to see the page:
+               Launch the server with 'rails server' or 'rails s' for short:
              </p>
              <div class="coding">
                <h6 class="steps">
@@ -202,8 +203,7 @@ permalink: /tutorials/deploy_to_heroku/
             <p class="tuts">
               <span class="strong em">Heroku gems</a></span> were previously relied on the Rails plugin system;
               which has been removed from Rails 4. To enable features, such as static asset serving on Heroku,
-              go ahead and add 'rails_12factor' gem to the end of the gemfile.<br>
-              At the end of the Gemfile add:
+              go ahead and add 'rails_12factor' gem to the end of the Gemfile.
             </p> 
             <div class="coding">
               <h6 class="steps">
@@ -429,7 +429,7 @@ permalink: /tutorials/deploy_to_heroku/
                 <span class="accent">$</span>&nbsp &nbsp heroku run rake db:migrate<br>
               </h6>
               <p class="tuts">
-                Any commands after the heroku run will be executed on a Heroku dyno.
+                Any commands after the 'heroku' run will be executed on a Heroku dyno.
               </p>
             </div>
           </dd>
@@ -450,7 +450,7 @@ permalink: /tutorials/deploy_to_heroku/
               </h6>
             </div>
             <p class="tuts">
-              You can check the state of the app’s dynos. The heroku ps command lists the running dynos of your application:
+              You can check the state of the app’s dynos. The heroku ps command lists the running dynos of your app:
             </p>
             <div class="coding">
               <h6 class="steps">
@@ -463,7 +463,7 @@ permalink: /tutorials/deploy_to_heroku/
               Here, one dyno is running.
             </p>
             <p class="tuts">
-              We can now visit the app in our browser with heroku open.
+              We can now visit the app in our browser with 'heroku open'.
             </p>
             <div class="coding">
               <h6 class="steps">
@@ -472,10 +472,10 @@ permalink: /tutorials/deploy_to_heroku/
               </h6>
             </div>
             <p class="tuts">
-              You should now see the “Hello World” text we inserted above.
+              You should now see the 'Hello World' text we inserted above.
             </p>
             <p class="tuts">
-              Heroku gives you a default web url for simplicty while you are developing. 
+              Heroku gives you a default web url for simplicity while you are developing. 
               When you are ready to scale up and use Heroku for production you can add 
               your own <a href="https://devcenter.heroku.com/articles/custom-domains">Custom Domain</a>.
             </p>
