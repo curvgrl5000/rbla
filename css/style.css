@@ -1484,7 +1484,7 @@
 
 	/*section title*/
 	h1 { 
-	  font-size:40px;
+	  font-size:38px;
 	  line-height:40px;
 	}
 	h2 { 
@@ -1762,7 +1762,7 @@
   
   .cheat-sheets span.strong.em {
     font-weight: 600;
-    font-size: 16px;
+    font-size: 14px;
     color: #0590A6;   /*blue for sass*/
   }
   .cheat-sheets span.strong {
@@ -1829,8 +1829,8 @@
   }
   .git-three-description {
     background: white url("/images/create_a_repo_description.png") no-repeat;
-    height: 85px;
-    background-size: 170%;
+    height: 50px;
+    background-size: 100%;
     background-position-x: -8px;
   }
   .git-three-public {

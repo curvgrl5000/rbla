@@ -21,8 +21,8 @@ permalink: /tutorials/install_git/
   				<dt><a href="#"><span>+</span> Installing from Source</a></dt>
   				<dd style="">
             <p class="tuts">
-              To install <span class="strong em"><a href="http://git-scm.com/book/en/Getting-Started-Installing-Git">Git</a></span> 
-              from the Source is generally useful, because you’ll get 
+              <span class="strong em">To install <a href="http://git-scm.com/book/en/Getting-Started-Installing-Git">Git</a> 
+              from the Source</span> is generally useful, because you’ll get 
               the most recent version. Each version of Git tends to include useful UI enhancements. 
               <br><br>Getting the latest version is often 
               the best route if you feel comfortable compiling software from source. It is also the case that many 
@@ -70,7 +70,7 @@ permalink: /tutorials/install_git/
   				<dt><a href="#"><span>+</span> Installing on Linux</a></dt>
   				<dd style="">
             <p class="tuts">
-              If you want to <span class="strong em"><a href="https://github.com/">install Git on Linux</a></span> 
+              <span class="strong em">To install <a href="https://github.com/">Git on Linux</a></span> 
               via a binary installer, you can generally do so through the basic package-management tool that comes with your 
               distribution. If you’re on Fedora, you can use yum:
             </p>
@@ -92,7 +92,7 @@ permalink: /tutorials/install_git/
   				<dt><a href="#"><span>+</span> Installing on Mac</a></dt>
   				<dd style="">
             <p class="tuts">
-              There are two easy ways to install Git on a Mac. The easiest is to use the graphical Git installer, 
+              <span class="strong em">Two easy ways to install on a Mac</span>. The easiest is to use the graphical Git installer, 
               which you can download from the <span class="strong em"><a href="">Google Code</a></span> page.
             </p>
             <div class="coding">
@@ -115,7 +115,7 @@ permalink: /tutorials/install_git/
           <dt><a href="#"><span>+</span> Installing on Windows</a></dt>
   			  <dd style="">
             <p class="tuts">
-              <span class="strong em">Installing Git</span> on Windows is very easy. The msysGit project has one of the easier installation procedures. 
+              <span class="strong em">Installing Git on Windows</span> is also easy. The msysGit project has one of the easier installation procedures. 
               Simply download the installer exe file from the Google Code page, and run it:
             </p>
             <div class="coding">
@@ -125,8 +125,8 @@ permalink: /tutorials/install_git/
             </div>
             <p class="tuts">
               After it’s installed, you have both a command-line version (including an SSH client that will come in handy later) 
-              and the standard GUI. <br>
-              <span class="strong em">Note on Windows usage:</span> you should use Git with the provided msysGit shell (Unix style), it allows      
+              and the standard GUI. <br><br>
+              <span class="strong em">Note on Windows usage:</span> You should use Git with the provided msysGit shell (Unix style), it allows      
               to use the complex lines of command given in this book. If you need, for some reason, to use the native Windows shell /  
               command line console, you have to use double quotes instead of simple quotes (for parameters with spaces in them) and you  
               must quote the parameters ending with the circumflex accent (^) if they are last on the line, as it is a continuation    
@@ -136,11 +136,8 @@ permalink: /tutorials/install_git/
           
           <dt><a href="#"><span>+</span> A few more GIT tips nobody told you about</a></dt>
   			  <dd style="">
-            <p class="tuts">
-              <span class="strong em"><a href="http://mxcl.github.com/homebrew/">Homebrew:</a></span> "the missing package manager for OSX"
-            </p> 
             <p class="tuts">  
-              Homebrew installs everything you need that Apple didn't, and it's all git and ruby underneath.
+              <span class="strong em"><a href="http://mxcl.github.com/homebrew/">Homebrew</a></span> installs everything you need that Apple didn't, and it's all git and ruby underneath.
               It compliments OSX, and you can install GIT, your GEMS and all the GEM depedencies with 'brew'.
               It allows you to easily install hundreds of open-source tools, did I mention that it also installs Git?
             </p>
@@ -150,7 +147,7 @@ permalink: /tutorials/install_git/
               </h6>
             </div> 
             <p class="tuts">  
-              Run the command, and follow the instructions when prompted. Note that Terminal does not provide visual 
+              <span class="strong em">Run the command</span>, and follow the instructions when prompted. Note that Terminal does not provide visual 
               feedback when you type your password. Just type it slowly and press return.
               Once the installation is successful, run the following command:
             </p>
@@ -159,16 +156,16 @@ permalink: /tutorials/install_git/
                 <span class="accent">$</span>&nbsp &nbsp brew doctor<br>
               </h6>
             <p class="tuts">  
-              If you get 'Your system is raring to brew', you can move on to the next step.
+              <span class="strong em">If you get 'Your system is raring to brew',</span> you can move on to the next step.
             </p>
             <p class="tuts">  
-              If you get warning: <br>
-              'Experimental support for using Xcode without the "Command Line Tools", <br>
+              <span class="strong em">If you get warning:</span><br>
+              'Experimental support for using Xcode without the "Command Line Tools"' <br>
               you probably upgraded from Lion to Mountain Lion but haven't reinstalled the Command Line Tools. 
             </p>
             <p class="tuts">  
-              If you get Error:<br> 
-              No such file or directory - /usr/local/Cellar,<br> 
+              <span class="strong em">If you get the Error:</span><br> 
+              'No such file or directory - /usr/local/Cellar'<br> 
               run the following command, which creates the /usr/local/Cellar directory:
             </p>
             <div class="coding">
@@ -178,7 +175,7 @@ permalink: /tutorials/install_git/
             </div>
             
             <p class="tuts">
-              'sudo' allows you to run commands as a user with higher access rights, 
+              <span class="strong em">'sudo'</span> allows you to run commands as a user with higher access rights, 
                which is why it prompts you for your password, and 'mkdir' stands for “make directory”.
                Next, run the command below, which makes you the owner of the /usr/local directory, in 
                addition to all nested directories. This is needed in order to install Git in the next step. 
@@ -191,7 +188,7 @@ permalink: /tutorials/install_git/
               </h6>
             </div> 
             <p class="tuts">
-              'chown' stands for “change owner”, the -R flag applies this to all nested files and directories, 
+              <span class="strong em">'chown'</span> stands for “change owner”, the -R flag applies this to all nested files and directories, 
               and 'whoami' is a variable that represents your OS X username. You should copy and paste the command above as is.
               You can learn more about any Unix commany by typing 'man' (for "manual"), followed by the command. For example:
             </p>
@@ -201,7 +198,7 @@ permalink: /tutorials/install_git/
               </h6>
             </div>
             <p class="tuts">
-              If a manual is longer than a page long, it will display 'a :' at the end to signify there is more to read. 
+              <span class="strong em">If a manual is longer than a page long,</span> it will display 'a :' at the end to signify there is more to read. 
               To display one additional line at a time, press return. To display an additional page at a time, press the 
               space bar. To quit at any time, press q. Then run 'brew doctor' again. If you get 'Your system is raring to
               brew', you are golden. If you're on Lion, you might get an error message, warning you that your "Xcode is
